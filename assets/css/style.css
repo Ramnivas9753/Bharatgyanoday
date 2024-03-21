@@ -544,3 +544,14 @@ select {
 .navbar-nav .active{
   color:#FF543E !important;
 }
+
+
+/* Dont change clamp number  */
+.triple-dotes{
+  display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis
+}
+/* Dont change clamp number  */
