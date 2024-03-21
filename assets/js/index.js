@@ -10,6 +10,33 @@
   });
   // Desktop View navbar active class End
 
+
+  // show password js
+  function showPass() {
+    var passInput = $("#passInput");
+    var showPassIcon = $("#showPass");
+    if (passInput.attr('type') === 'password') {
+        showPassIcon.removeClass('fa-eye-slash').addClass('fa-eye');
+        passInput.attr('type', 'text');
+    } else {
+        showPassIcon.removeClass('fa-eye').addClass('fa-eye-slash');
+        passInput.attr('type', 'password');
+    }
+}
+
+const formControls = document.querySelectorAll(".form-control");
+
+// Loop through each element and add event listener
+formControls.forEach(control => {
+    control.addEventListener("focus", () => {
+        // Toggle class on the parent element
+        control.parentElement.classList.add("bg-gradient");
+    });
+    control.addEventListener("blur", () => {
+        // Toggle class on the parent element
+        control.parentElement.classList.remove("bg-gradient");
+    });
+});
   
   // Associative 
   var swiper = new Swiper(".mySwiper", {
