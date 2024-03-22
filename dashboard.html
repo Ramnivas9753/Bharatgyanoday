@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Site Name -->
+    <title>Dashboard</title>
+
+    <!-- Site Icon -->
+    <link rel="icon" href="assets/images/logo.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap_min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Other CSS -->
+    <link rel="stylesheet" href="assets/css/yogesh.css">
+    <!-- Include AOS CSS from CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+    <style>
+        .nav-pills .btn,
+        .nav-pills .btn span {
+            font-size: clamp(.8rem, 2vw, .9rem) !important;
+            font-family: Inter;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: left
+        }
+
+        .side-navbar {
+            width: 250px;
+            height: 100%;
+            position: fixed;
+            margin-left: -300px;
+            transition: .5s
+        }
+
+        .nav-link:active,
+        .nav-link:focus-visible .nav-link:focus,
+        .btn:first-child:active,
+        .nav-linkbtn {
+            background-color: #ffffff;
+            outline: none;
+            color: unset;
+            background-color: unset;
+            border-color: unset;
+            box-shadow: unset !important;
+        }
+
+        .my-container {
+            transition: 0.4s
+        }
+
+        .active-nav {
+            margin-left: 0
+        }
+
+        .active-cont {
+            margin-left: 250px
+        }
+
+        #menu-btn {
+            background-color: #100901;
+            width: auto;
+            color: #fff
+        }
+
+        .nav-pills .btn {
+            color: var(--bs-gray-300);
+            background: white;
+        }
+
+        .nav-pills .btn span {
+            font-weight: 400 !important
+        }
+
+        .nav-pills .btn.active,
+        .nav-pills .btn:hover {
+            background: #c28E2929;
+            font-weight: 500 !important
+        }
+
+        .nav-pills .btn.active span,
+        .nav-pills .btn:hover span {
+            font-weight: 400 !important;
+            background: -webkit-linear-gradient(40deg, #d08147 40.78%, #ffb078 61.68%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent
+        }
+
+        #sidebar {
+            max-height: 100vh
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Side-Nav -->
+    <aside class="side-navbar active-nav pe-2" id="sidebar">
+        <a href="index.html" class="my-2 p-2 px-3 d-block">
+            <img src="assets/images/main-logo.png" alt="main-logo" style="max-height: 2rem; object-fit: contain;">
+        </a>
+        <ul class="nav flex-column gap-1 nav-pills px-2 flex-nowrap h-100 overflow-auto" id="v-pills-tab" role="tablist"
+            aria-orientation="vertical">
+            <li>
+                <button class="nav-link btn active" id="v-pills-home-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                    aria-selected="true"><span class="p-0" > <i class="fa-solid fa-house me-1"></i> Home</span> </button>
+            </li>
+            <li>
+                <button class="nav-link btn " id="v-pills-profile-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                    aria-selected="false"><span class="p-0" > <i class="fa-solid fa-house me-1"></i>Profile</span></button>
+            </li>
+            <li>
+                <button class="nav-link btn" id="v-pills-messages-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
+                    aria-selected="false"><span class="p-0" > <i class="fa-solid fa-house me-1"></i>messages</span></button>
+            </li>
+            <li>
+                <button class="nav-link btn" id="v-pills-settings-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
+                    aria-selected="false"><span class="p-0" > <i class="fa-solid fa-house me-1"></i>settings</span></button>
+            </li>
+        </ul>
+
+        <span href="#" class="nav-link h4 w-100 mb-5">
+            <a href=""><i class="bx bxl-instagram-alt text-white"></i></a>
+            <a href=""><i class="bx bxl-twitter px-2 text-white"></i></a>
+            <a href=""><i class="bx bxl-facebook text-white"></i></a>
+        </span>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <main class="my-container active-cont">
+        <!-- Top Nav -->
+        <nav class="navbar top-navbar navbar-light sticky bg-light">
+            <a class="btn border-0 p-2" id="menu-btn"><i class="fa-solid fa-bars"></i></a>
+        </nav>
+        <!--End Top Nav -->
+        <h3 class="text-dark p-3">RESPONSIVE SIDEBAR NAV 💻 📱
+        </h3>
+        <div class="tab-content px-sm-4  px-md-5" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"
+                tabindex="0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus impedit veritatis
+                voluptates cumque ab. Odit quibusdam, delectus, laboriosam vitae quasi accusantium nam quis autem
+                cupiditate, iste sapiente asperiores. Minima, rem?
+                Quis beatae ea harum a fuga praesentium, cupiditate culpa sapiente possimus quod quos. Soluta, vel.
+                Repudiandae obcaecati magnam illo saepe fugit, ipsa tenetur quos ratione quibusdam inventore iusto. Rem,
+                veritatis!</div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
+                tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, laboriosam facilis quod
+                eum nihil animi architecto aliquid reprehenderit quasi illo nobis inventore ullam commodi fugit quos
+                mollitia minus sint numquam.
+                Quis dolorum sint temporibus? Praesentium eos ratione eum tenetur labore natus voluptatum quisquam
+                dolor. Illum, dolores voluptatum maiores, inventore animi blanditiis aperiam atque, dignissimos iusto
+                aliquam similique reprehenderit incidunt dolorum?
+                Veniam ullam minus doloribus eaque eos laudantium dolor temporibus maiores unde fugiat vero facere
+                reprehenderit in libero, cumque eligendi blanditiis id quidem quas. Reiciendis quod ab nostrum? Error,
+                ullam recusandae?</div>
+            <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab"
+                tabindex="0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat officiis nostrum
+                voluptatum blanditiis saepe excepturi quas fuga porro placeat quis, illum impedit tempore repudiandae
+                magnam doloremque commodi facilis explicabo rerum.</div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
+                tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit necessitatibus in consequatur
+                ullam nisi. Excepturi, esse iste eveniet deserunt autem, maiores porro perferendis temporibus a atque in
+                sapiente mollitia officiis.
+                Velit repellendus alias eius explicabo doloribus ab earum, quas in, quidem recusandae omnis cupiditate
+                facilis rem hic odio laboriosam, consectetur illo fugit ut. Tenetur consequuntur non tempore pariatur
+                accusamus hic!
+                Maxime, veniam dolor. Doloremque libero ullam omnis voluptatum at natus, pariatur esse vitae assumenda.
+                Maxime ipsum officia saepe cupiditate animi. Beatae, perspiciatis? Reprehenderit dicta quo maxime amet.
+                Nesciunt, adipisci eius.
+                Veritatis ut veniam similique doloremque deserunt, officiis exercitationem perspiciatis itaque aut,
+                asperiores adipisci voluptatem nisi commodi? Porro nobis veniam quibusdam numquam, quaerat officia earum
+                molestias necessitatibus laboriosam inventore? Inventore, voluptate.
+                Laboriosam sunt deleniti exercitationem corrupti qui error. Consequatur reprehenderit natus
+                necessitatibus impedit rem consequuntur aut tempora nostrum nemo, corporis aspernatur maxime alias
+                consectetur maiores aperiam. Enim delectus consequatur vel in?</div>
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
+                tabindex="0"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa sequi eligendi explicabo
+                libero? Nulla numquam dicta quas veniam praesentium labore ipsum. Corrupti odit possimus optio
+                doloremque veritatis, accusamus ex labore?
+                Molestias id dicta quibusdam autem ullam fuga ratione asperiores amet ipsa, veniam eius culpa fugiat
+                molestiae voluptatibus omnis nostrum quae! Iste facere consequuntur suscipit maxime iure corporis
+                aperiam omnis delectus?
+                Voluptatem, culpa sint molestias consectetur aliquam harum illum. Sint, ad rerum. Fugit assumenda a
+                ipsam culpa, est nam odit mollitia aliquid iure eaque, consectetur, molestias tempore facilis facere
+                quae minima?
+                Vel distinctio veniam culpa! Obcaecati quis placeat fugiat eaque. Numquam quisquam omnis cumque labore
+                id distinctio itaque minima nisi, quam, fuga ducimus quaerat neque necessitatibus commodi eligendi
+                nesciunt cupiditate. Eum? </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awsome CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+        integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Bootstrap JS link  -->
+    <script src="assets/css/bootstrap_js.js"></script>
+    <!-- Main JS  -->
+    <script src="assets/js/index.js"></script>
+
+    <!-- Include AOS JavaScript from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+</body>
+
+<script>
+    var menu_btn = document.querySelector("#menu-btn");
+    var sidebar = document.querySelector("#sidebar");
+    var container = document.querySelector(".my-container");
+    menu_btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active-nav");
+        container.classList.toggle("active-cont");
+    });
+
+</script>
+
+</html>

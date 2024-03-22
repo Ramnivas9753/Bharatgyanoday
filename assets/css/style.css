@@ -25,7 +25,7 @@
   --bs-gray-dark: #0b0a12;
   --bs-gray-100: #f5f5f6;
   --bs-gray-200: #dfdfe3;
-  --bs-gray-300: #c5c5c7;
+  --bs-gray-300: #B0B0B0;
   --bs-gray-400: #96969a;
   --bs-gray-500: #85878a;
   --bs-gray-600: #747579;
@@ -62,6 +62,25 @@
   :root {
     scroll-behavior: smooth;
   }
+}
+
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 5px !important;
+}
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 1rem;
+  background: 0 0;
+  /* max-height: 1rem !important; */
+}
+#media ::-webkit-scrollbar {
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bs-gradient);
+  border-radius: 5px;
 }
 
 body {
