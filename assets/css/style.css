@@ -766,6 +766,10 @@ select {
   width: 100%; aspect-ratio:3/2; object-fit: contain;
 }
 
+.navbar-nav .active {
+  color: #ff543e !important;
+}
+
 @media (max-width:768px) {
   .support_img{
     width: 100%; aspect-ratio:3/3; object-fit: contain;
