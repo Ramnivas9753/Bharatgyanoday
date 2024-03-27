@@ -599,8 +599,11 @@ select {
 }
 
 .btn-primary {
-  color: var(--primary-white) !important;
-  background: linear-gradient(270deg, #ee2513 0%, #008af8 100%);
+  color: var(--primary-white);
+  background: linear-gradient(94.44deg,
+      #d08147 10.78%,
+      rgba(255, 236, 228, 0.81) 61.68%,
+      #84e91e 100%);
   box-shadow: -10px 17.299999237060547px 25px 0px #231f201a;
   font-weight: 700;
   padding: 40px, 80px !important;
