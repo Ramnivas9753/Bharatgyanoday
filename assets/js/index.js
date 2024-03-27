@@ -101,7 +101,7 @@ var swiper = new Swiper(".events_Media_Section .mySwiper", {
   freeMode: true,
   loop: true,
   autoplay: {
-    delay: 1000,
+    delay: 10000000,
   },
   navigation: {
     nextEl: ".swiper-button-next",
