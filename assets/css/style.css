@@ -450,9 +450,6 @@ button:focus:not(:focus-visible) {
       #d08147 10.78%,
       rgba(255, 236, 228, 0.81) 61.68%,
       #84e91e 100%);
-  /* border-radius: 10px; */
-  /* background: linear-gradient(90.53deg, #ff2800 1.97%, #008dff 59.69%); */
-  /* (94.44deg, #D08147 10.78%, rgba(255, 236, 228, 0.81) 61.68%, #84E91E 100%) */
 }
 
 input,
@@ -842,7 +839,7 @@ select {
   -moz-border-radius: 0px 200px 0px 200px;
 }
 
-@media (max-width:768px) {
+@media (max-width:992px) {
   .design_border {
     border-radius: 0px 100px 0px 100px;
     -webkit-border-radius: 0px 100px 0px 100px;
@@ -877,3 +874,51 @@ input[type="file"] {
     text-align: justify;
   }
 }
+
+.scholarship_Form .dropdown-toggle::after {
+  border: 0;
+}
+
+.scholarship_Form .form-check-input {
+  accent-color: #9d3039 !important;
+  border: 1px solid #878787 !important;
+  padding: 10px;
+  margin: 0;
+}
+
+.scholarship_Form .form-check-input:checked{
+          background:url('/assets/images/check_img.png');
+          background-size:contain;
+          border:0 !important;
+}
+
+.swiper-button-next:after,
+                        .swiper-rtl .swiper-button-next:after {
+                            content: '' !important;
+                        }
+                        .swiper-button-prev:after,
+                        .swiper-rtl .swiper-button-next:after {
+                            content: '' !important;
+                        }
+
+                        .swiper-button-prev,.swiper-button-next{
+                            width: 100px !important; height: 100px !important;
+                        }
+                        .swiper-button-prev{
+                            left: -13px !important;
+                        }
+                        .swiper-button-next{
+                            right: -13px !important;
+                        }
+                        @media (max-width:768px){
+                            .swiper-button-prev,.swiper-button-next{
+                                width:50px !important;   
+                                height:50px !important;   
+                        }
+                        .swiper-button-prev{
+                            left: -3px !important;
+                        }
+                        .swiper-button-next{
+                            right: -3px !important;
+                        }
+                        }

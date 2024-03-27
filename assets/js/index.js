@@ -134,3 +134,34 @@ function updateFileName(input) {
   document.getElementById("signature-label").innerText = fileName;
 }
 // upload file name show js
+
+// specialists Slider
+var swiper = new Swiper("#specialists .mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  freeMode: true, 
+  loop: true,
+  autoplay: {
+    delay: 1000,
+  },
+  pagination: {
+    clickable: false,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    525: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },   
+}});
