@@ -711,11 +711,12 @@ select {
 }
 .navbar-nav .active {
   color: #ff543e !important;
+}
 
 
 
 /* Dont change clamp number  */
-.triple-dotes{
+.triple-dotes {
   display: -webkit-box;
 -webkit-line-clamp: 3;
 -webkit-box-orient: vertical;
