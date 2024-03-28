@@ -695,15 +695,18 @@ select {
   outline: none;
 }
 
-.logo_img img{
-  width:50px; aspect-ratio:1/1;
+.logo_img img {
+  width: 50px;
+  aspect-ratio: 1/1;
 }
-@media (max-width:524px){
-  .logo_img img{
-    width:35px; aspect-ratio:1/1;
+
+@media (max-width:524px) {
+  .logo_img img {
+    width: 35px;
+    aspect-ratio: 1/1;
   }
 
-  .logo_img strong{
+  .logo_img strong {
     font-size: 15px;
   }
 }
@@ -761,13 +764,15 @@ select {
   color: #FF543E !important;
 }
 
-.heading_line{
-  width: 8%; height: 1.6px;
+.heading_line {
+  width: 8%;
+  height: 1.6px;
 }
 
-@media (max-width:768px){
-  .heading_line{
-    width: 90%; height: 1px;
+@media (max-width:768px) {
+  .heading_line {
+    width: 90%;
+    height: 1px;
   }
 }
 
@@ -1001,6 +1006,7 @@ input[type="file"] {
     background-repeat: no-repeat !important;
   }
 }
+
 /* top banner */
 
 /* History Section */
@@ -1033,18 +1039,73 @@ input[type="file"] {
 @media (max-width:768px) {
   .border-md-start {
     border-left: 2px solid black;
+    padding-left: 20px;
   }
 }
+
+.pink_bdr_left {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  right: -25px;
+}
+
+.pink_bdr_right {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  left: -25px;
+  transform: rotate(200deg);
+}
+
 
 /* History Section */
 
-.img_width{
-  width: 100%; height: 300px; aspect-ratio:2/2;
+.img_width {
+  width: 100%;
+  height: 300px;
+  aspect-ratio: 2/2;
   object-fit: cover;
 }
 
-@media (max-width:768px){
-  .img_width{
-    width: 100%; height: 130px; aspect-ratio:2/2;
+@media (max-width:768px) {
+  .img_width {
+    width: 100%;
+    height: 130px;
+    aspect-ratio: 2/2;
   }
 }
+
+.image_vdo {
+  position: absolute;
+  height: 100%;
+  top: -7px;
+  bottom: 0;
+  left: 0px;
+  width: 100%;
+  border-radius:15px;
+}
+.image_vdo .overflow-hidden{
+  object-fit: cover;
+}
+
+.yt-card {
+  position: relative;
+  border-radius: 15px !important;
+  overflow: hidden;
+}
+
+.play_vdo_btn{
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width:524px) {
+  .play_vdo_btn{
+    width: 30px;
+  }
+}
+

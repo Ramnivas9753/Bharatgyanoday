@@ -250,24 +250,45 @@
             <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
                 elementum tristique</p>
         </div>
-        <div class="container"
-            style="background:url('/assets/images/history_trans.png'); background-size: 100%; background-repeat:no-repeat;">
+        <style>
+            .History_bg {
+                background: url('/assets/images/history_trans.png');
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+
+            @media (max-width:768px) {
+                .History_bg {
+                    background: url('/assets/images/history_mob_bg.png');
+                    background-size: 100% 100%;
+                }
+            }
+        </style>
+        <div class="container History_bg">
             <div class="">
                 <div class="row d-flex g-3 justify-content-center">
                     <div class="col-lg-6 d-md-flex g-3 border-md-start">
                         <div class="row g-3 mb-3 mt-2 d-flex History_div_first flex-column">
                             <div class="col-12">
-                                <div class="text-center p-3 rounded" style="background:#FFCACA;">
+                                <div class="text-center p-3 rounded position-relative" style="background:#FFCACA;">
                                     <h4>Startup (1990)</h4>
                                     pLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in
                                     eros elementum tristique
+                                    <img src="assets/images/pink_bdr.png" alt=""
+                                        class="d-md-block d-none pink_bdr_left">
+                                    <img src="assets/images/pink_bdr.png" alt=""
+                                        class="pink_bdr_right d-md-none d-block">
                                 </div>
                             </div>
                             <div class="col-12 ">
-                                <div class="text-center p-3 rounded" style="background:#FFCACA;">
+                                <div class="text-center p-3 rounded position-relative" style="background:#FFCACA;">
                                     <h4>NEO (2005)</h4>
                                     pLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in
                                     eros elementum tristique
+                                    <img src="assets/images/pink_bdr.png" alt=""
+                                        class="d-md-block d-none pink_bdr_left">
+                                    <img src="assets/images/pink_bdr.png" alt=""
+                                        class="pink_bdr_right d-md-none d-block">
                                 </div>
                             </div>
                         </div>
@@ -276,17 +297,19 @@
 
                         <div class="row g-3 mb-3 History_div d-flex flex-column">
                             <div class="col-12">
-                                <div class="text-center p-3 rounded" style="background:#FFCACA;">
+                                <div class="text-center position-relative p-3 rounded" style="background:#FFCACA;">
                                     <h4>National Event (2015)</h4>
                                     pLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in
                                     eros elementum tristique
+                                    <img src="assets/images/pink_bdr.png" alt="" class="pink_bdr_right ">
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="text-center p-3 rounded" style="background:#FFCACA;">
+                                <div class="text-center p-3 rounded position-relative" style="background:#FFCACA;">
                                     <h4>Bihar Edu Event (2020)</h4>
                                     pLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in
                                     eros elementum tristique
+                                    <img src="assets/images/pink_bdr.png" alt="" class="pink_bdr_right ">
                                 </div>
                             </div>
                         </div>
