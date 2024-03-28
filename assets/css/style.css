@@ -1116,3 +1116,13 @@ input[type="file"] {
   }
 }
 
+/* ID RIGHT TIC ON LI  */
+#rule-sect li::before{
+  list-style: none;
+  content: ' ✔️';
+  font-size: 10px;
+}
+#rule-sect li{
+  list-style: none;
+  margin-bottom: 7px;
+}

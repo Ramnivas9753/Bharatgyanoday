@@ -110,15 +110,16 @@
         background-color: black;
         /* Set the color of the line */
     }
-    li::before{
-        list-style: none;
-        content: ' ✔️';
-        font-size: 10px;
-    }
-    li{
-        list-style: none;
-        margin-bottom: 7px;
-    }
+/* ID RIGHT TIC ON LI  */
+#rule-sect li::before{
+  list-style: none;
+  content: ' ✔️';
+  font-size: 10px;
+}
+#rule-sect li{
+  list-style: none;
+  margin-bottom: 7px;
+}
 </style>
 
      <!-- Top Banner section -->
@@ -189,8 +190,8 @@
     <!-- Our supporter Section End -->
 
     <!-- RULE -->
-    <section>
-        <div class="container">
+    <section id="rule-sect">
+        <div class="container" >
             <div class="row">
                <div class="col-12 col-md-8 col-lg-5 mx-auto">
                 <h6 class="text-center">RULES</h6>
