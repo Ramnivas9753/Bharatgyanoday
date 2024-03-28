@@ -277,7 +277,7 @@ h6,
   /* border: 1px solid; */
   padding: 0.05em;
   border-radius: 7px;
-  /* background: var(--bs-gray-200); */
+  background: var(--bs-gray-200);
 }
 
 .form-group input {

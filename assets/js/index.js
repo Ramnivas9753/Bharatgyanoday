@@ -165,3 +165,23 @@ var swiper = new Swiper("#specialists .mySwiper", {
       spaceBetween: 30,
     },   
 }});
+
+
+const dropdownMenu = document.querySelector('#dropdown-menu');
+const selectedItemsDisplay = document.getElementById('multiSelectDropdown');
+let mySelectedItems = [];
+
+function handleCB(event) {
+    const checkbox = event.target;
+    if (checkbox.checked) {
+        mySelectedItems.push(checkbox.value);
+    } else {
+        mySelectedItems = mySelectedItems.filter((item) => item !== checkbox.value);
+    }
+
+    console.log(mySelectedItems);
+    // Update the display of selected items
+    selectedItemsDisplay.textContent = mySelectedItems.length > 0 ? mySelectedItems.join(', ') : '';
+}
+
+dropdownMenu.addEventListener('change', handleCB);
