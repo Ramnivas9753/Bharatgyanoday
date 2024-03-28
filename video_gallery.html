@@ -178,7 +178,7 @@
                 </div>
                 <div class="col">
                     <div>
-                        <ul class="nav nav-pills mb-4 d-flex justify-content-center  gap-md-3 gap-1 flex-nowrap overflow-auto "
+                        <ul class="nav nav-pills mb-4 d-flex justify-content-sm-center justify-content-around gap-md-3 gap-1 flex-nowrap overflow-auto "
                             id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link  rounded-pill active" id="pills-About-tab" data-bs-toggle="pill"
@@ -186,7 +186,7 @@
                                     aria-selected="true">Educational</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link   rounded-pill" id="pills-Mission-tab" data-bs-toggle="pill"
+                                <button class="nav-link text-nowrap rounded-pill" id="pills-Mission-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-Mission" type="button" role="tab"
                                     aria-controls="pills-Mission" aria-selected="false">Food Distribution</button>
                             </li>
@@ -574,6 +574,38 @@
 <!-- Include AOS JavaScript from CDN -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+
+<!-- Video Gallery -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let ytContainers = document.querySelectorAll(".yt-card");
+      ytContainers.forEach((card) => {
+        let image = card.getElementsByClassName("image_vdo")[0];
+        let iframe = card.querySelector(".iframe");
+
+        image.addEventListener("click", playVideo);
+
+        function playVideo() {
+          console.log("clicked....");
+          // Pause or reset other videos
+          ytContainers.forEach((otherCard) => {
+            if (otherCard !== card) {
+              let otherIframe = otherCard.querySelector(".iframe");
+              let otherImage = otherCard.querySelector(".image_vdo");
+              // Reset other video to original state
+              otherIframe.setAttribute('src', otherIframe.getAttribute('src').replace('&autoplay=1', ''));
+              otherImage.style.display = "block";
+            }
+          });
+          // Play the clicked video
+          image.style.display = "none";
+          let src = iframe.getAttribute('src');
+          iframe.setAttribute('src', src + "&autoplay=1"); // Use "&" instead of "$"
+        }
+      });
+    });
+  </script>
+  <!-- Video Gallery -->
 
 </body>
 
