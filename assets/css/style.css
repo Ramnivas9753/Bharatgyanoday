@@ -752,13 +752,30 @@ select {
   }
 }
 
-
-
-/* @media (min-width:768) and (max-width:1199) {
-  .navbar-nav > li > a{
-    font-size: 13px;
+/* Navbar_Fixed In Mobile View*/
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+      position: fixed;
+      top: 65px;
+      left: 0;
+      right: 0;
+      bottom: auto;
+      background-color: #fff;
+      z-index: 1000;
+      overflow-y: auto;
+      max-height: calc(100vh - 56px);
   }
-} */
+}
+/* Navbar_Fixed In MObile View*/
+
+
+/* @media (max-width:992px){ */
+  #navbarDropdown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+/* } */
 
 .navbar-nav .active {
   color: #FF543E !important;
