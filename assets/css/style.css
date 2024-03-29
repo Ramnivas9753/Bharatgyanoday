@@ -752,20 +752,6 @@ select {
   }
 }
 
-@media (max-width: 991.98px) {
-  .navbar-collapse {
-      position: fixed;
-      top: 0;
-      /* top: 65px; */
-      left: 0;
-      right: 0;
-      bottom: auto;
-      background-color: #fff; /* Change this to your desired background color */
-      z-index: 1000; /* Ensure the navbar is above other content */
-      overflow-y: auto; /* Enable scrolling if the content is taller than the viewport */
-      max-height: calc(100vh - 56px); /* Adjust as necessary to avoid viewport height */
-  }
-}
 /* Navbar_Fixed In MObile View*/
 
 
