@@ -801,9 +801,6 @@ select {
   object-fit: contain;
 }
 
-.navbar-nav .active {
-  color: #ff543e !important;
-}
 
 @media (max-width:768px) {
   .support_img {
@@ -819,10 +816,6 @@ select {
 
 .navbar-nav>li>a {
   font-weight: 600;
-}
-
-.navbar-nav .active {
-  color: #ff543e !important;
 }
 
 /* Dont change clamp number  */
@@ -1128,4 +1121,13 @@ input[type="file"] {
 #rule-sect li{
   list-style: none;
   margin-bottom: 7px;
+}
+
+
+.footer a:hover {
+  /* background:linear-gradient(94.44deg,
+  #d08147 10.78%,
+  rgba(255, 236, 228, 0.81) 61.68%,
+  #84e91e 100%); */
+  color:white !important;
 }

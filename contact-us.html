@@ -34,14 +34,14 @@
 
     <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet" />
 
-<style>
-    .navbar-toggler-icon {
-  display: inline-block;
-  background: url('/assets/images/triple_line.png');
-  background-size:100%;
-  background-repeat:no-repeat;
-}
-</style>
+    <style>
+        .navbar-toggler-icon {
+            display: inline-block;
+            background: url('/assets/images/triple_line.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body>
@@ -49,7 +49,7 @@
     <!-- Header Start -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light desktop_nav">
         <div class="container-fluid px-md-5">
-            <a class="navbar-brand d-flex align-items-center h4 fw-bold logo_img" href="#">
+            <a class="navbar-brand d-flex align-items-center h4 fw-bold logo_img" href="index.html">
                 <img src="assets/images/Bharat_gyan_logo.png" alt="" class="me-2 ">
                 <strong class="logo_text">Bharatgyanoday</strong></a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
@@ -66,8 +66,8 @@
                         <a class="nav-link" href="about_us.html">About us</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Gallery
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -83,7 +83,7 @@
                         <a class="nav-link " aria-current="page" href="blog-detail.html">Blogs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="exam.html">Scholarship Test</a>
+                        <a class="nav-link " aria-current="page" href="scholarship_test.html">Scholarship Test</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " aria-current="page" href="contact-us.html">Contact</a>
@@ -100,46 +100,51 @@
         </div>
     </nav>
     <!-- Header End -->
-   
-   <style>
-        #contact-form .form-bg{
-    background-image: url('/assets/images/bg-ng.png'); background-repeat: no-repeat; background-position: right; background-size: 62% 100%;   
 
-}
+    <style>
+        
+        #contact-form .form-bg {
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 62% 100%;
+        }
 
-#contact-form input{
-    background: #EFEAFC;
-    outline: none;
-    box-shadow: none;
-    border: 0;
-    margin: 10px 0px 10px 0px;
-}
+        @media (min-width:768px){
+            #contact-form .form-bg {
+            background-image: url('/assets/images/bg-ng.png');
+        }
+        }
 
-@media (max-width:525px){
-    #contact-form input{
-        background: #EAEBF1;
-    }
-}
+        #contact-form input {
+            background: #EFEAFC;
+            outline: none;
+            box-shadow: none;
+            border: 0;
+            margin: 10px 0px 10px 0px;
+        }
 
-#contact-form .textarea{
-    background: #EFEAFC;
-    outline: none;
-    box-shadow: none;
-    border-radius: 20px !important;
-}
+        @media (max-width:525px) {
+            #contact-form input {
+                background: #EAEBF1;
+            }
+        }
+
+        #contact-form .textarea {
+            background: #EFEAFC;
+            outline: none;
+            box-shadow: none;
+            border-radius: 20px !important;
+        }
 
 
-#contact-form label{
-font-size: 18px;
-font-weight: 700;
-line-height: 18px;
-letter-spacing: 0em;
-text-align: left;
+        #contact-form label {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 18px;
+            letter-spacing: 0em;
+            text-align: left;
 
-}
-#contact-form .bg-clr{
-    background-color: #ffffff;
-}
+        }
     </style>
 
 
@@ -162,52 +167,62 @@ text-align: left;
         <div class="container-fluid form-bg">
             <div class="">
                 <div class="row d-flex align-items-center px-lg-5">
-                    <div class="col-lg-6 col-md-9 bg-clr border rounded-3 px-sm-5  px-2 my-5" style="box-shadow: 0px 4px 20px 0px #00000026;
+                    <div class="col-lg-6 col-md-9 bg-light border rounded-3 py-sm-2 px-sm-5 py-2 my-5" style="box-shadow: 0px 4px 20px 0px #00000026;
                     ">
-                       <form class="">
-                        <div class="container">
+                        <form>
                             <div class="row px-lg-3 px-0 p-md-1 h6 g-4">
-                                <div class="col-12 col-md-12 col-lg-12 pt-3 pb-3 pb-sm-4">
-                                    <h3 class="text-nowrap">Get in touch today</h3>
-                                    <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipiscing elit semper dalar elementum tempus hac tellus libero accumsan. </p>
+                                <div class="col-12  pt-3 pb-3 pb-sm-4">
+                                    <h4 class="text-uppercase  d-flex align-items-center text-nowrap gap-3">Contact us
+                                        <p class="bg-dark m-0 heading_line"></p>
+                                    </h4>
+                                    <h3 class="">Get in touch today</h3>
+                                    <p class=" mt-2">Lorem ipsum dolor sit amet consectetur adipiscing elit
+                                        semper dalar elementum tempus hac tellus libero accumsan. </p>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group border border-1">
-                                        <input type="text" placeholder="Full Name" onkeydown="return /[a-z]/i.test(event.key)" class="form-control form-control-sm border-0 bg-white px-4 py-3 m-0">
+                                        <input type="text" placeholder="Full Name"
+                                            onkeydown="return /[a-z]/i.test(event.key)"
+                                            class="form-control form-control-sm border-0 bg-white px-4 py-3 m-0">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group border border-1">
-                                        <input type="email" placeholder="Email Id" pattern=".+@gmail\.(com|in)" class="form-control form-control-sm border-0 bg-white px-4 py-3 m-0">
+                                        <input type="email" placeholder="Email Id" pattern=".+@gmail\.(com|in)"
+                                            class="form-control form-control-sm border-0 bg-white px-4 py-3 m-0">
                                     </div>
                                 </div>
-                    
+
                                 <div class="col-md-6">
                                     <div class="form-group border border-1">
-                                        <input type="text" placeholder="Mobile no." oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');" minlength="10" maxlength="10" class="form-control form-control-sm border-0 bg-white px-4 py-3 m-0">
+                                        <input type="text" placeholder="Mobile no."
+                                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
+                                            minlength="10" maxlength="10"
+                                            class="form-control form-control-sm border-0 bg-white px-4 py-3 m-0">
                                     </div>
                                 </div>
-                    
+
                                 <div class="col-md-6">
                                     <div class="form-group border border-1">
-                                        <input type="text" placeholder="Father Occupation" onkeydown="return /[a-z]/i.test(event.key)" class="form-control form-control-sm border-0 bg-white px-4 py-3 m-0">
+                                        <input type="text" placeholder="Father Occupation"
+                                            onkeydown="return /[a-z]/i.test(event.key)"
+                                            class="form-control form-control-sm border-0 bg-white px-4 py-3 m-0">
                                     </div>
                                 </div>
-                    
-                                <div class="col-md-12">
+
+                                <div class="col-md-12 col-lg-12 mt-3">
                                     <div class="form-group border border-1">
-                                        <textarea type="text" placeholder="Message" pattern=".+@gmail\.(com|in)" class="form-control form-control-sm border-0 bg-white py-4"></textarea>
+                                        <textarea type="text" placeholder="Massage" pattern=".+@gmail\.(com|in)"
+                                            class="form-control form-control-sm border-0 bg-white  pb-4 px-4 pt-2"></textarea>
                                     </div>
                                 </div>
-                                <div class="col-12 px-lg-3  mb-2">
-                                    <div class="w-100 btn-gradient-border my-2" style="padding: 2px;">
+                                <div class="col-12">
+                                    <div class="w-25 btn-gradient-border my-1" style="padding: 2px;">
                                         <button class="w-100 btn">Submit</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
-                    
+                        </form>
                     </div>
                 </div>
             </div>
@@ -216,38 +231,49 @@ text-align: left;
     <!-- Form Section End  -->
 
     <!-- GET IN TOUCH -->
-    
+
     <!-- OFFICE LOCATION -->
     <section>
         <div class="container">
-            <div class="row m-0 g-3">
+            <div class="row mb-md-3 mb-3">
+                <div class="col-lg-7 col-md-6 mx-auto">
+                    <h4 class="text-uppercase  d-flex align-items-center text-nowrap gap-3 justify-content-center">
+                        office location <p class="bg-dark m-0 heading_line"></p>
+                    </h4>
+                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse Lorem
+                        ipsum dolor sit amet consectetur adipisicing elit. Impedit, labori</p>
+                </div>
+            </div>
+            <div class="row m-0 g-4">
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="location-cls h-100 w-100 py-4 rounded-2 text-center d-flex flex-column gap-2" style="background-color: #dadfe4;">
-                        <a href=""><i class="fa-solid fa-location-dot fs-3" style="color: #E24242;"></i></a>
+                    <div class="location-cls h-100 w-100 py-4 rounded-3 text-center d-flex flex-column gap-2"
+                        style="background-color: #1F64B41A;">
+                        <a href=""><i class="fa-solid fa-location-dot fs-1" style="color: #E24242;"></i></a>
                         <div class="row">
                             <div class="col-10 col-md-11 col-lg-9  mx-auto">
-                                <p class="text-break">Bhopal Address:Lambakhl Berasiya Road, Bhopal, Madhya Pradesh, India - 462038</p>
+                                <p class="text-break text-dark lh-base" style="font-weight: 500;">Bhopal
+                                    Address:Lambakhl Berasiya Road, Bhopal, Madhya Pradesh, India - 462038</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="location-cls h-100 w-100 py-4 rounded-2 text-center d-flex flex-column gap-2" style="background-color: #dadfe4;">
-                        <a href=""><i class="fa-solid fa-location-dot fs-3" style="color: #E24242;"></i></a>
-                        <div class="row">
-                            <div class="col-10 col-md-11 col-lg-9  mx-auto">
-                                <p class="text-break">Bhopal Address:Lambakhl Berasiya Road, Bhopal, Madhya Pradesh, India - 462038</p>
-                            </div>
+                    <div class="location-cls h-100 py-4 rounded-3 text-center  d-flex flex-column gap-2"
+                        style="background-color: #1F64B41A;">
+                        <a href=""><i class="fa-solid fa-location-dot fs-1" style="color: #E24242;"></i></a>
+                        <div class="col-10 col-md-11 col-lg-9  mx-auto">
+                            <p class="text-break text-dark lh-base" style="font-weight: 500;">Bhopal Address:Lambakheda,
+                                Berasiya Road, Bhopal, Madhya Pradesh, India - 462038</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="location-cls h-100 w-100 py-4 rounded-2 text-center d-flex flex-column gap-2" style="background-color: #dadfe4;">
-                        <a href=""><i class="fa-solid fa-location-dot fs-3" style="color: #E24242;"></i></a>
-                        <div class="row">
-                            <div class="col-10 col-md-11 col-lg-9  mx-auto">
-                                <p class="text-break">Bhopal Address:Lambakhl Berasiya Road, Bhopal, Madhya Pradesh, India - 462038</p>
-                            </div>
+                    <div class="location-cls h-100 py-4 rounded-3 text-center d-flex flex-column gap-2"
+                        style="background-color: #1F64B41A;">
+                        <a href=""><i class="fa-solid fa-location-dot fs-1" style="color: #E24242;"></i></a>
+                        <div class="col-10 col-md-11 col-lg-9 mx-auto">
+                            <p class="text-break text-dark lh-base" style="font-weight: 500;">Bhopal Address:Lambakheda,
+                                Berasiya Road, Bhopal, Madhya Pradesh, India - 462038</p>
                         </div>
                     </div>
                 </div>
@@ -257,12 +283,15 @@ text-align: left;
     <!-- OFFICE LOCATION -->
 
     <!-- LATEST EVENT/NEWS -->
-     <section>
+    <section>
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 col-md-6 mx-auto">
-                    <h4 class="text-center">LATEST EVENTS/NEWS</h4>
-                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, labori</p>
+                    <h4 class="text-uppercase  d-flex align-items-center text-nowrap gap-3 justify-content-center">We
+                        are allocated <p class="bg-dark m-0 heading_line"></p>
+                    </h4>
+                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse Lorem
+                        ipsum dolor sit amet consectetur adipisicing elit. Impedit, labori</p>
                 </div>
             </div>
         </div>
@@ -318,11 +347,14 @@ text-align: left;
                         <div class="information">
                             <h6 class="footer-heading text-uppercase text-white fw-bold">NGO</h6>
                             <ul class="list-unstyled footer-link mt-md-4 footer_text">
-                                <li class="mb-1"><a href="event.html" class="text-white text-decoration-none">Events</a></li>
-                                <li class="mb-1"><a href="photo_gallery.html" class="text-white text-decoration-none">Gallery</a></li>
+                                <li class="mb-1"><a href="event.html" class="text-white text-decoration-none">Events</a>
+                                </li>
+                                <li class="mb-1"><a href="photo_gallery.html"
+                                        class="text-white text-decoration-none">Gallery</a></li>
                                 <li class="mb-1"><a href="#" class="text-white text-decoration-none">Food
                                         Help</a></li>
-                                <li class=""><a href="contact-us.html" class="text-white text-decoration-none">Educational
+                                <li class=""><a href="contact-us.html"
+                                        class="text-white text-decoration-none">Educational
                                         Help</a></li>
                                 <li class=""><a href="#" class="text-white text-decoration-none">Health
                                         Help</a></li>
@@ -335,9 +367,11 @@ text-align: left;
                         <div class="resources">
                             <h6 class="footer-heading text-uppercase text-white fw-bold">Company</h6>
                             <ul class="list-unstyled footer-link mt-md-4 footer_text">
-                                <li class="mb-1"><a href="term&condition.html" class="text-white text-decoration-none">Term &
+                                <li class="mb-1"><a href="term&condition.html"
+                                        class="text-white text-decoration-none">Term &
                                         Condition </a></li>
-                                <li class="mb-1"><a href="privacy_policy.html" class="text-white text-decoration-none">Privacy
+                                <li class="mb-1"><a href="privacy_policy.html"
+                                        class="text-white text-decoration-none">Privacy
                                         Policy</a></li>
                                 <li class="mb-1"><a href="contact-us.html" class="text-white text-decoration-none">Help
                                         center</a></li>
@@ -370,8 +404,10 @@ text-align: left;
             <div class="container-fluid">
                 <hr class="mx-md-5 mx-1 my-4" style="background: white; opacity: 0.9; height: 1.5px;">
             </div>
-            <div class="text-center mx-3  mt-4 p-1" >
-                <p class="mb-0 " style="color:#7F7F7F;">Copyright © 2024 pawan_design | All Rights Reserved | <a href="term&condition.html" style="color:#7F7F7F;">Terms and Conditions</a> | <a href="privacy_policy.html" style="color:#7F7F7F;">Privacy Policy</a> </p>
+            <div class="text-center mx-3  mt-4 p-1">
+                <p class="mb-0 " style="color:#7F7F7F;">Copyright © 2024 pawan_design | All Rights Reserved | <a
+                        href="term&condition.html" style="color:#7F7F7F;">Terms and Conditions</a> | <a
+                        href="privacy_policy.html" style="color:#7F7F7F;">Privacy Policy</a> </p>
             </div>
         </footer>
     </section>
