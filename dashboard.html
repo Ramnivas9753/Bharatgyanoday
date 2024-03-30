@@ -40,10 +40,10 @@
         }
 
         .side-navbar {
-            width: 250px;
+            /* width: 250px; */
             height: 100%;
             position: fixed;
-            margin-left: -300px;
+            margin-left: -250px;
             transition: .5s
         }
 
@@ -68,17 +68,12 @@
         }
 
         .active-cont {
-            margin-left: 250px
-        }
-
-        #menu-btn {
-            background-color: #100901;
-            width: auto;
-            color: #fff
+            /* margin-left: 250px */
         }
 
         .nav-pills .btn {
             color: var(--bs-gray-300);
+            width: 100%;
             background: white;
         }
 
@@ -95,117 +90,342 @@
         .nav-pills .btn.active span,
         .nav-pills .btn:hover span {
             font-weight: 400 !important;
+            color: #d08147;
             background: -webkit-linear-gradient(40deg, #d08147 40.78%, #ffb078 61.68%);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media (max-width : 768px) {
+            .side-navbar {
+                width: 70px;
+                height: 100%;
+                position: fixed;
+                margin-left: -70px;
+                transition: .5s
+            }
+
+            .active-cont {
+                /* margin-left: 70px; */
+            }
+
+            .active-nav {
+                margin-left: 0
+            }
+
+            .nav-pills .btn {
+                display: flex;
+                padding: 12px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .nav-pills .btn svg {
+                margin: 0 !important;
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width : 768px) {
+            .side-navbar {
+                /* width: 50px; */
+                height: 100%;
+                position: fixed;
+                margin-left: -50px;
+                transition: .5s
+            }
+
+            .active-cont {
+                /* margin-left: 50px; */
+            }
+
+            .active-nav {
+                margin-left: 0
+            }
+
+            .nav-pills .btn {
+                display: flex;
+                padding: 6px 8px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .nav-pills .btn svg {
+                margin: 0 !important;
+                font-size: 15px;
+            }
         }
 
         #sidebar {
-            max-height: 100vh
+            max-height: 100vh;
+            z-index: 1000;
+            /* width: min-content; */
+        }
+
+        #sidebar .nav {
+            border-right: 2px solid #B8B8B8 !important;
+        }
+
+        section .navbar {
+            border-bottom: 1px solid #b8b8b853 !important;
+        }
+
+        #menu-btn {
+            position: absolute;
+            top: 15px;
+            right: -40px;
+        }
+
+        .fs-7 {
+            font-size: 12px !important;
+        }
+
+        .notification {
+            position: absolute;
+            font-size: 10px !important;
+            display: flex;
+            aspect-ratio: 1 / 1;
+            width: 15px;
+            height: 15px;
+            line-height: 0px !important;
+            right: -10px;
+            top: -2px;
+            border-radius: 50%;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+
+        .navbar .hover-class:hover * {
+            color: #d08147 !important;
+            transition: 0.3s;
+            cursor: context-menu;
+        }
+
+        .d-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            ;
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 5px;
+            /* grid-row-gap: 5px; */
+        }
+
+        .table-borderless * {
+            font-size: clamp(0.7rem, 4vw, 1rem) !important
+        }
+
+        .text-light-gray {
+            color: #8B909A !important;
+        }
+
+        .d-grid small:first-child {
+            grid-area: 1 / 1 / 2 / 2;
+            line-height: normal;
+            font-weight: 600;
+            color: black;
+        }
+
+        .d-grid img {
+            grid-area: 1 / 2 / 3 / 3;
+        }
+
+        .d-grid .fs-7 {
+            grid-area: 2 / 1 / 3 / 2;
+            line-height: normal;
         }
     </style>
 
 </head>
 
 <body>
-    <!-- Side-Nav -->
-    <aside class="side-navbar active-nav pe-2" id="sidebar">
-        <a href="index.html" class="my-2 p-2 px-3 d-block">
-            <img src="assets/images/main-logo.png" alt="main-logo" style="max-height: 2rem; object-fit: contain;">
-        </a>
-        <ul class="nav flex-column gap-1 nav-pills px-2 flex-nowrap h-100 overflow-auto" id="v-pills-tab" role="tablist"
-            aria-orientation="vertical">
-            <li>
-                <button class="nav-link btn active" id="v-pills-home-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-                    aria-selected="true"><span class="p-0" > <i class="fa-solid fa-house me-1"></i> Home</span> </button>
-            </li>
-            <li>
-                <button class="nav-link btn " id="v-pills-profile-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
-                    aria-selected="false"><span class="p-0" > <i class="fa-solid fa-house me-1"></i>Profile</span></button>
-            </li>
-            <li>
-                <button class="nav-link btn" id="v-pills-messages-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
-                    aria-selected="false"><span class="p-0" > <i class="fa-solid fa-house me-1"></i>messages</span></button>
-            </li>
-            <li>
-                <button class="nav-link btn" id="v-pills-settings-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
-                    aria-selected="false"><span class="p-0" > <i class="fa-solid fa-house me-1"></i>settings</span></button>
-            </li>
-        </ul>
 
-        <span href="#" class="nav-link h4 w-100 mb-5">
-            <a href=""><i class="bx bxl-instagram-alt text-white"></i></a>
-            <a href=""><i class="bx bxl-twitter px-2 text-white"></i></a>
-            <a href=""><i class="bx bxl-facebook text-white"></i></a>
-        </span>
-    </aside>
+    <section class=" m-0 p-0 position-relative d-flex" style="min-height: 100vh; width: auto;">
 
-    <!-- Main Wrapper -->
-    <main class="my-container active-cont">
-        <!-- Top Nav -->
-        <nav class="navbar top-navbar navbar-light sticky bg-light">
-            <a class="btn border-0 p-2" id="menu-btn"><i class="fa-solid fa-bars"></i></a>
-        </nav>
-        <!--End Top Nav -->
-        <h3 class="text-dark p-3">RESPONSIVE SIDEBAR NAV 💻 📱
-        </h3>
-        <div class="tab-content px-sm-4  px-md-5" id="v-pills-tabContent">
-            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"
-                tabindex="0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus impedit veritatis
-                voluptates cumque ab. Odit quibusdam, delectus, laboriosam vitae quasi accusantium nam quis autem
-                cupiditate, iste sapiente asperiores. Minima, rem?
-                Quis beatae ea harum a fuga praesentium, cupiditate culpa sapiente possimus quod quos. Soluta, vel.
-                Repudiandae obcaecati magnam illo saepe fugit, ipsa tenetur quos ratione quibusdam inventore iusto. Rem,
-                veritatis!</div>
-            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
-                tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, laboriosam facilis quod
-                eum nihil animi architecto aliquid reprehenderit quasi illo nobis inventore ullam commodi fugit quos
-                mollitia minus sint numquam.
-                Quis dolorum sint temporibus? Praesentium eos ratione eum tenetur labore natus voluptatum quisquam
-                dolor. Illum, dolores voluptatum maiores, inventore animi blanditiis aperiam atque, dignissimos iusto
-                aliquam similique reprehenderit incidunt dolorum?
-                Veniam ullam minus doloribus eaque eos laudantium dolor temporibus maiores unde fugiat vero facere
-                reprehenderit in libero, cumque eligendi blanditiis id quidem quas. Reiciendis quod ab nostrum? Error,
-                ullam recusandae?</div>
-            <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab"
-                tabindex="0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat officiis nostrum
-                voluptatum blanditiis saepe excepturi quas fuga porro placeat quis, illum impedit tempore repudiandae
-                magnam doloremque commodi facilis explicabo rerum.</div>
-            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
-                tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit necessitatibus in consequatur
-                ullam nisi. Excepturi, esse iste eveniet deserunt autem, maiores porro perferendis temporibus a atque in
-                sapiente mollitia officiis.
-                Velit repellendus alias eius explicabo doloribus ab earum, quas in, quidem recusandae omnis cupiditate
-                facilis rem hic odio laboriosam, consectetur illo fugit ut. Tenetur consequuntur non tempore pariatur
-                accusamus hic!
-                Maxime, veniam dolor. Doloremque libero ullam omnis voluptatum at natus, pariatur esse vitae assumenda.
-                Maxime ipsum officia saepe cupiditate animi. Beatae, perspiciatis? Reprehenderit dicta quo maxime amet.
-                Nesciunt, adipisci eius.
-                Veritatis ut veniam similique doloremque deserunt, officiis exercitationem perspiciatis itaque aut,
-                asperiores adipisci voluptatem nisi commodi? Porro nobis veniam quibusdam numquam, quaerat officia earum
-                molestias necessitatibus laboriosam inventore? Inventore, voluptate.
-                Laboriosam sunt deleniti exercitationem corrupti qui error. Consequatur reprehenderit natus
-                necessitatibus impedit rem consequuntur aut tempora nostrum nemo, corporis aspernatur maxime alias
-                consectetur maiores aperiam. Enim delectus consequatur vel in?</div>
-            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
-                tabindex="0"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa sequi eligendi explicabo
-                libero? Nulla numquam dicta quas veniam praesentium labore ipsum. Corrupti odit possimus optio
-                doloremque veritatis, accusamus ex labore?
-                Molestias id dicta quibusdam autem ullam fuga ratione asperiores amet ipsa, veniam eius culpa fugiat
-                molestiae voluptatibus omnis nostrum quae! Iste facere consequuntur suscipit maxime iure corporis
-                aperiam omnis delectus?
-                Voluptatem, culpa sint molestias consectetur aliquam harum illum. Sint, ad rerum. Fugit assumenda a
-                ipsam culpa, est nam odit mollitia aliquid iure eaque, consectetur, molestias tempore facilis facere
-                quae minima?
-                Vel distinctio veniam culpa! Obcaecati quis placeat fugiat eaque. Numquam quisquam omnis cumque labore
-                id distinctio itaque minima nisi, quam, fuga ducimus quaerat neque necessitatibus commodi eligendi
-                nesciunt cupiditate. Eum? </div>
-        </div>
-    </main>
+        <!-- Side-Nav -->
+        <aside class="side-navbar bg-white active-nav" id="sidebar">
+            <a href="index.html" class="mt-2 p-2 px-md-3 d-block">
+                <!-- <img src="assets/images/main-logo.png" alt="main-logo" class="d-none d-md-block"
+                    style="max-height: 2rem; object-fit: contain;"> -->
+                <img src="assets/images/main-logo-small.png" alt="main-logo" class="d-md-none"
+                    style="max-height: 2rem; object-fit: contain;">
+            </a>
+            <a class="btn d-none bg-light rounded-2 d-md-inline-block w-auto border-0 p-2 z-3" id="menu-btn"> <img
+                    src="assets/images/toggle-icon.png" style="aspect-ratio: 1/1; z-index: 0; max-height: 1.5rem;"
+                    alt="" srcset=""> </a>
+            <ul class="nav flex-column gap-1 nav-pills mt-2 mt-md-3 px-2 flex-nowrap h-100 overflow-auto"
+                id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <li>
+                    <button class="nav-link btn" id="v-pills-Dashboard-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-Dashboard" type="button" role="tab" aria-controls="v-pills-Dashboard"
+                        aria-selected="true"> <span class="p-0"><i class="fa-solid fa-house me-1"></i> </span> <span
+                            class="p-0 das-tab-button ">Dashboard  </span> </button>
+                </li>
+                <li>
+                    <button class="nav-link btn " id="v-pills-exam-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-exam" type="button" role="tab" aria-controls="v-pills-exam"
+                        aria-selected="false"><span class="p-0"><i class="fa-solid fa-clipboard me-1"></i></i> </span>
+                        <span class="p-0 das-tab-button">My Exam</span></button>
+                </li>
+                <li>
+                    <button class="nav-link btn " id="v-pills-result-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-result" type="button" role="tab" aria-controls="v-pills-result"
+                        aria-selected="false"><span class="p-0"><i class="fa-solid me-1 fa-clipboard-list"></i> </span>
+                        <span class="p-0 das-tab-button">Result</span></button>
+                </li>
+                <li>
+                    <button class="nav-link btn" id="v-pills-messages-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
+                        aria-selected="false"> <span class="p-0"><i class="fa-solid me-1 fa-user-tie"></i> </span> <span
+                            class="p-0 das-tab-button">Contact Admin</span></button>
+                </li>
+                <li>
+                    <button class="nav-link btn active" id="v-pills-settings-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
+                        aria-selected="false"> <span class="p-0"><i class="fa-solid me-1 fa-user"></i> </span> <span
+                            class="p-0 das-tab-button"> Profile </span></button>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Wrapper -->
+        <main class="my-container bg-white w-100 active-cont">
+            <!-- Top Nav -->
+            <nav class="navbar position-sticky z-1 top-0 top-navbar p-2 p-md-3 bg-white navbar-light">
+                <div class="ms-auto d-flex align-items-center gap-3 gap-md-4 text-gray">
+                    <span class="hover-class d-none d-md-inline">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <small class="ps-1">Monday, 11th March</small>
+                    </span>
+                    <span class="hover-class position-relative">
+                        <i class="fa-solid fa-bell"></i>
+                        <small class="bg-gradient opacity-100 notification">1</small>
+                    </span>
+                    <div class="hover-class d-grid align-items-center text-end">
+                        <small class="ps-1">Ritesh Chouhan</small>
+                        <img src="assets/images/main-logo-small.png" style="max-height: 2.5rem;" alt="">
+                        <small class="ps-1 fs-7">riteshchouhan8871@gmail.com</small>
+                    </div>
+                </div>
+            </nav>
+            <!--End Top Nav -->
+            <div class="tab-content p-2 p-md-4 bg-light overflow-auto" id="v-pills-tabContent"
+                style="min-height: 90vh;">
+                <!-- Dashboard -->
+                <div class="tab-pane fade " id="v-pills-Dashboard" role="tabpanel"
+                    aria-labelledby="v-pills-Dashboard-tab" tabindex="0">Dashboard</div>
+                <!-- My Exam -->
+                <div class="tab-pane fade" id="v-pills-exam" role="tabpanel" aria-labelledby="v-pills-exam-tab"
+                    tabindex="0">my Exam</div>
+                <!-- Result -->
+                <div class="tab-pane fade" id="v-pills-result" role="tabpanel" aria-labelledby="v-pills-result-tab"
+                    tabindex="0">
+                    Result</div>
+                <!-- Contact Admin -->
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
+                    tabindex="0">Contant Admin</div>
+                <!-- Profile -->
+                <div class="tab-pane fade show active" id="v-pills-settings" role="tabpanel"
+                    aria-labelledby="v-pills-settings-tab" tabindex="0">
+                    <div class="row row-gap-4">
+                        <!-- User Data -->
+                        <div class="col-md-5">
+                            <div class="bg-gradient rounded-2 h-100" style="padding: 0.05em;">
+                                <div class="card border-0 bg-white h-100 pt-2 pt-md-4 ">
+                                    <div
+                                        class="card-body px-3 px-xl-4 border-0 bg-transparent d-flex align-items-center flex-column">
+                                        <img src="assets/images/main-logo-small.png" class="rounded-circle"
+                                            style="max-height: clamp(3.5rem,5vw,5rem); width: fit-content;" alt="">
+                                        <h5 class="text-center pt-2 text-light-gray pt-md-3">Ritesh Chouhan</h5>
+                                        <table class="table m-0 table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row" colspan="2" class="py-1 p-0 text-gray fw-medium">
+                                                        Admission No.</th>
+                                                    <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue">100056
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" class="py-1 p-0 text-gray fw-medium">Course</th>
+                                                    <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue">
+                                                        Bachelor in computer Application</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" class="py-1 p-0 text-gray fw-medium">Branch</th>
+                                                    <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue">CSE
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" class="py-1 p-0 text-gray fw-medium">Semester</th>
+                                                    <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue">6</td>
+                                                <tr>
+                                                    <th scope="row" class="py-1 p-0 text-gray fw-medium">Branch</th>
+                                                    <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue">CSE
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" class="py-1 p-0 text-gray fw-medium">Semester</th>
+                                                    <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue">6</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- QR Code -->
+                        <div class="col-md-7">
+                            <div class="bg-gradient rounded-2 h-100" style="padding: 0.05em;">
+                                <div class="card border-0 bg-white h-100 pt-2 pt-md-4 ">
+                                    <div
+                                        class="card-body px-2 px-lg-3 px-xl-4 border-0 bg-transparent d-flex align-items-center flex-column">
+                                        <h5 class="text-center pt-2 text-light-gray pt-md-3">Make an attendance using QR
+                                            Code</h5>
+                                        <img src="assets/images/laptop.png" class="rounded-1 my-auto"
+                                            style="max-height: clamp(12rem,15vw,13rem); object-fit: cover; aspect-ratio: 1/1; width: fit-content;"
+                                            alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Address -->
+                        <div class="col-12">
+                            <div class="bg-gradient rounded-2 h-100" style="padding: 0.05em;">
+                                <div class="card border-0 bg-white h-100 pt-2">
+                                    <div class="card-body py-2 px-3 px-xl-4 border-0 bg-transparent">
+                                        <h5 class="text-light-gray">Address</h5>
+                                        <table class="table m-0 table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="py-1 p-0 text-gray fw-medium">
+                                                        <small class="d-block">Current Address </small>
+                                                        <small class="text-gray fw-normal">Prem Nagar near vbu sindhur
+                                                            hazaribagh Jharkhand (825301) </small>
+                                                    </th>
+                                                    <td colspan="2" class="py-1 p-0 text-end fw-medium"><i
+                                                            class="fa-solid text-light-gray fa-pen"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" class="py-1 p-0 text-gray fw-medium">
+                                                        <small class="d-block">Permanent Address</small>
+                                                        <small class="text-gray fw-normal">Prem Nagar near vbu sindhur
+                                                            hazaribagh Jharkhand (825301) </small>
+                                                    </th>
+                                                    <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue"><i
+                                                            class="fa-solid text-light-gray fa-pen"></i></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </section>
 
     <!-- Bootstrap CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -231,14 +451,49 @@
 </body>
 
 <script>
+
+function setWidth() {
     var menu_btn = document.querySelector("#menu-btn");
     var sidebar = document.querySelector("#sidebar");
     var container = document.querySelector(".my-container");
-    menu_btn.addEventListener("click", () => {
-        sidebar.classList.toggle("active-nav");
-        container.classList.toggle("active-cont");
-    });
+    var tabButtons = document.querySelectorAll(".das-tab-button");
 
+    container.style.marginLeft = sidebar.offsetWidth + "px";
+
+    if (window.innerWidth < 768) {
+        sidebar.style.marginLeft = "0px"; // Set margin to 0px if screen width is less than 768px
+    }
+
+    let clicked = true;
+
+    menu_btn.addEventListener("click", () => {
+        tabButtons.forEach(tab => {
+            if (tab.classList.contains("d-none")) {
+                tab.classList.remove("d-none");
+                console.log("hulu lu lu");
+            } else {
+                tab.classList.add("d-none");
+            }
+        });
+
+        // Rest of your code for menu_btn click event
+        // if (clicked) {
+        //     sidebar.style.marginLeft = `-` + sidebar.offsetWidth + "px";
+        //     container.style.marginLeft = `0px`;
+        //     clicked = false;
+        // }
+        // else {
+        //     sidebar.style.marginLeft = `0px`;
+        //     container.style.marginLeft = sidebar.offsetWidth + "px";
+        //     clicked = true;
+        // }
+    });
+}
+
+setWidth();
+
+window.addEventListener("resize", setWidth);
+   
 </script>
 
 </html>
