@@ -628,7 +628,7 @@ select {
   background-color: white;
 }
 
-.table td {
+/* .table td {
   text-align: center;
 }
 
@@ -645,13 +645,13 @@ select {
   opacity: 1;
   outline: 2px solid rgba(255, 0, 0, 0.237) !important;
   transition: all 0.2s ease-in;
-}
+} */
 
-.table tr th:first-child {
+/* .table tr th:first-child {
   padding-left: 50px !important;
   line-height: 40px;
   font-size: clamp(0.8rem, 3.2vw, 1.2rem) !important;
-}
+} */
 
 .btn-light {
   color: var(--bs-link-color-light);
@@ -662,10 +662,10 @@ select {
   text-align: center;
 }
 
-.table tr th:first-child {
+/* .table tr th:first-child {
   padding-left: 20px !important;
   line-height: 30px;
-}
+} */
 
 .btn-primary {
   padding: 8px 15px;
