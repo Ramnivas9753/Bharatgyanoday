@@ -40,41 +40,36 @@
         }
 
         .side-navbar {
-            /* width: 250px; */
             height: 100%;
+            width: auto;
             position: fixed;
             margin-left: -250px;
-            transition: .5s
+            transition: .2s
         }
 
+        .btn:first-child:active,
         .nav-link:active,
         .nav-link:focus-visible .nav-link:focus,
-        .btn:first-child:active,
         .nav-linkbtn {
-            background-color: #ffffff;
-            outline: none;
+            outline: 0;
             color: unset;
             background-color: unset;
             border-color: unset;
-            box-shadow: unset !important;
+            box-shadow: unset !important
         }
 
         .my-container {
-            transition: 0.4s
+            transition: .2s
         }
 
         .active-nav {
             margin-left: 0
         }
 
-        .active-cont {
-            /* margin-left: 250px */
-        }
-
         .nav-pills .btn {
             color: var(--bs-gray-300);
             width: 100%;
-            background: white;
+            background: #fff
         }
 
         .nav-pills .btn span {
@@ -93,146 +88,136 @@
             color: #d08147;
             background: -webkit-linear-gradient(40deg, #d08147 40.78%, #ffb078 61.68%);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-text-fill-color: transparent
         }
 
-        @media (max-width : 768px) {
-            .side-navbar {
-                width: 70px;
-                height: 100%;
-                position: fixed;
-                margin-left: -70px;
-                transition: .5s
-            }
-
-            .active-cont {
-                /* margin-left: 70px; */
-            }
-
-            .active-nav {
-                margin-left: 0
-            }
-
-            .nav-pills .btn {
-                display: flex;
-                padding: 12px;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .nav-pills .btn svg {
-                margin: 0 !important;
-                font-size: 15px;
-            }
+        .notification-group {
+            right: -10vw;
         }
 
-        @media (max-width : 768px) {
+        @media (max-width :768px) {
             .side-navbar {
-                /* width: 50px; */
+                /* width: 70px; */
                 height: 100%;
                 position: fixed;
                 margin-left: -50px;
-                transition: .5s
+                transition: .2s
             }
 
-            .active-cont {
-                /* margin-left: 50px; */
+            .nav-pills .btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                padding: 8px 10px;
+                justify-content: center;
+                align-items: center
             }
 
             .active-nav {
                 margin-left: 0
             }
 
-            .nav-pills .btn {
-                display: flex;
-                padding: 6px 8px;
-                justify-content: center;
-                align-items: center;
-            }
-
             .nav-pills .btn svg {
                 margin: 0 !important;
-                font-size: 15px;
+                font-size: 15px
+            }
+
+            .notification-group {
+                right: -30vw !important;
+                transition: 0.2s;
+                width: max-content;
             }
         }
 
         #sidebar {
             max-height: 100vh;
-            z-index: 1000;
-            /* width: min-content; */
+            z-index: 2;
         }
 
         #sidebar .nav {
-            border-right: 2px solid #B8B8B8 !important;
+            border-right: 2px solid #b8b8b8 !important
         }
 
         section .navbar {
-            border-bottom: 1px solid #b8b8b853 !important;
+            border-bottom: 1px solid #b8b8b853 !important
         }
 
         #menu-btn {
             position: absolute;
             top: 15px;
-            right: -40px;
+            right: -40px
         }
 
         .fs-7 {
-            font-size: 12px !important;
+            font-size: 12px !important
         }
 
         .notification {
             position: absolute;
             font-size: 10px !important;
             display: flex;
-            aspect-ratio: 1 / 1;
+            aspect-ratio: 1/1;
             width: 15px;
             height: 15px;
-            line-height: 0px !important;
+            line-height: 0 !important;
             right: -10px;
             top: -2px;
             border-radius: 50%;
             justify-content: center;
             align-content: center;
-            align-items: center;
+            align-items: center
         }
 
-        .navbar .hover-class:hover * {
+        .hover-class:hover * {
             color: #d08147 !important;
-            transition: 0.3s;
-            cursor: context-menu;
+            transition: .2s;
+            cursor: context-menu
         }
 
         .d-grid {
             display: grid;
             grid-template-columns: 3fr 1fr;
-            ;
             grid-template-rows: repeat(2, 1fr);
-            grid-column-gap: 5px;
-            /* grid-row-gap: 5px; */
+            grid-column-gap: 5px
         }
 
         .table-borderless * {
-            font-size: clamp(0.7rem, 4vw, 1rem) !important
+            font-size: clamp(.7rem, 4vw, 1rem) !important
         }
 
         .text-light-gray {
-            color: #8B909A !important;
+            color: #8b909a !important
         }
 
         .d-grid small:first-child {
-            grid-area: 1 / 1 / 2 / 2;
+            grid-area: 1/1/2/2;
             line-height: normal;
             font-weight: 600;
-            color: black;
+            color: #000
         }
 
         .d-grid img {
-            grid-area: 1 / 2 / 3 / 3;
+            grid-area: 1/2/3/3
         }
 
         .d-grid .fs-7 {
-            grid-area: 2 / 1 / 3 / 2;
-            line-height: normal;
+            grid-area: 2/1/3/2;
+            line-height: normal
+        }
+
+        .add-modal label {
+            position: absolute;
+            font-size: clamp(10px, 3vw, 12px);
+            top: -36%;
+            left: 2%;
+            padding: 0 5px;
+            background: white;
+        }
+
+        .fa-pen:hover {
+            cursor: pointer;
+            color: #d08147 !important;
         }
     </style>
 
@@ -240,50 +225,54 @@
 
 <body>
 
-    <section class=" m-0 p-0 position-relative d-flex" style="min-height: 100vh; width: auto;">
+    <section class=" m-0 p-0 position-relative d-flex" style="min-height: 100vh;">
 
         <!-- Side-Nav -->
         <aside class="side-navbar bg-white active-nav" id="sidebar">
             <a href="index.html" class="mt-2 p-2 px-md-3 d-block">
-                <!-- <img src="assets/images/main-logo.png" alt="main-logo" class="d-none d-md-block"
-                    style="max-height: 2rem; object-fit: contain;"> -->
-                <img src="assets/images/main-logo-small.png" alt="main-logo" class="d-md-none"
+                <img src="assets/images/main-logo.png" alt="main-logo" id="main-logo" class="logo d-none"
+                    style="max-height: 2rem; object-fit: contain;">
+                <img src="assets/images/main-logo-small.png" alt="main-logo-small" id="main-logo-small" class=""
                     style="max-height: 2rem; object-fit: contain;">
             </a>
-            <a class="btn d-none bg-light rounded-2 d-md-inline-block w-auto border-0 p-2 z-3" id="menu-btn"> <img
-                    src="assets/images/toggle-icon.png" style="aspect-ratio: 1/1; z-index: 0; max-height: 1.5rem;"
-                    alt="" srcset=""> </a>
+            <a class="btn d-none bg-light rounded-2 d-md-inline-block w-auto border-0 p-2" id="menu-btn"> <img
+                    src="assets/images/toggle-icon.png" class="menu-btn-img"
+                    style="aspect-ratio: 1/1;  max-height: 1.2rem;" alt="" srcset=""> </a>
             <ul class="nav flex-column gap-1 nav-pills mt-2 mt-md-3 px-2 flex-nowrap h-100 overflow-auto"
                 id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <li>
-                    <button class="nav-link btn" id="v-pills-Dashboard-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-Dashboard" type="button" role="tab" aria-controls="v-pills-Dashboard"
-                        aria-selected="true"> <span class="p-0"><i class="fa-solid fa-house me-1"></i> </span> <span
-                            class="p-0 das-tab-button ">Dashboard  </span> </button>
+                    <button class="nav-link d-flex justify-text gap-2 btn" id="v-pills-Dashboard-tab"
+                        data-bs-toggle="pill" data-bs-target="#v-pills-Dashboard" type="button" role="tab"
+                        aria-controls="v-pills-Dashboard" aria-selected="true"> <span class="p-0"><i
+                                class="fa-solid fa-house"></i> </span> <span class="p-0 d-none das-tab-button">Dashboard
+                        </span> </button>
                 </li>
                 <li>
-                    <button class="nav-link btn " id="v-pills-exam-tab" data-bs-toggle="pill"
+                    <button class="nav-link d-flex justify-text gap-2 btn " id="v-pills-exam-tab" data-bs-toggle="pill"
                         data-bs-target="#v-pills-exam" type="button" role="tab" aria-controls="v-pills-exam"
-                        aria-selected="false"><span class="p-0"><i class="fa-solid fa-clipboard me-1"></i></i> </span>
-                        <span class="p-0 das-tab-button">My Exam</span></button>
+                        aria-selected="false"><span class="p-0"><i class="fa-solid fa-clipboard"></i></i> </span>
+                        <span class="p-0 d-none das-tab-button">My Exam</span></button>
                 </li>
                 <li>
-                    <button class="nav-link btn " id="v-pills-result-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-result" type="button" role="tab" aria-controls="v-pills-result"
-                        aria-selected="false"><span class="p-0"><i class="fa-solid me-1 fa-clipboard-list"></i> </span>
-                        <span class="p-0 das-tab-button">Result</span></button>
+                    <button class="nav-link d-flex justify-text gap-2 btn " id="v-pills-result-tab"
+                        data-bs-toggle="pill" data-bs-target="#v-pills-result" type="button" role="tab"
+                        aria-controls="v-pills-result" aria-selected="false"><span class="p-0"><i
+                                class="fa-solid fa-clipboard-list"></i> </span>
+                        <span class="p-0 d-none das-tab-button">Result</span></button>
                 </li>
                 <li>
-                    <button class="nav-link btn" id="v-pills-messages-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
-                        aria-selected="false"> <span class="p-0"><i class="fa-solid me-1 fa-user-tie"></i> </span> <span
-                            class="p-0 das-tab-button">Contact Admin</span></button>
+                    <button class="nav-link d-flex justify-text gap-2 btn" id="v-pills-messages-tab"
+                        data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab"
+                        aria-controls="v-pills-messages" aria-selected="false"> <span class="p-0"><i
+                                class="fa-solid fa-user-tie"></i> </span> <span
+                            class="p-0 d-none das-tab-button">Contact Admin</span></button>
                 </li>
                 <li>
-                    <button class="nav-link btn active" id="v-pills-settings-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
-                        aria-selected="false"> <span class="p-0"><i class="fa-solid me-1 fa-user"></i> </span> <span
-                            class="p-0 das-tab-button"> Profile </span></button>
+                    <button class="nav-link d-flex justify-text gap-2 btn active" id="v-pills-settings-tab"
+                        data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab"
+                        aria-controls="v-pills-settings" aria-selected="false"> <span class="p-0"><i
+                                class="fa-solid fa-user"></i> </span> <span class="p-0 d-none das-tab-button"> Profile
+                        </span></button>
                 </li>
             </ul>
         </aside>
@@ -297,19 +286,20 @@
                         <i class="fa-solid fa-calendar-days"></i>
                         <small class="ps-1">Monday, 11th March</small>
                     </span>
-                    <span class="hover-class position-relative">
+                    <span class="position-relative notifications hover-class">
                         <i class="fa-solid fa-bell"></i>
                         <small class="bg-gradient opacity-100 notification">1</small>
                     </span>
+
                     <div class="hover-class d-grid align-items-center text-end">
                         <small class="ps-1">Ritesh Chouhan</small>
-                        <img src="assets/images/main-logo-small.png" style="max-height: 2.5rem;" alt="">
-                        <small class="ps-1 fs-7">riteshchouhan8871@gmail.com</small>
+                        <img src="assets/images/main-logo-small.png" style="max-height: 2rem;" alt="">
+                        <small class="ps-1 fs-7">ritesan8871@gmail.com</small>
                     </div>
                 </div>
             </nav>
             <!--End Top Nav -->
-            <div class="tab-content p-2 p-md-4 bg-light overflow-auto" id="v-pills-tabContent"
+            <div class="tab-content overflow-auto" id="v-pills-tabContent"
                 style="min-height: 90vh;">
                 <!-- Dashboard -->
                 <div class="tab-pane fade " id="v-pills-Dashboard" role="tabpanel"
@@ -327,7 +317,9 @@
                 <!-- Profile -->
                 <div class="tab-pane fade show active" id="v-pills-settings" role="tabpanel"
                     aria-labelledby="v-pills-settings-tab" tabindex="0">
-                    <div class="row row-gap-4">
+
+                    <!-- Profile detail page -->
+                    <div class="row m-0 p-2 d-none p-md-4 bg-light row-gap-4">
                         <!-- User Data -->
                         <div class="col-md-5">
                             <div class="bg-gradient rounded-2 h-100" style="padding: 0.05em;">
@@ -350,14 +342,6 @@
                                                     <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue">
                                                         Bachelor in computer Application</td>
                                                 </tr>
-                                                <tr>
-                                                    <th scope="row" class="py-1 p-0 text-gray fw-medium">Branch</th>
-                                                    <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue">CSE
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row" class="py-1 p-0 text-gray fw-medium">Semester</th>
-                                                    <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue">6</td>
                                                 <tr>
                                                     <th scope="row" class="py-1 p-0 text-gray fw-medium">Branch</th>
                                                     <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue">CSE
@@ -402,8 +386,11 @@
                                                         <small class="text-gray fw-normal">Prem Nagar near vbu sindhur
                                                             hazaribagh Jharkhand (825301) </small>
                                                     </th>
-                                                    <td colspan="2" class="py-1 p-0 text-end fw-medium"><i
-                                                            class="fa-solid text-light-gray fa-pen"></i></td>
+                                                    <td colspan="2" class="py-1 p-0 text-end fw-medium">
+                                                        <i class="fa-solid text-light-gray fa-pen"
+                                                            data-bs-target="#exampleModalToggle"
+                                                            data-bs-toggle="modal"></i>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row" class="py-1 p-0 text-gray fw-medium">
@@ -412,15 +399,277 @@
                                                             hazaribagh Jharkhand (825301) </small>
                                                     </th>
                                                     <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue"><i
-                                                            class="fa-solid text-light-gray fa-pen"></i></td>
+                                                            class="fa-solid text-light-gray fa-pen"
+                                                            data-bs-target="#exampleModalToggle"
+                                                            data-bs-toggle="modal"></i></td>
                                                 </tr>
                                             </tbody>
                                         </table>
+
+                                        <!-- Adress Modal -->
+                                        <div class="modal add-modal fade" id="exampleModalToggle" aria-hidden="true"
+                                            aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content bg-light">
+                                                    <div class="modal-header border-0 pb-0">
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body pt-0">
+                                                        <h1 class="modal-title text-gray pb-3 pb-md-5 fs-5"
+                                                            id="exampleModalToggleLabel">Edit Address</h1>
+                                                        <form action="" class="d-flex flex-column gap-4" >
+                                                            <div class="form-group position-relative">
+                                                                <label for="street">street, Flour</label>
+                                                                <input type="text" id="street" placeholder="Jharkhand"
+                                                                    class="form-control form-control-sm border-0 bg-white px-3 py-2"
+                                                                    required>
+                                                            </div>
+                                                            <div class="form-group position-relative">
+                                                                <label for="village">Vilage</label>
+                                                                <input type="text" id="village" placeholder="Jharkhand"
+                                                                    class="form-control form-control-sm border-0 bg-white px-3 py-2"
+                                                                    id="vilage" required>
+                                                            </div>
+                                                            <div class="form-group position-relative">
+                                                                <label for="post-office">Post Office</label>
+                                                                <input type="text" id="street" placeholder="Jharkhand"
+                                                                    class="form-control form-control-sm border-0 bg-white px-3 py-2"
+                                                                    id="post-office" required>
+                                                            </div>
+                                                            <div class="form-group position-relative">
+                                                                <label for="block">Block</label>
+                                                                <input type="text" id="street" placeholder="Jharkhand"
+                                                                    class="form-control form-control-sm border-0 bg-white px-3 py-2"
+                                                                    id="block" required>
+                                                            </div>
+                                                            <div class="form-group position-relative">
+                                                                <label for="city">City</label>
+                                                                <input type="text" id="street" placeholder="Jharkhand"
+                                                                    class="form-control form-control-sm border-0 bg-white px-3 py-2"
+                                                                    id="city" required>
+                                                            </div>
+                                                            <div class="form-group position-relative">
+                                                                <label for="state">State</label>
+                                                                <input type="text" id="street" placeholder="Jharkhand"
+                                                                    class="form-control form-control-sm border-0 bg-white px-3 py-2"
+                                                                    id="state" required>
+                                                            </div>
+                                                            <div class="form-group position-relative">
+                                                                <label for="pincode">Pin Code</label>
+                                                                <input type="tel" id="street" placeholder="Jharkhand" min="6" maxlength="6"
+                                                                    class="form-control form-control-sm border-0 bg-white px-3 py-2"
+                                                                    id="pincode" required>
+                                                            </div>
+                                                            <div class="w-100 gap-2 pb-3 d-flex flex-wrap justify-content-center">
+                                                                <button type="submit" class="btn rounded-pill py-2 py-md-3  fw-semibold btn-secondary btn-block"
+                                                                    style="font-size: clamp(10px,3vw,14px);">Update</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- adress modal End -->
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="w-100 gap-2 d-flex flex-wrap justify-content-center justify-content-sm-end">
+                            <button type="submit" class="btn rounded-pill  fw-semibold btn-secondary btn-block"
+                                style="font-size: clamp(10px,3vw,14px);">Edit Profile</button>
+                            <button type="submit" class="btn rounded-pill  fw-semibold btn-secondary btn-block"
+                                style="font-size: clamp(10px,3vw,14px);">View Admit Card</button>
+                        </div>
                     </div>
+                    <!-- profile Edit page  -->
+                    <form class="p-2 p-md-4" action="">
+                        <div class="row bg-white justify-content-center p-0 m-0 gy-3">
+                            <div class="col-md-12 px-0 px-md-2 my-md-3">
+                                <div class="text-center mx-auto position-relative"
+                                    style="aspect-ratio:2/2; width: 80px;">
+                                    <img src="assets/images/def_img.png" alt=""
+                                        style="aspect-ratio:2/2; width: 80px;">
+                                    <img src="assets/images/profile_camara.png" alt=""
+                                        style="width: 30px; position: absolute; bottom: 0; right: -10px;">
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Full Name"
+                                        onkeydown="return /[a-z]/i.test(event.key)"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Mobile no."
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
+                                        minlength="10" maxlength="10"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="form-group">
+                                    <input type="email" placeholder="Email Id" pattern=".+@gmail\.(com|in)"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="form-group">
+                                    <input type="text" placeholder="DOB"
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="form-group">
+                                    <input type="text" placeholder="10th passing year"
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="form-group">
+                                    <input type="text" placeholder="12th passing year"
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="dropdown">
+
+                                    <div class=" dropdown-toggle form-control form-control-sm px-4 d-flex align-items-center py-3"
+                                        type="button" id="multiSelectDropdown" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <p class=" m-0 d-flex w-100 justify-content-between ">Choose course <i
+                                                class="fa fa-angle-down mt-1 "></i></p>
+                                    </div>
+                                    <ul class="dropdown-menu" id="dropdown-menu"
+                                        aria-labelledby="multiSelectDropdown" onchange="handleCB(this)">
+                                        <li>
+                                            <label class="dropdown-item">
+                                                <input type="checkbox" class="form-check-input" value="Java">
+                                                B.Tech
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="dropdown-item">
+                                                <input type="checkbox" class="form-check-input" value="C++">
+                                                BCA
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="dropdown-item">
+                                                <input type="checkbox" class="form-check-input" value="Python">
+                                                Polytechnic
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="dropdown-item">
+                                                <input type="checkbox" class="form-check-input" value="Python">
+                                                BBA
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="dropdown-item">
+                                                <input type="checkbox" class="form-check-input" value="Python">
+                                                B.Des
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label class="dropdown-item">
+                                                <input type="checkbox" class="form-check-input" value="Python">
+                                                BA
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <label for="file-upload"
+                                    class="custom-file-upload form-control d-flex justify-content-between align-items-center"
+                                    style="height: 100%;">
+                                    <div id="signature-label">Signature</div>
+                                    <div> <i class="fa-solid fa-right-from-bracket" style="rotate: -90deg;"></i>
+                                    </div>
+                                </label>
+                                <input id="file-upload" type="file" onchange="updateFileName(this)" />
+                            </div>
+                            <!-- <div class="col-md-5 px-0 px-md-2">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Signature" pattern=".+@gmail\.(com|in)"
+                                            class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                    </div>
+                                </div> -->
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Father Name"
+                                        onkeydown="return /[a-z]/i.test(event.key)"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Father Occupation"
+                                        onkeydown="return /[a-z]/i.test(event.key)"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Mother Name"
+                                        onkeydown="return /[a-z]/i.test(event.key)"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Adhar Card."
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Pan Card " pattern=""
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="form-group">
+                                    <input type="text" placeholder="State"
+                                        onkeydown="return /[a-z]/i.test(event.key)"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="form-group">
+                                    <input type="text" placeholder="City"
+                                        onkeydown="return /[a-z]/i.test(event.key)"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-5 px-0 px-md-2">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Pincode"
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-12 px-0">
+                                <div class="form-group">
+                                    <textarea type="text" placeholder="Address" pattern=".+@gmail\.(com|in)"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3"></textarea>
+                                </div>
+                            </div>
+                            <div class="col px-0">
+                                <div class="w-25 btn-gradient-border my-2" style="padding: 2px;">
+                                    <button class="w-100 btn">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </main>
@@ -451,49 +700,104 @@
 </body>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menu_btn = document.querySelector("#menu-btn");
+        const sidebar = document.querySelector("#sidebar");
+        const notification = document.querySelector(".notifications");
+        const notificationGroup = document.querySelector(".notification-group");
+        const container = document.querySelector(".my-container");
+        const mainlogo = document.querySelector("#main-logo");
+        const smalllogo = document.querySelector("#main-logo-small");
+        const tabButtons = document.querySelectorAll(".das-tab-button");
+        const justifyText = document.querySelectorAll(".justify-text");
 
-function setWidth() {
-    var menu_btn = document.querySelector("#menu-btn");
-    var sidebar = document.querySelector("#sidebar");
-    var container = document.querySelector(".my-container");
-    var tabButtons = document.querySelectorAll(".das-tab-button");
+        function setWidth() {
+            container.style.marginLeft = sidebar.offsetWidth + "px";
+            justifyText.forEach(text => {
+                text.style.justifyContent = "center";
+            });
 
-    container.style.marginLeft = sidebar.offsetWidth + "px";
-
-    if (window.innerWidth < 768) {
-        sidebar.style.marginLeft = "0px"; // Set margin to 0px if screen width is less than 768px
-    }
-
-    let clicked = true;
-
-    menu_btn.addEventListener("click", () => {
-        tabButtons.forEach(tab => {
-            if (tab.classList.contains("d-none")) {
-                tab.classList.remove("d-none");
-                console.log("hulu lu lu");
-            } else {
-                tab.classList.add("d-none");
+            if (window.innerWidth < 768) {
+                if (!mainlogo.classList.contains("d-none")) {
+                    mainlogo.classList.add("d-none");
+                }
+                if (smalllogo.classList.contains("d-none")) {
+                    smalllogo.classList.remove("d-none");
+                    mainlogo.classList.add("d-none");
+                }
+                sidebar.style.marginLeft = "0px";
+                container.style.marginLeft = sidebar.offsetWidth + "px";
+                justifyText.forEach(text => {
+                    text.style.justifyContent = "center";
+                });
             }
-        });
 
-        // Rest of your code for menu_btn click event
-        // if (clicked) {
-        //     sidebar.style.marginLeft = `-` + sidebar.offsetWidth + "px";
-        //     container.style.marginLeft = `0px`;
-        //     clicked = false;
-        // }
-        // else {
-        //     sidebar.style.marginLeft = `0px`;
-        //     container.style.marginLeft = sidebar.offsetWidth + "px";
-        //     clicked = true;
-        // }
+            let clicked = false;
+
+            menu_btn.style.transition = "transform 0.2s";
+            menu_btn.style.transform = "rotate(180deg)";
+
+            menu_btn.addEventListener("click", () => {
+                tabButtons.forEach(tab => {
+                    tab.classList.toggle("d-none");
+                });
+
+                if (clicked) {
+                    if (smalllogo.classList.contains("d-none")) {
+                        smalllogo.classList.remove("d-none");
+                        mainlogo.classList.add("d-none");
+                    }
+                    sidebar.style.marginLeft = "0px";
+                    container.style.marginLeft = sidebar.offsetWidth + "px";
+                    justifyText.forEach(text => {
+                        text.style.justifyContent = "center";
+                    });
+                    menu_btn.style.transform = "rotate(180deg)";
+                } else {
+                    if (mainlogo.classList.contains("d-none")) {
+                        mainlogo.classList.remove("d-none");
+                        smalllogo.classList.add("d-none");
+                    }
+                    container.style.marginLeft = sidebar.offsetWidth + "px";
+                    justifyText.forEach(text => {
+                        text.style.justifyContent = "start";
+                    });
+                    menu_btn.style.transform = "rotate(0deg)";
+                }
+                clicked = !clicked;
+            });
+        }
+
+        // notification.addEventListener("click", (e) => {
+        //     e.stopPropagation();
+        //     notificationGroup.classList.toggle("d-none");
+        // });
+
+        setWidth();
     });
-}
 
-setWidth();
 
-window.addEventListener("resize", setWidth);
-   
+    const dropdownMenu = document.querySelector('#dropdown-menu');
+        const selectedItemsDisplay = document.getElementById('multiSelectDropdown');
+        let mySelectedItems = [];
+
+        function handleCB(event) {
+            const checkbox = event.target;
+            if (checkbox.checked) {
+                mySelectedItems.push(checkbox.value);
+            } else {
+                mySelectedItems = mySelectedItems.filter((item) => item !== checkbox.value);
+            }
+
+            console.log(mySelectedItems);
+            // Update the display of selected items
+            selectedItemsDisplay.textContent = mySelectedItems.length > 0 ? mySelectedItems.join(', ') : '';
+        }
+
+        dropdownMenu.addEventListener('change', handleCB);
+
+    // window.addEventListener("resize", setWidth);
+
 </script>
 
 </html>
