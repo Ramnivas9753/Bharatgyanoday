@@ -14,19 +14,25 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap_min.css">
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- Other CSS -->
-    <link rel="stylesheet" href="assets/css/yogesh.css">
-    <!-- Include AOS CSS from CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Other CSS -->
+    <link rel="stylesheet" href="assets/css/yogesh.css">
+
+    <!-- Include AOS CSS from CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+
+    <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet" />
 
 
     <style>
@@ -219,6 +225,8 @@
             cursor: pointer;
             color: #d08147 !important;
         }
+
+        
     </style>
 
 </head>
@@ -536,7 +544,7 @@
                                         class="form-control form-control-sm border-0 bg-white px-4 py-3">
                                 </div>
                             </div>
-                            <div class="col-md-5 px-0 px-md-2">
+                             <div class="col-md-5 px-0 px-md-2 scholarship_Form">
                                 <div class="dropdown">
 
                                     <div class=" dropdown-toggle form-control form-control-sm px-4 d-flex align-items-center py-3"
@@ -585,7 +593,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> 
                             <div class="col-md-5 px-0 px-md-2">
                                 <label for="file-upload"
                                     class="custom-file-upload form-control d-flex justify-content-between align-items-center"
@@ -675,26 +683,27 @@
         </main>
 
     </section>
+   <!-- Bootstrap JS link  -->
+   <script src="assets/css/bootstrap_js.js"></script>
 
-    <!-- Bootstrap CDN -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Font Awsome CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
-        integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <!-- JQuery CDN -->
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <!-- Swiper JS -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Bootstrap JS link  -->
-    <script src="assets/css/bootstrap_js.js"></script>
-    <!-- Main JS  -->
-    <script src="assets/js/index.js"></script>
+   <!-- Font Awsome CDN -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+       integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- Include AOS JavaScript from CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+   <!-- Main JS  -->
+   <script src="assets/js/index.js"></script>
+
+   <!-- Include AOS JavaScript from CDN -->
+   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+   <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
 
 
 </body>
@@ -776,25 +785,6 @@
         setWidth();
     });
 
-
-    const dropdownMenu = document.querySelector('#dropdown-menu');
-        const selectedItemsDisplay = document.getElementById('multiSelectDropdown');
-        let mySelectedItems = [];
-
-        function handleCB(event) {
-            const checkbox = event.target;
-            if (checkbox.checked) {
-                mySelectedItems.push(checkbox.value);
-            } else {
-                mySelectedItems = mySelectedItems.filter((item) => item !== checkbox.value);
-            }
-
-            console.log(mySelectedItems);
-            // Update the display of selected items
-            selectedItemsDisplay.textContent = mySelectedItems.length > 0 ? mySelectedItems.join(', ') : '';
-        }
-
-        dropdownMenu.addEventListener('change', handleCB);
 
     // window.addEventListener("resize", setWidth);
 
