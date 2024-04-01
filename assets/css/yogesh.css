@@ -20,3 +20,11 @@
     .location-cls{
         
     }
+
+
+    .anch-style a{
+    list-style: none;
+    text-decoration: none !important;
+    columns: black;
+    background-color: black;
+    }
