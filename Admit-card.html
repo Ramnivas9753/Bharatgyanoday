@@ -61,6 +61,11 @@
             border-radius: 8px !important;
         }
 
+        .wid-btn{
+            width: 100px;
+
+        }
+
       </style>
 </head>
 
@@ -115,16 +120,18 @@
                                 </div>
                                 
                                   <div class="form-label-group">
-                                    <input type="date" id="tt1" class="form-control border"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');" placeholder=" DOB"required />
+                                    <input type="text" onfocus="(this.type = 'date');" onblur="(this.type = 'text');"
+                                    required  placeholder="DOB" value="DOB"
+                                    class="form-control border">
                                     <label for="tt1" class="me-2">Date of birth</label>
                                     <i class=" position-absolute" style="top: 50%; transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
-    
+
                                   </div>
                                   <div class="form-label-group">
                                     <input type="text" id="tt1" class="form-control border" placeholder=" Male" required />
                                     <label for="tt1" class="me-2">Gender</label>
                                     <i class="fa-solid fa-caret-down position-absolute" style="top: 50%; transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
-    
+
                                   </div>
                             </div>
                             <div class="col-lg-6 px-lg-3 px-0 d-flex flex-column gap-2">
@@ -143,6 +150,8 @@
                                   <div class="form-label-group">
                                     <input type="text" id="tt1" class="form-control border" placeholder="Mohan Yadav" required />
                                     <label for="tt1" class="me-2">Signature</label>
+                                    <i class="fa-solid fa-cloud-arrow-up position-absolute" style="top: 50%; rotate: 0deg;  transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
+                                    <i class=""></i>
                                   </div>
                             </div>
                           </div>
@@ -229,8 +238,8 @@
                         <!-- <form action=""> -->
                             <div class="col-12 col-md-12 col-lg-12">
                                 <div class="text-center py-2">
-                                    <button type="submit" class="border border-2 rounded-3  py-1 px-4 bg-gradient  text-dark">Update</button>
-                                    <button type="submit" class="border border-2 rounded-3  py-1 px-4 bg-gradient  text-dark">Print</button>
+                                    <button type="submit" class="border border-2 rounded-2  py-1 px-4 bg-gradient wid-btn text-dark">Update</button>
+                                    <button type="submit" class="border border-2 rounded-2  py-1 px-4 bg-gradient wid-btn text-dark">Print</button>
                                 </div>
                             </div>
                             
