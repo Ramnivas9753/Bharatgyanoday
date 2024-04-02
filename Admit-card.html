@@ -118,13 +118,34 @@
                                     <label for="tt1" class="me-2">Candidate Name</label>
                                     <i class="fa-solid fa-pen position-absolute" style="top: 50%; transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
                                 </div>
+
+                                <style>
+                                    /* Hide the default arrow button */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+/* Add custom icon background */
+input[type="date"] {
+  /* background-image: url('calendar-icon.png');  */
+  background-image: url('assets/images/calendar_img.png'); 
+  background-size: 20px; /* Adjust the size of the icon */
+  background-repeat: no-repeat;
+  background-position: right center; /* Adjust the position of the icon */
+  -webkit-appearance: none; /* Remove default styles */
+  appearance: none; /* Remove default styles */
+}
+                                </style>
                                 
                                   <div class="form-label-group">
+
                                     <input type="text" onfocus="(this.type = 'date');" onblur="(this.type = 'text');"
                                     required  placeholder="DOB" value="DOB"
                                     class="form-control border">
                                     <label for="tt1" class="me-2">Date of birth</label>
                                     <i class=" position-absolute" style="top: 50%; transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
+
+
 
                                   </div>
                                   <div class="form-label-group">
