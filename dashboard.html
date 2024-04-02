@@ -207,10 +207,33 @@
             grid-area: 1/2/3/3
         }
 
+        #date {
+            color: #4F4F4F;
+        }
+
         .d-grid .fs-7 {
             grid-area: 2/1/3/2;
             line-height: normal
         }
+
+        input[type="date"][id="date"]+.dob-calender {
+           display: none;
+        }
+        input[type="text"][id="date"]+.dob-calender {
+            aspect-ratio: 1/1;
+            display: inline-block;
+            z-index: 0;
+            width: 14px;
+            position: absolute;
+            right: 25px;
+            top: 39%;
+        }
+
+        .profile-form input {
+            font-family: IBM Plex Serif !important;
+            color: #4F4F4F !important;
+        }
+
 
         .add-modal label {
             position: absolute;
@@ -221,12 +244,14 @@
             background: white;
         }
 
+        .profile-input #camera:hover {
+            cursor: pointer;
+        }
+
         .fa-pen:hover {
             cursor: pointer;
             color: #d08147 !important;
         }
-
-        
     </style>
 
 </head>
@@ -294,21 +319,45 @@
                         <i class="fa-solid fa-calendar-days"></i>
                         <small class="ps-1">Monday, 11th March</small>
                     </span>
-                    <span class="position-relative notifications hover-class">
+                    <button type="button" class="position-relative btn notifications hover-class" data-mdb-target="#exampleModal"
+                        onmouseover="triggerModal()">
                         <i class="fa-solid fa-bell"></i>
                         <small class="bg-gradient opacity-100 notification">1</small>
-                    </span>
-
+                    </button>
                     <div class="hover-class d-grid align-items-center text-end">
                         <small class="ps-1">Ritesh Chouhan</small>
                         <img src="assets/images/main-logo-small.png" style="max-height: 2rem;" alt="">
                         <small class="ps-1 fs-7">ritesan8871@gmail.com</small>
                     </div>
+                    <!-- Button trigger modal -->
+                    <!-- <button type="button" class="btn btn-primary" >
+                        Hover me !
+                    </button> -->
+
+                    <!-- Modal -->
+                    <div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+                        <div class="modal-dialog  ">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">...</div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </nav>
             <!--End Top Nav -->
-            <div class="tab-content overflow-auto" id="v-pills-tabContent"
-                style="min-height: 90vh;">
+            <div class="tab-content overflow-auto" id="v-pills-tabContent" style="min-height: 90vh;">
                 <!-- Dashboard -->
                 <div class="tab-pane fade " id="v-pills-Dashboard" role="tabpanel"
                     aria-labelledby="v-pills-Dashboard-tab" tabindex="0">Dashboard</div>
@@ -426,7 +475,7 @@
                                                     <div class="modal-body pt-0">
                                                         <h1 class="modal-title text-gray pb-3 pb-md-5 fs-5"
                                                             id="exampleModalToggleLabel">Edit Address</h1>
-                                                        <form action="" class="d-flex flex-column gap-4" >
+                                                        <form action="" class="d-flex flex-column gap-4">
                                                             <div class="form-group position-relative">
                                                                 <label for="street">street, Flour</label>
                                                                 <input type="text" id="street" placeholder="Jharkhand"
@@ -465,12 +514,15 @@
                                                             </div>
                                                             <div class="form-group position-relative">
                                                                 <label for="pincode">Pin Code</label>
-                                                                <input type="tel" id="street" placeholder="Jharkhand" min="6" maxlength="6"
+                                                                <input type="tel" id="street" placeholder="Jharkhand"
+                                                                    min="6" maxlength="6"
                                                                     class="form-control form-control-sm border-0 bg-white px-3 py-2"
                                                                     id="pincode" required>
                                                             </div>
-                                                            <div class="w-100 gap-2 pb-3 d-flex flex-wrap justify-content-center">
-                                                                <button type="submit" class="btn rounded-pill py-2 py-md-3  fw-semibold btn-secondary btn-block"
+                                                            <div
+                                                                class="w-100 gap-2 pb-3 d-flex flex-wrap justify-content-center">
+                                                                <button type="submit"
+                                                                    class="btn rounded-pill py-2 py-md-3  fw-semibold btn-secondary btn-block"
                                                                     style="font-size: clamp(10px,3vw,14px);">Update</button>
                                                             </div>
                                                         </form>
@@ -491,190 +543,116 @@
                         </div>
                     </div>
                     <!-- profile Edit page  -->
-                    <form class="p-2 p-md-4" action="">
-                        <div class="row bg-white justify-content-center p-0 m-0 gy-3">
+                    <form class="p-3 p-md-4 px-md-4 px-lg-5 profile-form" action="">
+                        <div class="row bg-white justify-content-center px-md-4 px-lg-5 m-0 gy-3">
                             <div class="col-md-12 px-0 px-md-2 my-md-3">
-                                <div class="text-center mx-auto position-relative"
+                                <div class="text-center mx-auto position-relative profile-input"
                                     style="aspect-ratio:2/2; width: 80px;">
-                                    <img src="assets/images/def_img.png" alt=""
-                                        style="aspect-ratio:2/2; width: 80px;">
-                                    <img src="assets/images/profile_camara.png" alt=""
-                                        style="width: 30px; position: absolute; bottom: 0; right: -10px;">
+                                    <img src="assets/images/def_img.png" alt="" style="aspect-ratio:2/2; width: 80px;"
+                                        id="img-preview">
+                                    <label for="file-input"><img src="assets/images/profile_camara.png" id="camera"
+                                            alt=""
+                                            style="width: 30px; position: absolute; bottom: 20px; right: -3px;"></label>
+                                    <input accept="image/*" type="file" id="file-input" required />
                                 </div>
                             </div>
-                            <div class="col-md-5 px-0 px-md-2">
+                            <div class="col-md-6 px-0 px-md-2 mt-md-4">
                                 <div class="form-group">
-                                    <input type="text" placeholder="Full Name"
+                                    <input type="text" placeholder="Full Name" required
                                         onkeydown="return /[a-z]/i.test(event.key)"
                                         class="form-control form-control-sm border-0 bg-white px-4 py-3">
                                 </div>
                             </div>
-                            <div class="col-md-5 px-0 px-md-2">
+                            <div class="col-md-6 px-0 px-md-2 mt-md-4">
                                 <div class="form-group">
-                                    <input type="text" placeholder="Mobile no."
+                                    <input type="text" placeholder="Mobile Number" required
                                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
                                         minlength="10" maxlength="10"
                                         class="form-control form-control-sm border-0 bg-white px-4 py-3">
                                 </div>
                             </div>
-                            <div class="col-md-5 px-0 px-md-2">
+                            <div class="col-md-6 px-0 px-md-2 mt-md-4">
                                 <div class="form-group">
-                                    <input type="email" placeholder="Email Id" pattern=".+@gmail\.(com|in)"
+                                    <input type="email" placeholder="Email Id" pattern=".+@gmail\.(com|in)" required
                                         class="form-control form-control-sm border-0 bg-white px-4 py-3">
                                 </div>
                             </div>
-                            <div class="col-md-5 px-0 px-md-2">
-                                <div class="form-group">
-                                    <input type="text" placeholder="DOB"
-                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
-                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
-                                </div>
-                            </div>
-                            <div class="col-md-5 px-0 px-md-2">
-                                <div class="form-group">
-                                    <input type="text" placeholder="10th passing year"
-                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
-                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
-                                </div>
-                            </div>
-                            <div class="col-md-5 px-0 px-md-2">
-                                <div class="form-group">
-                                    <input type="text" placeholder="12th passing year"
-                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
-                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
-                                </div>
-                            </div>
-                             <div class="col-md-5 px-0 px-md-2 scholarship_Form">
-                                <div class="dropdown">
-
-                                    <div class=" dropdown-toggle form-control form-control-sm px-4 d-flex align-items-center py-3"
-                                        type="button" id="multiSelectDropdown" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <p class=" m-0 d-flex w-100 justify-content-between ">Choose course <i
-                                                class="fa fa-angle-down mt-1 "></i></p>
-                                    </div>
-                                    <ul class="dropdown-menu" id="dropdown-menu"
-                                        aria-labelledby="multiSelectDropdown" onchange="handleCB(this)">
-                                        <li>
-                                            <label class="dropdown-item">
-                                                <input type="checkbox" class="form-check-input" value="Java">
-                                                B.Tech
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="dropdown-item">
-                                                <input type="checkbox" class="form-check-input" value="C++">
-                                                BCA
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="dropdown-item">
-                                                <input type="checkbox" class="form-check-input" value="Python">
-                                                Polytechnic
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="dropdown-item">
-                                                <input type="checkbox" class="form-check-input" value="Python">
-                                                BBA
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="dropdown-item">
-                                                <input type="checkbox" class="form-check-input" value="Python">
-                                                B.Des
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="dropdown-item">
-                                                <input type="checkbox" class="form-check-input" value="Python">
-                                                BA
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div> 
-                            <div class="col-md-5 px-0 px-md-2">
-                                <label for="file-upload"
-                                    class="custom-file-upload form-control d-flex justify-content-between align-items-center"
-                                    style="height: 100%;">
-                                    <div id="signature-label">Signature</div>
-                                    <div> <i class="fa-solid fa-right-from-bracket" style="rotate: -90deg;"></i>
-                                    </div>
-                                </label>
-                                <input id="file-upload" type="file" onchange="updateFileName(this)" />
-                            </div>
-                            <!-- <div class="col-md-5 px-0 px-md-2">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Signature" pattern=".+@gmail\.(com|in)"
-                                            class="form-control form-control-sm border-0 bg-white px-4 py-3">
-                                    </div>
-                                </div> -->
-                            <div class="col-md-5 px-0 px-md-2">
+                            <div class="col-md-6 px-0 px-md-2 mt-md-4">
                                 <div class="form-group">
                                     <input type="text" placeholder="Father Name"
-                                        onkeydown="return /[a-z]/i.test(event.key)"
+                                        onkeydown="return /[a-z]/i.test(event.key)" required
                                         class="form-control form-control-sm border-0 bg-white px-4 py-3">
                                 </div>
                             </div>
-                            <div class="col-md-5 px-0 px-md-2">
+                            <div class="col-md-6 px-0 px-md-2 mt-md-4">
                                 <div class="form-group">
                                     <input type="text" placeholder="Father Occupation"
-                                        onkeydown="return /[a-z]/i.test(event.key)"
+                                        onkeydown="return /[a-z]/i.test(event.key)" required
                                         class="form-control form-control-sm border-0 bg-white px-4 py-3">
                                 </div>
                             </div>
-                            <div class="col-md-5 px-0 px-md-2">
+                            <div class="col-md-6 px-0 px-md-2 mt-md-4">
                                 <div class="form-group">
                                     <input type="text" placeholder="Mother Name"
-                                        onkeydown="return /[a-z]/i.test(event.key)"
+                                        onkeydown="return /[a-z]/i.test(event.key)" required
                                         class="form-control form-control-sm border-0 bg-white px-4 py-3">
                                 </div>
                             </div>
-                            <div class="col-md-5 px-0 px-md-2">
+                            <div class="col-md-6 px-0 px-md-2 mt-md-4">
+                                <div class="form-group">
+                                    <input type="text" placeholder="10th passing year" required minlength="4"
+                                        maxlength="4"
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-6 px-0 px-md-2 mt-md-4">
+                                <div class="form-group">
+                                    <input type="number" placeholder="12th passing year" required minlength="4"
+                                        maxlength="4" min="2000" max="2023"
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                </div>
+                            </div>
+                            <div class="col-md-6 px-0 px-md-2 mt-md-4">
+                                <div class="form-group DOB position-relative">
+                                    <input type="text" onfocus="(this.type = 'date');" 
+                                    onblur="(this.type = 'text');"
+                                    required id="date" placeholder="DOB" value="DOB" class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                    <img src="assets/images/Calendar.png" onclick="triggerInputClick()" class="dob-calender" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 px-0 px-md-2 mt-md-4">
                                 <div class="form-group">
                                     <input type="text" placeholder="Adhar Card."
                                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
-                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                        required class="form-control form-control-sm border-0 bg-white px-4 py-3">
                                 </div>
                             </div>
-                            <div class="col-md-5 px-0 px-md-2">
+                            <div class="col-md-4 px-0 px-md-2">
                                 <div class="form-group">
-                                    <input type="text" placeholder="Pan Card " pattern=""
-                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                    <input type="text" placeholder="City" onkeydown="return /[a-z]/i.test(event.key)"
+                                        required class="form-control form-control-sm border-0 bg-white px-4 py-3">
                                 </div>
                             </div>
-                            <div class="col-md-5 px-0 px-md-2">
+                            <div class="col-md-4 px-0 px-md-2">
                                 <div class="form-group">
-                                    <input type="text" placeholder="State"
+                                    <input type="text" placeholder="State" required
                                         onkeydown="return /[a-z]/i.test(event.key)"
                                         class="form-control form-control-sm border-0 bg-white px-4 py-3">
                                 </div>
                             </div>
-                            <div class="col-md-5 px-0 px-md-2">
+                            <div class="col-md-4 px-0 px-md-2">
                                 <div class="form-group">
-                                    <input type="text" placeholder="City"
-                                        onkeydown="return /[a-z]/i.test(event.key)"
-                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
-                                </div>
-                            </div>
-                            <div class="col-md-5 px-0 px-md-2">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Pincode"
+                                    <input type="text" placeholder="Pincode" required minlength="6" maxlength="6"
                                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
                                         class="form-control form-control-sm border-0 bg-white px-4 py-3">
                                 </div>
                             </div>
-                            <div class="col-md-12 px-0">
-                                <div class="form-group">
-                                    <textarea type="text" placeholder="Address" pattern=".+@gmail\.(com|in)"
-                                        class="form-control form-control-sm border-0 bg-white px-4 py-3"></textarea>
-                                </div>
-                            </div>
-                            <div class="col px-0">
-                                <div class="w-25 btn-gradient-border my-2" style="padding: 2px;">
-                                    <button class="w-100 btn">Submit</button>
-                                </div>
+                            <div class="col-12 d-flex mt-3 mt-md-5 px-0 px-md-2">
+                                <button type="submit"
+                                    class="btn rounded-2 py-2 py-md-3 mx-auto px-5  fw-semibold btn-secondary btn-block"
+                                    style="font-size: clamp(12px,3vw,14px);">Update</button>
                             </div>
                         </div>
                     </form>
@@ -683,30 +661,43 @@
         </main>
 
     </section>
-   <!-- Bootstrap JS link  -->
-   <script src="assets/css/bootstrap_js.js"></script>
+    <!-- Bootstrap JS link  -->
+    <script src="assets/css/bootstrap_js.js"></script>
 
-   <!-- JQuery CDN -->
-   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-   <!-- Swiper JS -->
-   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-   <!-- Font Awsome CDN -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
-       integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
-       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Font Awsome CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+        integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-   <!-- Main JS  -->
-   <script src="assets/js/index.js"></script>
+    <!-- Main JS  -->
+    <script src="assets/js/index.js"></script>
 
-   <!-- Include AOS JavaScript from CDN -->
-   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-   <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+    <!-- Include AOS JavaScript from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
 
 
 </body>
+
+<script>
+    const input = document.getElementById("file-input");
+    const image = document.getElementById("img-preview");
+
+    input.addEventListener("change", (e) => {
+        if (e.target.files.length) {
+            const src = URL.createObjectURL(e.target.files[0]);
+            image.src = src;
+        }
+    });
+
+</script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -788,6 +779,14 @@
 
     // window.addEventListener("resize", setWidth);
 
+    function triggerInputClick() {
+    var inputElement = document.getElementById('date');
+    if (inputElement) {
+        inputElement.focus();
+    }
+}
+
 </script>
+
 
 </html>
