@@ -151,6 +151,7 @@
 
         #menu-btn {
             position: absolute;
+            z-index: 200;
             top: 15px;
             right: -40px
         }
@@ -217,8 +218,9 @@
         }
 
         input[type="date"][id="date"]+.dob-calender {
-           display: none;
+            display: none;
         }
+
         input[type="text"][id="date"]+.dob-calender {
             aspect-ratio: 1/1;
             display: inline-block;
@@ -248,8 +250,69 @@
             cursor: pointer;
         }
 
-        .fa-pen:hover {
-            cursor: pointer;
+        .modal-backdrop {
+            z-index: 2 !important;
+            background-color: unset !important;
+            ;
+        }
+
+        @media (max-width: 576px) {
+            .notification-modal .modal-dialog {
+                margin: 6vh 1rem 0 3.5rem;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .notification-modal .modal-dialog {
+                margin-right: 2rem !important;
+                margin-top: 7vh !important;
+            }
+
+            .notification-modal .modal-dialog {
+                max-width: 25rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logIn-modal .modal-dialog {
+                margin-right: 1rem !important;
+                margin-top: 7vh !important;
+                margin-left: auto;
+            }
+
+            .logIn-modal {
+                background: #1111114D
+            }
+
+            .logIn-modal .modal-dialog {
+                max-width: 15rem;
+            }
+        }
+
+        @media (min-width: 576px) {
+            .logIn-modal .modal-dialog {
+                margin-right: 2rem !important;
+                margin-top: 7vh !important;
+            }
+
+            .logIn-modal .modal-dialog {
+                max-width: 15rem;
+            }
+
+            .logIn-modal .modal-dialog {
+                box-shadow: 0px 4px 38px 0px #00000040 !important;
+            }
+        }
+
+        .dashboard .card
+        {
+            box-shadow: 0px 1px 4px 0px #00000040;
+        }
+
+        .fa-pen:hover,
+        .notifications:hover *,
+        .log-in:hover * {
+            cursor: pointer !important;
             color: #d08147 !important;
         }
     </style>
@@ -259,7 +322,6 @@
 <body>
 
     <section class=" m-0 p-0 position-relative d-flex" style="min-height: 100vh;">
-
         <!-- Side-Nav -->
         <aside class="side-navbar bg-white active-nav" id="sidebar">
             <a href="index.html" class="mt-2 p-2 px-md-3 d-block">
@@ -274,7 +336,7 @@
             <ul class="nav flex-column gap-1 nav-pills mt-2 mt-md-3 px-2 flex-nowrap h-100 overflow-auto"
                 id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <li>
-                    <button class="nav-link d-flex justify-text gap-2 btn" id="v-pills-Dashboard-tab"
+                    <button class="nav-link d-flex justify-text gap-2 btn active" id="v-pills-Dashboard-tab"
                         data-bs-toggle="pill" data-bs-target="#v-pills-Dashboard" type="button" role="tab"
                         aria-controls="v-pills-Dashboard" aria-selected="true"> <span class="p-0"><i
                                 class="fa-solid fa-house"></i> </span> <span class="p-0 d-none das-tab-button">Dashboard
@@ -301,10 +363,11 @@
                             class="p-0 d-none das-tab-button">Contact Admin</span></button>
                 </li>
                 <li>
-                    <button class="nav-link d-flex justify-text gap-2 btn active" id="v-pills-settings-tab"
+                    <button class="nav-link d-flex justify-text gap-2 btn " id="v-pills-settings-tab"
                         data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab"
-                        aria-controls="v-pills-settings" aria-selected="false"> <span class="p-0"><i
-                                class="fa-solid fa-user"></i> </span> <span class="p-0 d-none das-tab-button"> Profile
+                        onclick="goToProfile()" aria-controls="v-pills-settings" aria-selected="false"> <span
+                            class="p-0"><i class="fa-solid fa-user"></i> </span> <span
+                            class="p-0 d-none das-tab-button"> Profile
                         </span></button>
                 </li>
             </ul>
@@ -319,48 +382,73 @@
                         <i class="fa-solid fa-calendar-days"></i>
                         <small class="ps-1">Monday, 11th March</small>
                     </span>
-                    <button type="button" class="position-relative btn notifications hover-class" data-mdb-target="#exampleModal"
-                        onmouseover="triggerModal()">
+                    <span class="position-relative notifications hover-class" data-bs-toggle="modal"
+                        data-bs-target="#notificationModal">
                         <i class="fa-solid fa-bell"></i>
-                        <small class="bg-gradient opacity-100 notification">1</small>
-                    </button>
-                    <div class="hover-class d-grid align-items-center text-end">
+                        <small class="bg-gradient opacity-100 notification">10</small>
+                    </span>
+                    <div class="hover-class log-in d-grid align-items-center text-end" data-bs-toggle="modal"
+                        data-bs-target="#logInModal">
                         <small class="ps-1">Ritesh Chouhan</small>
                         <img src="assets/images/main-logo-small.png" style="max-height: 2rem;" alt="">
                         <small class="ps-1 fs-7">ritesan8871@gmail.com</small>
                     </div>
-                    <!-- Button trigger modal -->
-                    <!-- <button type="button" class="btn btn-primary" >
-                        Hover me !
-                    </button> -->
+                </div>
+            </nav>
+            <!--End Top Nav -->
 
-                    <!-- Modal -->
-                    <div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
-                        <div class="modal-dialog  ">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                    <button type="button" class="btn-close" data-mdb-dismiss="modal"
-                                        aria-label="Close"></button>
+            <!-- TabContant Contant -->
+            <div class="tab-content overflow-auto" id="v-pills-tabContent" style="min-height: 90vh;">
+                <!-- Dashboard -->
+                <div class="tab-pane dashboard fade show active" id="v-pills-Dashboard" role="tabpanel"
+                    aria-labelledby="v-pills-Dashboard-tab" tabindex="0">
+                    <div class="row m-0 p-3 p-md-5">
+                        <div class="col-md-4 col-lg-3 p-2">
+                            <div class="card border-0 p-2">
+                                <div class="d-flex  hover-class">
+                                    <div class="flex-grow-1" >
+                                        <small class="ps-1 text-start">ritesan8871@gmail.com</small>
+                                        <h4 class="ps-1 text-start">Ritesh Chouhan</h4>
+                                    </div>
+                                    <img src="assets/images/main-logo-small.png" style="width: auto ;max-height: 3rem;" alt="">
                                 </div>
-                                <div class="modal-body">...</div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-                                        Close
-                                    </button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 p-2">
+                            <div class="card border-0 p-2">
+                                <div class="d-flex  hover-class">
+                                    <div class="flex-grow-1" >
+                                        <small class="ps-1 text-start">ritesan8871@gmail.com</small>
+                                        <h4 class="ps-1 text-start">Ritesh Chouhan</h4>
+                                    </div>
+                                    <img src="assets/images/main-logo-small.png" style="width: auto ;max-height: 3rem;" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 p-2">
+                            <div class="card border-0 p-2">
+                                <div class="d-flex  hover-class">
+                                    <div class="flex-grow-1" >
+                                        <small class="ps-1 text-start">ritesan8871@gmail.com</small>
+                                        <h4 class="ps-1 text-start">Ritesh Chouhan</h4>
+                                    </div>
+                                    <img src="assets/images/main-logo-small.png" style="width: auto ;max-height: 3rem;" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 p-2">
+                            <div class="card border-0 p-2">
+                                <div class="d-flex  hover-class">
+                                    <div class="flex-grow-1" >
+                                        <small class="ps-1 text-start">ritesan8871@gmail.com</small>
+                                        <h4 class="ps-1 text-start">Ritesh Chouhan</h4>
+                                    </div>
+                                    <img src="assets/images/main-logo-small.png" style="width: auto ;max-height: 3rem;" alt="">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </nav>
-            <!--End Top Nav -->
-            <div class="tab-content overflow-auto" id="v-pills-tabContent" style="min-height: 90vh;">
-                <!-- Dashboard -->
-                <div class="tab-pane fade " id="v-pills-Dashboard" role="tabpanel"
-                    aria-labelledby="v-pills-Dashboard-tab" tabindex="0">Dashboard</div>
                 <!-- My Exam -->
                 <div class="tab-pane fade" id="v-pills-exam" role="tabpanel" aria-labelledby="v-pills-exam-tab"
                     tabindex="0">my Exam</div>
@@ -372,13 +460,12 @@
                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
                     tabindex="0">Contant Admin</div>
                 <!-- Profile -->
-                <div class="tab-pane fade show active" id="v-pills-settings" role="tabpanel"
+                <div class="tab-pane fade h-100" id="v-pills-settings" role="tabpanel"
                     aria-labelledby="v-pills-settings-tab" tabindex="0">
-
                     <!-- Profile detail page -->
-                    <div class="row m-0 p-2 d-none p-md-4 bg-light row-gap-4">
+                    <div class="row m-0 p-2 p-md-4 bg-light h-100 profile-detail row-gap-4" style="min-height: 90vh;">
                         <!-- User Data -->
-                        <div class="col-md-5">
+                        <div class="col-md-5 pt-3">
                             <div class="bg-gradient rounded-2 h-100" style="padding: 0.05em;">
                                 <div class="card border-0 bg-white h-100 pt-2 pt-md-4 ">
                                     <div
@@ -389,23 +476,23 @@
                                         <table class="table m-0 table-borderless">
                                             <tbody>
                                                 <tr>
-                                                    <th scope="row" colspan="2" class="py-1 p-0 text-gray fw-medium">
+                                                    <th colspan="2" class="py-1 p-0 text-gray fw-medium">
                                                         Admission No.</th>
-                                                    <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue">100056
+                                                    <td class="py-1 p-0 text-end fw-medium text-blue">100056
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row" class="py-1 p-0 text-gray fw-medium">Course</th>
+                                                    <th class="py-1 p-0 text-gray fw-medium">Course</th>
                                                     <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue">
                                                         Bachelor in computer Application</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row" class="py-1 p-0 text-gray fw-medium">Branch</th>
+                                                    <th class="py-1 p-0 text-gray fw-medium">Branch</th>
                                                     <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue">CSE
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row" class="py-1 p-0 text-gray fw-medium">Semester</th>
+                                                    <th class="py-1 p-0 text-gray fw-medium">Semester</th>
                                                     <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue">6</td>
                                                 </tr>
                                             </tbody>
@@ -415,7 +502,7 @@
                             </div>
                         </div>
                         <!-- QR Code -->
-                        <div class="col-md-7">
+                        <div class="col-md-7 pt-md-3">
                             <div class="bg-gradient rounded-2 h-100" style="padding: 0.05em;">
                                 <div class="card border-0 bg-white h-100 pt-2 pt-md-4 ">
                                     <div
@@ -445,7 +532,7 @@
                                                     </th>
                                                     <td colspan="2" class="py-1 p-0 text-end fw-medium">
                                                         <i class="fa-solid text-light-gray fa-pen"
-                                                            data-bs-target="#exampleModalToggle"
+                                                            data-bs-target="#CurAddModalToggle"
                                                             data-bs-toggle="modal"></i>
                                                     </td>
                                                 </tr>
@@ -457,93 +544,27 @@
                                                     </th>
                                                     <td colspan="2" class="py-1 p-0 text-end fw-medium text-blue"><i
                                                             class="fa-solid text-light-gray fa-pen"
-                                                            data-bs-target="#exampleModalToggle"
+                                                            data-bs-target="#PerAddModalToggle"
                                                             data-bs-toggle="modal"></i></td>
                                                 </tr>
                                             </tbody>
                                         </table>
-
-                                        <!-- Adress Modal -->
-                                        <div class="modal add-modal fade" id="exampleModalToggle" aria-hidden="true"
-                                            aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-                                            <div class="modal-dialog modal-dialog-centered">
-                                                <div class="modal-content bg-light">
-                                                    <div class="modal-header border-0 pb-0">
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body pt-0">
-                                                        <h1 class="modal-title text-gray pb-3 pb-md-5 fs-5"
-                                                            id="exampleModalToggleLabel">Edit Address</h1>
-                                                        <form action="" class="d-flex flex-column gap-4">
-                                                            <div class="form-group position-relative">
-                                                                <label for="street">street, Flour</label>
-                                                                <input type="text" id="street" placeholder="Jharkhand"
-                                                                    class="form-control form-control-sm border-0 bg-white px-3 py-2"
-                                                                    required>
-                                                            </div>
-                                                            <div class="form-group position-relative">
-                                                                <label for="village">Vilage</label>
-                                                                <input type="text" id="village" placeholder="Jharkhand"
-                                                                    class="form-control form-control-sm border-0 bg-white px-3 py-2"
-                                                                    id="vilage" required>
-                                                            </div>
-                                                            <div class="form-group position-relative">
-                                                                <label for="post-office">Post Office</label>
-                                                                <input type="text" id="street" placeholder="Jharkhand"
-                                                                    class="form-control form-control-sm border-0 bg-white px-3 py-2"
-                                                                    id="post-office" required>
-                                                            </div>
-                                                            <div class="form-group position-relative">
-                                                                <label for="block">Block</label>
-                                                                <input type="text" id="street" placeholder="Jharkhand"
-                                                                    class="form-control form-control-sm border-0 bg-white px-3 py-2"
-                                                                    id="block" required>
-                                                            </div>
-                                                            <div class="form-group position-relative">
-                                                                <label for="city">City</label>
-                                                                <input type="text" id="street" placeholder="Jharkhand"
-                                                                    class="form-control form-control-sm border-0 bg-white px-3 py-2"
-                                                                    id="city" required>
-                                                            </div>
-                                                            <div class="form-group position-relative">
-                                                                <label for="state">State</label>
-                                                                <input type="text" id="street" placeholder="Jharkhand"
-                                                                    class="form-control form-control-sm border-0 bg-white px-3 py-2"
-                                                                    id="state" required>
-                                                            </div>
-                                                            <div class="form-group position-relative">
-                                                                <label for="pincode">Pin Code</label>
-                                                                <input type="tel" id="street" placeholder="Jharkhand"
-                                                                    min="6" maxlength="6"
-                                                                    class="form-control form-control-sm border-0 bg-white px-3 py-2"
-                                                                    id="pincode" required>
-                                                            </div>
-                                                            <div
-                                                                class="w-100 gap-2 pb-3 d-flex flex-wrap justify-content-center">
-                                                                <button type="submit"
-                                                                    class="btn rounded-pill py-2 py-md-3  fw-semibold btn-secondary btn-block"
-                                                                    style="font-size: clamp(10px,3vw,14px);">Update</button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- adress modal End -->
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="w-100 gap-2 d-flex flex-wrap justify-content-center justify-content-sm-end">
-                            <button type="submit" class="btn rounded-pill  fw-semibold btn-secondary btn-block"
-                                style="font-size: clamp(10px,3vw,14px);">Edit Profile</button>
-                            <button type="submit" class="btn rounded-pill  fw-semibold btn-secondary btn-block"
+                        <!-- btns -->
+                        <div class="gap-2 d-flex flex-wrap justify-content-center justify-content-sm-end"
+                            style="height: fit-content;">
+                            <button type="submit" class="btn rounded-pill edit-profile-btn fw-semibold btn-secondary"
+                                onclick="goToEditProfile()" style="font-size: clamp(10px,3vw,14px);">Edit
+                                Profile</button>
+                            <button type="submit" class="btn rounded-pill  fw-semibold btn-secondary"
                                 style="font-size: clamp(10px,3vw,14px);">View Admit Card</button>
                         </div>
                     </div>
                     <!-- profile Edit page  -->
-                    <form class="p-3 p-md-4 px-md-4 px-lg-5 profile-form" action="">
+                    <form class="p-3 p-md-4 px-md-4 px-lg-5 d-none profile-form" action="">
                         <div class="row bg-white justify-content-center px-md-4 px-lg-5 m-0 gy-3">
                             <div class="col-md-12 px-0 px-md-2 my-md-3">
                                 <div class="text-center mx-auto position-relative profile-input"
@@ -616,10 +637,11 @@
                             </div>
                             <div class="col-md-6 px-0 px-md-2 mt-md-4">
                                 <div class="form-group DOB position-relative">
-                                    <input type="text" onfocus="(this.type = 'date');" 
-                                    onblur="(this.type = 'text');"
-                                    required id="date" placeholder="DOB" value="DOB" class="form-control form-control-sm border-0 bg-white px-4 py-3">
-                                    <img src="assets/images/Calendar.png" onclick="triggerInputClick()" class="dob-calender" alt="">
+                                    <input type="text" onfocus="(this.type = 'date');" onblur="(this.type = 'text');"
+                                        required id="date" placeholder="DOB" value="DOB"
+                                        class="form-control form-control-sm border-0 bg-white px-4 py-3">
+                                    <img src="assets/images/Calendar.png" onclick="triggerInputClick()"
+                                        class="dob-calender" alt="">
                                 </div>
                             </div>
                             <div class="col-md-6 px-0 px-md-2 mt-md-4">
@@ -629,20 +651,20 @@
                                         required class="form-control form-control-sm border-0 bg-white px-4 py-3">
                                 </div>
                             </div>
-                            <div class="col-md-4 px-0 px-md-2">
+                            <div class="col-md-4 px-0 px-md-2 mt-md-4">
                                 <div class="form-group">
                                     <input type="text" placeholder="City" onkeydown="return /[a-z]/i.test(event.key)"
                                         required class="form-control form-control-sm border-0 bg-white px-4 py-3">
                                 </div>
                             </div>
-                            <div class="col-md-4 px-0 px-md-2">
+                            <div class="col-md-4 px-0 px-md-2 mt-md-4">
                                 <div class="form-group">
                                     <input type="text" placeholder="State" required
                                         onkeydown="return /[a-z]/i.test(event.key)"
                                         class="form-control form-control-sm border-0 bg-white px-4 py-3">
                                 </div>
                             </div>
-                            <div class="col-md-4 px-0 px-md-2">
+                            <div class="col-md-4 px-0 px-md-2 mt-md-4">
                                 <div class="form-group">
                                     <input type="text" placeholder="Pincode" required minlength="6" maxlength="6"
                                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
@@ -658,7 +680,209 @@
                     </form>
                 </div>
             </div>
+
         </main>
+
+        <!-- Current Adress Modal -->
+        <div class="modal add-modal fade" style=" background-color:#1111114D" id="CurAddModalToggle" aria-hidden="true"
+            aria-labelledby="CurAddModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-light">
+                    <div class="modal-body">
+                        <h1 class="modal-title text-gray py-3 py-md-4 pb-md-5 fs-5" id="PerAddModalToggleLabel">Edit
+                            Address
+                        </h1>
+                        <form action="" class="d-flex flex-column gap-4">
+                            <div class="form-group position-relative">
+                                <label for="street">street, Flour</label>
+                                <input type="text" id="street" placeholder="Jharkhand"
+                                    class="form-control form-control-sm border-0 bg-white px-3 py-2" required>
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="village">Vilage</label>
+                                <input type="text" id="village" placeholder="Jharkhand"
+                                    class="form-control form-control-sm border-0 bg-white px-3 py-2" id="vilage"
+                                    required>
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="post-office">Post Office</label>
+                                <input type="text" id="street" placeholder="Jharkhand"
+                                    class="form-control form-control-sm border-0 bg-white px-3 py-2" id="post-office"
+                                    required>
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="block">Block</label>
+                                <input type="text" id="street" placeholder="Jharkhand"
+                                    class="form-control form-control-sm border-0 bg-white px-3 py-2" id="block"
+                                    required>
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="city">City</label>
+                                <input type="text" id="street" placeholder="Jharkhand"
+                                    class="form-control form-control-sm border-0 bg-white px-3 py-2" id="city" required>
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="state">State</label>
+                                <input type="text" id="street" placeholder="Jharkhand"
+                                    class="form-control form-control-sm border-0 bg-white px-3 py-2" id="state"
+                                    required>
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="pincode">Pin Code</label>
+                                <input type="tel" id="street" placeholder="Jharkhand" min="6" maxlength="6"
+                                    class="form-control form-control-sm border-0 bg-white px-3 py-2" id="pincode"
+                                    required>
+                            </div>
+                            <div class="w-100 gap-2 pb-3 d-flex flex-wrap justify-content-center">
+                                <button type="submit"
+                                    class="btn rounded-pill py-2 py-md-3  fw-semibold btn-secondary btn-block"
+                                    style="font-size: clamp(10px,3vw,14px);">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Current Adress modal End -->
+
+        <!-- Permanent Adress Modal -->
+        <div class="modal add-modal fade" style=" background-color:#1111114D" id="PerAddModalToggle" aria-hidden="true"
+            aria-labelledby="PerAddModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-light">
+                    <div class="modal-body">
+                        <h1 class="modal-title text-gray py-3 py-md-4 pb-md-5 fs-5" id="PerAddModalToggleLabel">Edit
+                            Address
+                        </h1>
+                        <form action="" class="d-flex flex-column gap-4">
+                            <div class="form-group position-relative">
+                                <label for="street">street, Flour</label>
+                                <input type="text" id="street" placeholder="Jharkhand"
+                                    class="form-control form-control-sm border-0 bg-white px-3 py-2" required>
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="village">Vilage</label>
+                                <input type="text" id="village" placeholder="Jharkhand"
+                                    class="form-control form-control-sm border-0 bg-white px-3 py-2" id="vilage"
+                                    required>
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="post-office">Post Office</label>
+                                <input type="text" id="street" placeholder="Jharkhand"
+                                    class="form-control form-control-sm border-0 bg-white px-3 py-2" id="post-office"
+                                    required>
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="block">Block</label>
+                                <input type="text" id="street" placeholder="Jharkhand"
+                                    class="form-control form-control-sm border-0 bg-white px-3 py-2" id="block"
+                                    required>
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="city">City</label>
+                                <input type="text" id="street" placeholder="Jharkhand"
+                                    class="form-control form-control-sm border-0 bg-white px-3 py-2" id="city" required>
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="state">State</label>
+                                <input type="text" id="street" placeholder="Jharkhand"
+                                    class="form-control form-control-sm border-0 bg-white px-3 py-2" id="state"
+                                    required>
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="pincode">Pin Code</label>
+                                <input type="tel" id="street" placeholder="Jharkhand" min="6" maxlength="6"
+                                    class="form-control form-control-sm border-0 bg-white px-3 py-2" id="pincode"
+                                    required>
+                            </div>
+                            <div class="w-100 gap-2 pb-3 d-flex flex-wrap justify-content-center">
+                                <button type="submit"
+                                    class="btn rounded-pill py-2 py-md-3  fw-semibold btn-secondary btn-block"
+                                    style="font-size: clamp(10px,3vw,14px);">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Permanent Adress modal End -->
+
+        <!-- Notification Modal start -->
+        <div class="modal notification-modal fade" style=" background-color:#1111114D" id="notificationModal"
+            tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content rounded-0 border-0">
+                    <div class="modal-body p-2">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item px-0">
+                                <div class="d-flex m-0 p-0">
+                                    <div class="p-0">
+                                        <img src="assets/images/logo-sk.png"
+                                            style="aspect-ratio: 1/1; max-height: 2rem;" alt="">
+                                    </div>
+                                    <div class="ps-2 flex-grow-1 p-0">
+                                        <small class="d-block">Hey ! You can download an admit card</small>
+                                        <small class="text-gray-light d-block">Last Wednesday at 9:42 AM</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                                <div class="d-flex m-0 p-0">
+                                    <div class="p-0">
+                                        <img src="assets/images/logo-sk.png"
+                                            style="aspect-ratio: 1/1; max-height: 2rem;" alt="">
+                                    </div>
+                                    <div class="ps-2 flex-grow-1 p-0">
+                                        <small class="d-block">Hey ! You can download an admit card</small>
+                                        <small class="d-block">Hey ! You can download an admit card</small>
+                                        <small class="d-block">Hey ! You can download an admit card</small>
+                                        <small class="text-gray-light d-block">Last Wednesday at 9:42 AM</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                                <div class="d-flex m-0 p-0">
+                                    <div class="p-0">
+                                        <img src="assets/images/logo-sk.png"
+                                            style="aspect-ratio: 1/1; max-height: 2rem;" alt="">
+                                    </div>
+                                    <div class="ps-2 flex-grow-1 p-0">
+                                        <small class="d-block">Hey ! You can download an admit card</small>
+                                        <small class="text-gray-light d-block">Last Wednesday at 9:42 AM</small>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Notification Modal End -->
+
+        <!-- LogIn/LogOut modal start -->
+        <div class="modal logIn-modal fade p-0" data-backdrop="false" id="logInModal" tabindex="-1"
+            aria-labelledby="logInModalLabel" aria-hidden="true">
+            <div class="modal-dialog border-0 rounded-3">
+                <div class="modal-content border-0">
+                    <div class="modal-body p-2">
+                        <div class="d-grid me-3 align-items-center text-end">
+                            <small class="ps-1">Ritesh Chouhan</small>
+                            <img src="assets/images/main-logo-small.png" style="max-height: 2rem;" alt="">
+                            <small class="ps-1 fs-7">ritesan8871@gmail.com</small>
+                        </div>
+                        <button class="btn nav-link mt-3 w-100 rounded-pill fw-semibold btn-secondary btn-block" id="v-pills-settings-tab"
+                        data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab"
+                        onclick="goToProfile()" aria-controls="v-pills-settings" aria-selected="false"
+                            style="font-size: 13px; padding : 12px 0"> <img src="assets/images/log-out.png"
+                                alt="log-out" style="max-width: 1.2rem; aspect-ratio: 1/1;" srcset=""> Edit
+                            Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- LogIn/LogOut modal End -->
+
+
 
     </section>
     <!-- Bootstrap JS link  -->
@@ -687,19 +911,7 @@
 </body>
 
 <script>
-    const input = document.getElementById("file-input");
-    const image = document.getElementById("img-preview");
 
-    input.addEventListener("change", (e) => {
-        if (e.target.files.length) {
-            const src = URL.createObjectURL(e.target.files[0]);
-            image.src = src;
-        }
-    });
-
-</script>
-
-<script>
     document.addEventListener("DOMContentLoaded", function () {
         const menu_btn = document.querySelector("#menu-btn");
         const sidebar = document.querySelector("#sidebar");
@@ -711,29 +923,39 @@
         const tabButtons = document.querySelectorAll(".das-tab-button");
         const justifyText = document.querySelectorAll(".justify-text");
 
+        let hogya = true;
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth <= 768) {
+                if (hogya) {
+                    if (mainlogo.classList.contains("d-none")) {
+                        console.log("ones")
+                        mainlogo.classList.add("d-none");
+                    }
+                    if (smalllogo.classList.contains("d-none")) {
+                        console.log("two")
+                        smalllogo.classList.remove("d-none");
+                        mainlogo.classList.add("d-none");
+                    }
+                    tabButtons.forEach(tab => {
+                        tab.classList.toggle("d-none");
+                    });
+                    sidebar.style.marginLeft = "0px";
+                    container.style.marginLeft = sidebar.offsetWidth + "px";
+                    justifyText.forEach(text => {
+                        text.style.justifyContent = "center";
+                    });
+                }
+                hogya = false;
+            }
+        });
+
         function setWidth() {
             container.style.marginLeft = sidebar.offsetWidth + "px";
             justifyText.forEach(text => {
                 text.style.justifyContent = "center";
             });
-
-            if (window.innerWidth < 768) {
-                if (!mainlogo.classList.contains("d-none")) {
-                    mainlogo.classList.add("d-none");
-                }
-                if (smalllogo.classList.contains("d-none")) {
-                    smalllogo.classList.remove("d-none");
-                    mainlogo.classList.add("d-none");
-                }
-                sidebar.style.marginLeft = "0px";
-                container.style.marginLeft = sidebar.offsetWidth + "px";
-                justifyText.forEach(text => {
-                    text.style.justifyContent = "center";
-                });
-            }
-
             let clicked = false;
-
             menu_btn.style.transition = "transform 0.2s";
             menu_btn.style.transform = "rotate(180deg)";
 
@@ -767,25 +989,22 @@
                 clicked = !clicked;
             });
         }
-
-        // notification.addEventListener("click", (e) => {
-        //     e.stopPropagation();
-        //     notificationGroup.classList.toggle("d-none");
-        // });
-
         setWidth();
     });
-
-
     // window.addEventListener("resize", setWidth);
 
-    function triggerInputClick() {
-    var inputElement = document.getElementById('date');
-    if (inputElement) {
-        inputElement.focus();
+    var profileDetails = document.querySelector(".profile-detail");
+    var profileForms = document.querySelector(".profile-form");
+    function goToEditProfile() {
+        profileDetails.classList.toggle("d-none");
+        profileForms.classList.toggle("d-none");
     }
-}
-
+    function goToProfile() {
+        if (profileDetails.classList.contains("d-none")) {
+            profileDetails.classList.toggle("d-none");
+            profileForms.classList.toggle("d-none");
+        }
+    }
 </script>
 
 
