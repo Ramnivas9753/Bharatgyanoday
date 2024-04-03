@@ -86,7 +86,7 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 !important;
   font-family: "DM Sans";
   overflow-x: hidden !important;
   -webkit-text-size-adjust: 100%;
