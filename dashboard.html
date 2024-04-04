@@ -36,6 +36,11 @@
 
 
     <style>
+        .my-container,
+        .side-navbar {
+            transition: .2s
+        }
+
         .nav-pills .btn,
         .nav-pills .btn span {
             font-size: clamp(.8rem, 2vw, .9rem) !important;
@@ -49,8 +54,7 @@
             height: 100%;
             width: auto;
             position: fixed;
-            margin-left: -250px;
-            transition: .2s
+            margin-left: -250px
         }
 
         .btn:first-child:active,
@@ -62,10 +66,6 @@
             background-color: unset;
             border-color: unset;
             box-shadow: unset !important
-        }
-
-        .my-container {
-            transition: .2s
         }
 
         .active-nav {
@@ -98,12 +98,11 @@
         }
 
         .notification-group {
-            right: -10vw;
+            right: -10vw
         }
 
         @media (max-width :768px) {
             .side-navbar {
-                /* width: 70px; */
                 height: 100%;
                 position: fixed;
                 margin-left: -50px;
@@ -132,14 +131,14 @@
 
             .notification-group {
                 right: -30vw !important;
-                transition: 0.2s;
-                width: max-content;
+                transition: .2s;
+                width: max-content
             }
         }
 
         #sidebar {
             max-height: 100vh;
-            z-index: 2;
+            z-index: 3
         }
 
         #menu-btn {
@@ -171,8 +170,9 @@
 
         .hover-class:hover * {
             color: #d08147 !important;
+            fill: #d08147 !important;
             transition: .2s;
-            cursor: context-menu
+            cursor: pointer;
         }
 
         .d-grid {
@@ -202,7 +202,7 @@
         }
 
         #date {
-            color: #4F4F4F;
+            color: #4f4f4f
         }
 
         .d-grid .fs-7 {
@@ -210,25 +210,24 @@
             line-height: normal
         }
 
-        input[type="date"][id="date"]+.dob-calender {
-            display: none;
+        input[type=date][id=date]+.dob-calender {
+            display: none
         }
 
-        input[type="text"][id="date"]+.dob-calender {
+        input[type=text][id=date]+.dob-calender {
             aspect-ratio: 1/1;
             display: inline-block;
             z-index: 0;
             width: 14px;
             position: absolute;
             right: 25px;
-            top: 39%;
+            top: 39%
         }
 
         .profile-form input {
             font-family: IBM Plex Serif !important;
-            color: #4F4F4F !important;
+            color: #4f4f4f !important
         }
-
 
         .add-modal label {
             position: absolute;
@@ -236,156 +235,170 @@
             top: -36%;
             left: 2%;
             padding: 0 5px;
-            background: white;
+            background: #fff
         }
 
         .profile-input #camera:hover {
-            cursor: pointer;
+            cursor: pointer
         }
 
         .modal-backdrop {
             z-index: 2 !important;
-            background-color: unset !important;
-            ;
+            background-color: unset !important
         }
 
-        @media (max-width: 576px) {
+        @media (max-width:576px) {
             .notification-modal .modal-dialog {
-                margin: 6vh 1rem 0 3.5rem;
-            }
-        }
-
-        @media (min-width: 576px) {
-            .notification-modal .modal-dialog {
-                margin-right: 2rem !important;
-                margin-top: 7vh !important;
+                margin: 6vh 1rem 0 3.5rem
             }
 
-            .notification-modal .modal-dialog {
-                max-width: 25rem;
-            }
-
-            /* #sidebar {
-                border-right: 2px solid #b8b8b8 !important
-            }
-
-            section .navbar {
-                border-bottom: 1px solid #b8b8b853 !important
-            } */
-        }
-
-        @media (max-width: 576px) {
             .logIn-modal .modal-dialog {
                 margin-right: 1rem !important;
                 margin-top: 7vh !important;
                 margin-left: auto;
+                max-width: 15rem
             }
 
             .logIn-modal {
                 background: #1111114D
             }
 
-            .logIn-modal .modal-dialog {
-                max-width: 15rem;
+            .bg-light-blue svg,
+            .bg-light-red svg {
+                font-size: 10px
             }
 
-            .bg-light-red svg,
-            .bg-light-blue svg {
-                font-size: 10px;
+            .contact-admin .form-group input,
+            .contact-admin .form-group textarea {
+                padding: .8rem 1rem !important
             }
-            .contact-admin .form-group input, .contact-admin .form-group textarea{
-            padding: 0.8rem 1rem !important;
-        }
 
             .dashboard .card {
-                box-shadow: 0px 0.6188362240791321px 2.4753448963165283px 0px #00000040 !important;
+                box-shadow: 0 .6188362240791321px 2.4753448963165283px 0 #00000040 !important
             }
         }
 
-        @media (min-width: 576px) {
+        @media (min-width:576px) {
+            .notification-modal .modal-dialog {
+                margin-right: 2rem !important;
+                margin-top: 7vh !important;
+                max-width: 25rem
+            }
+
             .logIn-modal .modal-dialog {
                 margin-right: 2rem !important;
                 margin-top: 7vh !important;
-            }
-            main .tab-content
-        {
-            box-shadow:inset 1px 0.5px 0.2px 0px #B8B8B8 !important;
-            margin: 1px 0 0 2px;
-        }
-
-            .logIn-modal .modal-dialog {
                 max-width: 15rem;
+                box-shadow: 0 4px 38px 0 #00000040 !important
             }
 
-            .bg-light-red,
-            .bg-light-blue {
+            main .tab-content {
+                box-shadow: inset 1px .5px .2px 0 #b8b8b8 !important;
+                margin: 1px 0 0 2px
+            }
+
+            .bg-light-blue,
+            .bg-light-red {
                 padding: 8px 9px !important;
-                border-radius: 10px !important;
-            }
-
-            .logIn-modal .modal-dialog {
-                box-shadow: 0px 4px 38px 0px #00000040 !important;
+                border-radius: 10px !important
             }
 
             .bg-md-light {
                 background: rgba(var(--bs-light-rgb), var(--bs-bg-opacity));
-                box-shadow:inset 1px 0.1px 0.2px 0px #B8B8B8 !important;
+                box-shadow: inset 1px .1px .2px 0 #b8b8b8 !important
             }
-            
         }
+
         .dashboard .card {
-            box-shadow: 0px 1px 4px 0px #00000040;
-            border-radius: clamp(5px, 2vw, 8px);
+            box-shadow: 0 1px 4px 0 #00000040;
+            border-radius: clamp(5px, 2vw, 8px)
         }
 
         .text-dashboard-gray {
-            color: #777980;
+            color: #777980
         }
+
         .bg-md-light {
-                background: #FCFCFC;
-            }
+            background: #fcfcfc
+        }
 
         .bg-light-red {
-            background-color: #FFF0EA;
+            background-color: #fff0ea
         }
 
         .bg-light-blue {
-            background-color: #EAEBFF;
+            background-color: #eaebff
         }
 
-        main .tab-content
-        {
-            /* box-shadow:inset 1px 0.1px 0.2px 0px #B8B8B8 !important; */
-            /* margin: 1px 0 0 2px; */
-        }
-        .bg-light-red,
-        .bg-light-blue {
+        .bg-light-blue,
+        .bg-light-red {
             padding: 6px;
-            border-radius: 4px;
+            border-radius: 4px
+        }
+
+        .card.card-shadow {
+            box-shadow: 0 1px 4px 0 #00000040 !important;
+            height: max-content
         }
 
         .bg-light-red svg {
-            color: #E24C42;
+            color: #e24c42
         }
 
         .bg-light-blue svg {
-            color: #0038A3;
+            color: #0038a3
         }
+
         main .tab-content>.active {
             display: flex;
-            flex-direction: column;
+            flex-direction: column
         }
-        .contact-admin .form-group input, .contact-admin .form-group textarea{
-            padding: 1rem;
+
+        .admin-contact * {
+            font-size: clamp(8px, 1.3vw, 13px)
         }
-        .contact-admin .form-group input::placeholder, .contact-admin .form-group textarea::placeholder{
-            font-size: clamp(10px,1vw,14px,) !important;
+
+        .admin-contact svg {
+            height: clamp(10px, 1.3vw, 17px)
         }
+
+        .text-light-black * {
+            color: #525560
+        }
+
+        .contact-admin .form-group input,
+        .contact-admin .form-group textarea {
+            padding: 1rem
+        }
+
+        .contact-admin .form-group input::placeholder,
+        .contact-admin .form-group textarea::placeholder {
+            font-size: clamp(10px, 1vw, 14px, ) !important
+        }
+
+        @media (max-width:767px) {
+            .admin-book {
+                margin-top: -11%;
+                margin-right: 0 !important;
+                margin-left: 11%
+            }
+        }
+
+        .admin-book {
+            width: clamp(8rem, 26vw, 15rem);
+            aspect-ratio: 3/2;
+            margin-right: -7%
+        }
+
+        .col-auto {
+            width: 100% !important;
+        }
+
         .fa-pen:hover,
-        .notifications:hover *,
-        .log-in:hover * {
+        .log-in:hover *,
+        .notifications:hover * {
             cursor: pointer !important;
-            color: #d08147 !important;
+            color: #d08147 !important
         }
     </style>
 
@@ -400,9 +413,9 @@
                     src="assets/images/toggle-icon.png" class="menu-btn-img"
                     style="aspect-ratio: 1/1;  max-height: 1.2rem;" alt="" srcset=""> </a>
             <a href="index.html" class="my-md-3 my-2 mb-2 p-2 px-md-3 d-block">
-                <img src="assets/images/main-logo.png" alt="main-logo" id="main-logo" class="logo d-none"
+                <img src="assets/images/main-logo.png" alt="main-logo" id="main-logo" class="logo"
                     style="max-height: 2rem; object-fit: contain;">
-                <img src="assets/images/main-logo-small.png" alt="main-logo-small" id="main-logo-small" class=""
+                <img src="assets/images/main-logo-small.png" alt="main-logo-small" id="main-logo-small" class="d-none"
                     style="max-width: 2rem; object-fit: contain;">
             </a>
             <ul class="nav flex-column gap-1 nav-pills pt-md-4 px-2 pe-sm-2 flex-nowrap h-100 overflow-auto"
@@ -411,35 +424,35 @@
                     <button class="nav-link d-flex justify-text gap-2 btn" id="v-pills-Dashboard-tab"
                         data-bs-toggle="pill" data-bs-target="#v-pills-Dashboard" type="button" role="tab"
                         aria-controls="v-pills-Dashboard" aria-selected="true"> <span class="p-0"><i
-                                class="fa-solid fa-house"></i> </span> <span class="p-0 d-none das-tab-button">Dashboard
+                                class="fa-solid fa-house"></i> </span> <span class="p-0 das-tab-button">Dashboard
                         </span> </button>
                 </li>
                 <li>
                     <button class="nav-link d-flex justify-text gap-2 btn " id="v-pills-exam-tab" data-bs-toggle="pill"
                         data-bs-target="#v-pills-exam" type="button" role="tab" aria-controls="v-pills-exam"
                         aria-selected="false"><span class="p-0"><i class="fa-solid fa-clipboard"></i></span>
-                        <span class="p-0 d-none das-tab-button">My Exam</span></button>
+                        <span class="p-0 das-tab-button">My Exam</span></button>
                 </li>
                 <li>
                     <button class="nav-link d-flex justify-text gap-2 btn " id="v-pills-result-tab"
                         data-bs-toggle="pill" data-bs-target="#v-pills-result" type="button" role="tab"
                         aria-controls="v-pills-result" aria-selected="false"><span class="p-0"><i
                                 class="fa-solid fa-clipboard-list"></i> </span>
-                        <span class="p-0 d-none das-tab-button">Result</span></button>
+                        <span class="p-0 das-tab-button">Result</span></button>
                 </li>
                 <li>
                     <button class="nav-link d-flex justify-text gap-2 btn active" id="v-pills-messages-tab"
                         data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab"
                         aria-controls="v-pills-messages" aria-selected="false"> <span class="p-0"><i
-                                class="fa-solid fa-user-tie"></i> </span> <span
-                            class="p-0 d-none das-tab-button">Contact Admin</span></button>
+                                class="fa-solid fa-user-tie"></i> </span> <span class="p-0 das-tab-button">Contact
+                            Admin</span></button>
                 </li>
                 <li>
-                    <button class="nav-link d-flex justify-text gap-2 btn " id="v-pills-settings-tab"
+                    <button class="nav-link d-flex justify-text gap-2 btn" id="v-pills-settings-tab"
                         data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab"
                         onclick="goToProfile()" aria-controls="v-pills-settings" aria-selected="false"> <span
-                            class="p-0"><i class="fa-solid fa-user"></i> </span> <span
-                            class="p-0 d-none das-tab-button"> Profile
+                            class="p-0"><i class="fa-solid fa-user"></i> </span> <span class="p-0 das-tab-button">
+                            Profile
                         </span></button>
                 </li>
             </ul>
@@ -461,9 +474,10 @@
                     </span>
                     <div class="hover-class log-in d-grid align-items-center text-end" data-bs-toggle="modal"
                         data-bs-target="#logInModal">
-                        <small class="ps-1" style="font-size: clamp(11px,3vw,14px) !important;" >Pawan Kumar</small>
+                        <small class="ps-1" style="font-size: clamp(11px,3vw,14px) !important;">Pawan Kumar</small>
                         <img src="assets/images/main-logo-small.png" style="max-height: 2rem;" alt="">
-                        <small class="ps-1" style="font-size: clamp(8px,3vw,10px) !important;" >pawankrtest07@gmail.com</small>
+                        <small class="ps-1"
+                            style="font-size: clamp(8px,3vw,10px) !important;">pawankrtest07@gmail.com</small>
                     </div>
                 </div>
             </nav>
@@ -472,11 +486,11 @@
             <!-- TabContant Contant -->
             <div class="tab-content overflow-auto" id="v-pills-tabContent" style="min-height: 90vh;">
                 <!-- Dashboard -->
-                <div class="tab-pane h-100 dashboard fade" id="v-pills-Dashboard" style="min-height: 90vh;" role="tabpanel"
-                    aria-labelledby="v-pills-Dashboard-tab" tabindex="0">
+                <div class="tab-pane h-100 dashboard fade" id="v-pills-Dashboard" style="min-height: 90vh;"
+                    role="tabpanel" aria-labelledby="v-pills-Dashboard-tab" tabindex="0">
                     <!-- details tab -->
                     <div class="row m-0 ps-0 p-1 p-sm-3 p-md-4 justify-content-center row-gap-sm-2 row-gap-md-4 p-lg-5">
-                        <div class="col-6 col-md-4 col-lg-3 px-md-3 px-xl-4 px-2 p-1 mb-1 mb-sm-0">
+                        <div class="col-6 col-md-4 col-lg-3 px-md-2 px-xl-4 px-2 p-1 mb-1 mb-sm-0 col-set">
                             <div class="card border-0 p-1 p-sm-2 h-100">
                                 <div class="d-flex h-100 align-items-center hover-class">
                                     <div class="flex-grow-1">
@@ -492,7 +506,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 col-md-4 col-lg-3 px-md-3 px-xl-4 px-2 p-1 mb-1 mb-sm-0">
+                        <div class="col-6 col-md-4 col-lg-3 px-md-2 px-xl-4 px-2 p-1 mb-1 mb-sm-0 col-set">
                             <div class="card border-0 p-1 p-sm-2 h-100">
                                 <div class="d-flex h-100 align-items-center hover-class">
                                     <div class="flex-grow-1">
@@ -508,7 +522,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 col-md-4 col-lg-3 px-md-3 px-xl-4 px-2 p-1 mb-1 mb-sm-0">
+                        <div class="col-6 col-md-4 col-lg-3 px-md-2 px-xl-4 px-2 p-1 mb-1 mb-sm-0 col-set">
                             <div class="card border-0 p-1 p-sm-2 h-100">
                                 <div class="d-flex h-100 align-items-center hover-class">
                                     <div class="flex-grow-1">
@@ -524,7 +538,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 col-md-4 col-lg-3 px-md-3 px-xl-4 px-2 p-1 mb-1 mb-sm-0">
+                        <div class="col-6 col-md-4 col-lg-3 px-md-2 px-xl-4 px-2 p-1 mb-1 mb-sm-0 col-set">
                             <div class="card border-0 p-1 p-sm-2 h-100">
                                 <div class="d-flex h-100 align-items-center hover-class">
                                     <div class="flex-grow-1">
@@ -542,7 +556,7 @@
                         </div>
                     </div>
                     <!-- Wel-Come img -->
-                    <div class="d-flex justify-content-center mt-5 my-md-auto" >
+                    <div class="d-flex justify-content-center mx-1 mt-5 my-md-auto">
                         <img src="assets/images/welcome.png" style="width: 100%; max-width: 50rem;" alt="">
                     </div>
                 </div>
@@ -554,74 +568,109 @@
                     tabindex="0">
                     Result</div>
                 <!-- Contact Admin -->
-                <div class="tab-pane fade pe-2 contact-admin p-md-4 p-lg-5 show active" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
-                    tabindex="0">
-                    <img src="assets/images/contactdminBg.jpg" alt="" class="img-thumbnail border-0" srcset="">
-                    <h4 class="text-md-center text-gray ff-roboto mt-md-4" >Connect with Admin</h4>
-                    <div class="mt-md-4 flex-wrap-reverse row m-0 row-cols-1 row-cols-md-2 mt-2" >
+                <div class="tab-pane fade pe-2 contact-admin p-md-4 p-lg-5 show active" id="v-pills-messages"
+                    role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">
+                    <img src="assets/images/contactdminBg.jpg" alt="" class="img-thumbnail border-0" style="max-height: 15rem; object-fit: cover;
+                    border-radius: 1rem;" srcset="">
+                    <h4 class="text-md-center text-gray ff-roboto mt-2 mt-md-4">Connect with Admin</h4>
+                    <div class="mt-md-4 flex-wrap-reverse row m-0 row-cols-1 row-cols-md-2 mt-2">
                         <!-- Send Massage -->
                         <div class="col p-0">
                             <div>
-                                <h4 class="mb-2 mb-md-4 text-uppercase d-flex align-items-center text-nowrap gap-3">Send a message <p
-                                    class="bg-dark m-0 heading_line" style="max-width: 70px; height: 2px;"></p>
+                                <h4 class="mb-2 mb-md-4 text-uppercase d-flex align-items-center ff-roboto text-nowrap gap-3"
+                                    style="letter-spacing: 2px;">Send a message <p class="bg-dark m-0 heading_line"
+                                        style="max-width: 70px; height: 2px;"></p>
                             </div>
-                            <p class="ff-roboto" style="line-height: inherit;" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique</p>
+                            <p class="ff-roboto" style="line-height: inherit;">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Suspendisse varius enim in eros elementum tristique</p>
                             <form class="" action="">
                                 <div class="d-flex row row-gap-4 justify-content-start">
-                                    <div class="px-0 col-md-6 pe-md-4" >
+                                    <div class="px-0 col-md-6 pe-md-4">
                                         <div class="form-group">
-                                            <input type="text" placeholder="Full Name" required style="line-height: normal;"
-                                                onkeydown="return /[a-z]/i.test(event.key)"
-                                                class="form-control form-control-sm border-0 bg-white">
+                                            <input type="text" placeholder="Full Name" required
+                                                style="line-height: normal;" onkeydown="return /[a-z]/i.test(event.key)"
+                                                class="form-control form-control-sm ff-roboto border-0 bg-white">
                                         </div>
                                     </div>
                                     <div class="px-0 col-md-6 ps-md-4">
                                         <div class="form-group">
-                                            <input type="text" placeholder="Mobile no." required style="line-height: normal;"
+                                            <input type="text" placeholder="Mobile no." required
+                                                style="line-height: normal;"
                                                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
                                                 minlength="10" maxlength="10"
-                                                class="form-control form-control-sm border-0 bg-white">
+                                                class="form-control form-control-sm ff-roboto border-0 bg-white">
                                         </div>
                                     </div>
                                     <div class="px-0">
                                         <div class="form-group">
                                             <textarea type="text" placeholder="Address" pattern=".+@gmail\.(com|in)"
-                                                class="form-control form-control-sm border-0 bg-white"></textarea>
+                                                class="form-control form-control-sm ff-roboto border-0 bg-white"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex px-0">
-                                        <div class="bg-gradient" style="padding : 0.05em; border-radius: 9px;" >
+                                        <div class="bg-gradient" style="padding : 0.05em; border-radius: 9px;">
                                             <button type="submit"
-                                            class="btn rounded-2 py-2 py-md-3 mx-auto px-5 fw-semibold"
-                                            style="font-size: clamp(12px,3vw,14px);">Submit</button>
+                                                class="btn rounded-2 py-2 py-md-3 mx-auto px-5 fw-semibold"
+                                                style="font-size: clamp(12px,3vw,14px);">Submit</button>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
                         <!-- Contact details -->
-                        <div class="col p-0">
-                            <div class="card">
-                                <i class="fa-regular fa-envelope"></i>
-                                <span>Support@ngo.com</span>
+                        <div class="col p-0 mb-3 position-relative overflow-hidden">
+                            <!-- details -->
+                            <div
+                                class="row admin-contact h-auto align-content-center mt-md-5 row-gap-2 mb-3 row-gap-md-4 justify-content-evenly m-0 p-0 text-light-black">
+                                <div
+                                    class="card col-5 d-flex flex-nowrap flex-row hover-class  rounded-pill gap-1 gap-sm-2 gap-lg-3 align-items-center justify-content-center p-2 p-md-3 border-0 card-shadow">
+                                    <i class="fa-regular fa-envelope"></i>
+                                    <a href="" class="ff-roboto">support@ngo.com</a>
+                                </div>
+                                <div
+                                    class="card col-5 d-flex flex-nowrap flex-row hover-class  rounded-pill gap-1 gap-sm-2 gap-lg-3 align-items-center justify-content-center p-2 p-md-3 border-0 card-shadow">
+                                    <i class="fa-regular fa-envelope"></i>
+                                    <a href="" class="ff-roboto">info@ngo.com</a>
+                                </div>
+                                <div
+                                    class="card col-5 d-flex flex-nowrap flex-row hover-class  rounded-pill gap-1 gap-sm-2 gap-lg-3 align-items-center justify-content-center p-2 p-md-3 border-0 card-shadow">
+                                    <span class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="17" viewBox="0 0 16 20"
+                                            fill="none">
+                                            <path
+                                                d="M4.76835 0.192052C5.79885 0.0500522 6.66535 0.680552 7.07535 1.50005L8.08385 3.51655C8.64335 4.63555 8.32185 5.94855 7.47385 6.77455C6.97285 7.26205 6.46935 7.81905 6.17735 8.31055C6.15801 8.34558 6.15197 8.38642 6.16035 8.42555C6.43035 9.88855 7.42185 11.3341 8.30635 12.3706C8.35084 12.42 8.40889 12.4552 8.47327 12.4718C8.53765 12.4884 8.6055 12.4857 8.66835 12.4641L10.6559 11.8431C11.1912 11.6757 11.7661 11.6843 12.2963 11.8675C12.8265 12.0507 13.284 12.3989 13.6018 12.8611L15.0404 14.9536C15.4304 15.5211 15.6279 16.2911 15.3289 17.0316C15.0619 17.6931 14.5453 18.6471 13.6058 19.2816C12.6308 19.9396 11.2953 20.1896 9.54785 19.5906C7.59535 18.9206 5.75085 17.2406 4.22135 15.0921C2.68285 12.9301 1.41635 10.2296 0.64835 7.41355C-0.07765 4.75505 0.36035 2.96505 1.39135 1.81255C2.38585 0.700552 3.81085 0.323552 4.76835 0.192052ZM5.95685 2.05905C5.72835 1.60255 5.32085 1.37705 4.93835 1.42955C4.08785 1.54655 3.02285 1.86305 2.32335 2.64555C1.66035 3.38705 1.20135 4.69305 1.85335 7.08455C2.58585 9.76855 3.79185 12.3336 5.23935 14.3671C6.69585 16.4136 8.35085 17.8586 9.95285 18.4081C11.3804 18.8976 12.2979 18.6556 12.9059 18.2456C13.5489 17.8111 13.9444 17.1206 14.1694 16.5636C14.2724 16.3086 14.2279 15.9786 14.0099 15.6616L12.5713 13.5696C12.4049 13.3274 12.1653 13.145 11.8876 13.049C11.6099 12.953 11.3088 12.9485 11.0283 13.0361L9.04085 13.6571C8.44685 13.8426 7.77785 13.6771 7.35535 13.1821C6.43485 12.1036 5.26185 10.4496 4.93035 8.65205C4.86698 8.31518 4.92811 7.96675 5.10235 7.67155C5.48135 7.03455 6.08135 6.38505 6.60085 5.87905C7.10835 5.38505 7.25235 4.65005 6.96535 4.07555L5.95685 2.05905Z"
+                                                fill="#444444" />
+                                        </svg>
+                                    </span>
+                                    <a href="tel:" class="text-light-black ff-roboto">+91 98879 78979</a>
+                                </div>
+                                <div
+                                    class="card col-5 d-flex flex-nowrap flex-row hover-class  rounded-pill gap-1 gap-sm-2 gap-lg-3 align-items-center justify-content-center p-2 p-md-3 border-0 card-shadow">
+                                    <span class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="17" viewBox="0 0 16 20"
+                                            fill="none">
+                                            <path
+                                                d="M4.76835 0.192052C5.79885 0.0500522 6.66535 0.680552 7.07535 1.50005L8.08385 3.51655C8.64335 4.63555 8.32185 5.94855 7.47385 6.77455C6.97285 7.26205 6.46935 7.81905 6.17735 8.31055C6.15801 8.34558 6.15197 8.38642 6.16035 8.42555C6.43035 9.88855 7.42185 11.3341 8.30635 12.3706C8.35084 12.42 8.40889 12.4552 8.47327 12.4718C8.53765 12.4884 8.6055 12.4857 8.66835 12.4641L10.6559 11.8431C11.1912 11.6757 11.7661 11.6843 12.2963 11.8675C12.8265 12.0507 13.284 12.3989 13.6018 12.8611L15.0404 14.9536C15.4304 15.5211 15.6279 16.2911 15.3289 17.0316C15.0619 17.6931 14.5453 18.6471 13.6058 19.2816C12.6308 19.9396 11.2953 20.1896 9.54785 19.5906C7.59535 18.9206 5.75085 17.2406 4.22135 15.0921C2.68285 12.9301 1.41635 10.2296 0.64835 7.41355C-0.07765 4.75505 0.36035 2.96505 1.39135 1.81255C2.38585 0.700552 3.81085 0.323552 4.76835 0.192052ZM5.95685 2.05905C5.72835 1.60255 5.32085 1.37705 4.93835 1.42955C4.08785 1.54655 3.02285 1.86305 2.32335 2.64555C1.66035 3.38705 1.20135 4.69305 1.85335 7.08455C2.58585 9.76855 3.79185 12.3336 5.23935 14.3671C6.69585 16.4136 8.35085 17.8586 9.95285 18.4081C11.3804 18.8976 12.2979 18.6556 12.9059 18.2456C13.5489 17.8111 13.9444 17.1206 14.1694 16.5636C14.2724 16.3086 14.2279 15.9786 14.0099 15.6616L12.5713 13.5696C12.4049 13.3274 12.1653 13.145 11.8876 13.049C11.6099 12.953 11.3088 12.9485 11.0283 13.0361L9.04085 13.6571C8.44685 13.8426 7.77785 13.6771 7.35535 13.1821C6.43485 12.1036 5.26185 10.4496 4.93035 8.65205C4.86698 8.31518 4.92811 7.96675 5.10235 7.67155C5.48135 7.03455 6.08135 6.38505 6.60085 5.87905C7.10835 5.38505 7.25235 4.65005 6.96535 4.07555L5.95685 2.05905Z"
+                                                fill="#444444" />
+                                        </svg>
+                                    </span>
+                                    <a href="tel:" class="text-light-black ff-roboto">+91 98879 78979</a>
+                                </div>
                             </div>
-                            <div class="card">
-                                <i class="fa-regular fa-envelope"></i>
-                                <span>Info@ngo.com</span>
-                            </div>
-                            <div class="card">
-                                <i class="fa-regular fa-phone"></i>
-                                <span>Info@ngo.com</span>
+                            <!-- img -->
+                            <div class="d-flex justify-content-center justify-content-md-end">
+                                <img src="assets/images/bookPen.png" alt="" class="admin-book" srcset="">
                             </div>
                         </div>
-                    </h4>
+                        </h4>
                     </div>
                 </div>
                 <!-- Profile -->
                 <div class="tab-pane fade h-100" id="v-pills-settings" role="tabpanel"
                     aria-labelledby="v-pills-settings-tab" tabindex="0">
                     <!-- Profile detail page -->
-                    <div class="row m-0 p-0 p-sm-2 p-md-4 bg-md-light h-100 profile-detail row-gap-4" style="min-height: 90vh;">
+                    <div class="row m-0 p-0 p-sm-2 p-md-4 bg-md-light h-100 profile-detail row-gap-4"
+                        style="min-height: 90vh;">
                         <!-- User Data -->
                         <div class="col-md-5 pt-3">
                             <div class="bg-gradient rounded-2 h-100" style="padding: 0.05em;">
@@ -719,7 +768,8 @@
                                 style="font-size: clamp(10px,3vw,14px); line-height: normal; padding: clamp() ;">Edit
                                 Profile</button>
                             <button type="submit" class="btn rounded-pill  fw-semibold btn-secondary"
-                                style="font-size: clamp(10px,3vw,14px); line-height: normal; padding: clamp() ;">View Admit Card</button>
+                                style="font-size: clamp(10px,3vw,14px); line-height: normal; padding: clamp() ;">View
+                                Admit Card</button>
                         </div>
                     </div>
                     <!-- profile Edit page  -->
@@ -1072,52 +1122,47 @@
 
 <script>
 
+    const menu_btn = document.querySelector("#menu-btn");
+    const sidebar = document.querySelector("#sidebar");
+    const notification = document.querySelector(".notifications");
+    const notificationGroup = document.querySelector(".notification-group");
+    const container = document.querySelector(".my-container");
+    const mainlogo = document.querySelector("#main-logo");
+    const smalllogo = document.querySelector("#main-logo-small");
+    const tabButtons = document.querySelectorAll(".das-tab-button");
+    const justifyText = document.querySelectorAll(".justify-text");
+    let profileDetails = document.querySelector(".profile-detail");
+    let profileForms = document.querySelector(".profile-form");
+    let profile = document.querySelector("#v-pills-settings-tab");
+    let profileTab = document.querySelector("#v-pills-settings");
+
+    let hogya = true;
+
     document.addEventListener("DOMContentLoaded", function () {
-        const menu_btn = document.querySelector("#menu-btn");
-        const sidebar = document.querySelector("#sidebar");
-        const notification = document.querySelector(".notifications");
-        const notificationGroup = document.querySelector(".notification-group");
-        const container = document.querySelector(".my-container");
-        const mainlogo = document.querySelector("#main-logo");
-        const smalllogo = document.querySelector("#main-logo-small");
-        const tabButtons = document.querySelectorAll(".das-tab-button");
-        const justifyText = document.querySelectorAll(".justify-text");
 
-        let hogya = true;
-
-        // window.addEventListener('resize', function () {
-        //     if (window.innerWidth <= 768) {
-        //         if (hogya) {
-        //             if (mainlogo.classList.contains("d-none")) {
-        //                 console.log("ones")
-        //                 mainlogo.classList.add("d-none");
-        //             }
-        //             if (smalllogo.classList.contains("d-none")) {
-        //                 console.log("two")
-        //                 smalllogo.classList.remove("d-none");
-        //                 mainlogo.classList.add("d-none");
-        //             }
-        //             tabButtons.forEach(tab => {
-        //                 tab.classList.toggle("d-none");
-        //             });
-        //             sidebar.style.marginLeft = "0px";
-        //             container.style.marginLeft = sidebar.offsetWidth + "px";
-        //             justifyText.forEach(text => {
-        //                 text.style.justifyContent = "center";
-        //             });
-        //         }
-        //         hogya = false;
-        //     }
-        // });
+        if (window.innerWidth > 769) {
+            setWidth();
+        }
+        else {
+            if (!mainlogo.classList.contains("d-none")) {
+                menu_btn.classList.remove("d-md-inline-block");
+                console.log("ones")
+                mainlogo.classList.add("d-none");
+                smalllogo.classList.remove("d-none")
+                tabButtons.forEach(tab => {
+                    tab.classList.toggle("d-none");
+                    container.style.marginLeft = sidebar.offsetWidth + 2 + "px";
+                });
+            }
+        }
 
         function setWidth() {
             container.style.marginLeft = sidebar.offsetWidth + "px";
             justifyText.forEach(text => {
-                text.style.justifyContent = "center";
+                text.style.justifyContent = "start";
             });
             let clicked = false;
             menu_btn.style.transition = "transform 0.2s";
-            menu_btn.style.transform = "rotate(180deg)";
 
             menu_btn.addEventListener("click", () => {
                 tabButtons.forEach(tab => {
@@ -1125,6 +1170,16 @@
                 });
 
                 if (clicked) {
+                    if (mainlogo.classList.contains("d-none")) {
+                        mainlogo.classList.remove("d-none");
+                        smalllogo.classList.add("d-none");
+                    }
+                    container.style.marginLeft = sidebar.offsetWidth + "px";
+                    justifyText.forEach(text => {
+                        text.style.justifyContent = "start";
+                    });
+                    menu_btn.style.transform = "rotate(0deg)";
+                } else {
                     if (smalllogo.classList.contains("d-none")) {
                         smalllogo.classList.remove("d-none");
                         mainlogo.classList.add("d-none");
@@ -1135,29 +1190,30 @@
                         text.style.justifyContent = "center";
                     });
                     menu_btn.style.transform = "rotate(180deg)";
-                } else {
-                    if (mainlogo.classList.contains("d-none")) {
-                        mainlogo.classList.remove("d-none");
-                        smalllogo.classList.add("d-none");
-                    }
-                    container.style.marginLeft = sidebar.offsetWidth + "px";
-                    justifyText.forEach(text => {
-                        text.style.justifyContent = "start";
-                    });
-                    menu_btn.style.transform = "rotate(0deg)";
                 }
                 clicked = !clicked;
             });
         }
-        setWidth();
-    });
-    // window.addEventListener("resize", setWidth);
 
-    var profileDetails = document.querySelector(".profile-detail");
-    var profileForms = document.querySelector(".profile-form");
+    });
+
+    window.addEventListener("resize", setWidth);
+
     function goToEditProfile() {
-        profileDetails.classList.toggle("d-none");
-        profileForms.classList.toggle("d-none");
+
+        if(!profile.classList.contains("active"))
+        {
+            profile.classList.add("active");
+            profileTab.classList.add("show");
+            profileTab.classList.add("active");
+            profileDetails.classList.toggle("d-none");
+            profileForms.classList.toggle("d-none");
+        }
+        else{
+            console.log(profileDetails , profileForms);
+            profileDetails.classList.toggle("d-none");
+            profileForms.classList.toggle("d-none");
+        }
     }
     function goToProfile() {
         if (profileDetails.classList.contains("d-none")) {
@@ -1165,6 +1221,7 @@
             profileForms.classList.toggle("d-none");
         }
     }
+
 </script>
 
 
