@@ -115,7 +115,8 @@
                 justify-content: center;
                 align-items: center;
                 display: flex;
-                padding: 8px 10px;
+                padding: 5px 10px;
+                line-height: normal;
                 justify-content: center;
                 align-items: center
             }
@@ -126,7 +127,7 @@
 
             .nav-pills .btn svg {
                 margin: 0 !important;
-                font-size: 15px
+                font-size: 13px
             }
 
             .notification-group {
@@ -139,14 +140,6 @@
         #sidebar {
             max-height: 100vh;
             z-index: 2;
-        }
-
-        #sidebar .nav {
-            border-right: 2px solid #b8b8b8 !important
-        }
-
-        section .navbar {
-            border-bottom: 1px solid #b8b8b853 !important
         }
 
         #menu-btn {
@@ -271,6 +264,14 @@
             .notification-modal .modal-dialog {
                 max-width: 25rem;
             }
+
+            /* #sidebar {
+                border-right: 2px solid #b8b8b8 !important
+            }
+
+            section .navbar {
+                border-bottom: 1px solid #b8b8b853 !important
+            } */
         }
 
         @media (max-width: 576px) {
@@ -287,6 +288,18 @@
             .logIn-modal .modal-dialog {
                 max-width: 15rem;
             }
+
+            .bg-light-red svg,
+            .bg-light-blue svg {
+                font-size: 10px;
+            }
+            .contact-admin .form-group input, .contact-admin .form-group textarea{
+            padding: 0.8rem 1rem !important;
+        }
+
+            .dashboard .card {
+                box-shadow: 0px 0.6188362240791321px 2.4753448963165283px 0px #00000040 !important;
+            }
         }
 
         @media (min-width: 576px) {
@@ -294,21 +307,80 @@
                 margin-right: 2rem !important;
                 margin-top: 7vh !important;
             }
+            main .tab-content
+        {
+            box-shadow:inset 1px 0.5px 0.2px 0px #B8B8B8 !important;
+            margin: 1px 0 0 2px;
+        }
 
             .logIn-modal .modal-dialog {
                 max-width: 15rem;
             }
 
+            .bg-light-red,
+            .bg-light-blue {
+                padding: 8px 9px !important;
+                border-radius: 10px !important;
+            }
+
             .logIn-modal .modal-dialog {
                 box-shadow: 0px 4px 38px 0px #00000040 !important;
             }
-        }
 
-        .dashboard .card
-        {
+            .bg-md-light {
+                background: rgba(var(--bs-light-rgb), var(--bs-bg-opacity));
+                box-shadow:inset 1px 0.1px 0.2px 0px #B8B8B8 !important;
+            }
+            
+        }
+        .dashboard .card {
             box-shadow: 0px 1px 4px 0px #00000040;
+            border-radius: clamp(5px, 2vw, 8px);
         }
 
+        .text-dashboard-gray {
+            color: #777980;
+        }
+        .bg-md-light {
+                background: #FCFCFC;
+            }
+
+        .bg-light-red {
+            background-color: #FFF0EA;
+        }
+
+        .bg-light-blue {
+            background-color: #EAEBFF;
+        }
+
+        main .tab-content
+        {
+            /* box-shadow:inset 1px 0.1px 0.2px 0px #B8B8B8 !important; */
+            /* margin: 1px 0 0 2px; */
+        }
+        .bg-light-red,
+        .bg-light-blue {
+            padding: 6px;
+            border-radius: 4px;
+        }
+
+        .bg-light-red svg {
+            color: #E24C42;
+        }
+
+        .bg-light-blue svg {
+            color: #0038A3;
+        }
+        main .tab-content>.active {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-admin .form-group input, .contact-admin .form-group textarea{
+            padding: 1rem;
+        }
+        .contact-admin .form-group input::placeholder, .contact-admin .form-group textarea::placeholder{
+            font-size: clamp(10px,1vw,14px,) !important;
+        }
         .fa-pen:hover,
         .notifications:hover *,
         .log-in:hover * {
@@ -324,19 +396,19 @@
     <section class=" m-0 p-0 position-relative d-flex" style="min-height: 100vh;">
         <!-- Side-Nav -->
         <aside class="side-navbar bg-white active-nav" id="sidebar">
-            <a href="index.html" class="mt-2 p-2 px-md-3 d-block">
-                <img src="assets/images/main-logo.png" alt="main-logo" id="main-logo" class="logo d-none"
-                    style="max-height: 2rem; object-fit: contain;">
-                <img src="assets/images/main-logo-small.png" alt="main-logo-small" id="main-logo-small" class=""
-                    style="max-height: 2rem; object-fit: contain;">
-            </a>
             <a class="btn d-none bg-light rounded-2 d-md-inline-block w-auto border-0 p-2" id="menu-btn"> <img
                     src="assets/images/toggle-icon.png" class="menu-btn-img"
                     style="aspect-ratio: 1/1;  max-height: 1.2rem;" alt="" srcset=""> </a>
-            <ul class="nav flex-column gap-1 nav-pills mt-2 mt-md-3 px-2 flex-nowrap h-100 overflow-auto"
+            <a href="index.html" class="my-md-3 my-2 mb-2 p-2 px-md-3 d-block">
+                <img src="assets/images/main-logo.png" alt="main-logo" id="main-logo" class="logo d-none"
+                    style="max-height: 2rem; object-fit: contain;">
+                <img src="assets/images/main-logo-small.png" alt="main-logo-small" id="main-logo-small" class=""
+                    style="max-width: 2rem; object-fit: contain;">
+            </a>
+            <ul class="nav flex-column gap-1 nav-pills pt-md-4 px-2 pe-sm-2 flex-nowrap h-100 overflow-auto"
                 id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <li>
-                    <button class="nav-link d-flex justify-text gap-2 btn active" id="v-pills-Dashboard-tab"
+                    <button class="nav-link d-flex justify-text gap-2 btn" id="v-pills-Dashboard-tab"
                         data-bs-toggle="pill" data-bs-target="#v-pills-Dashboard" type="button" role="tab"
                         aria-controls="v-pills-Dashboard" aria-selected="true"> <span class="p-0"><i
                                 class="fa-solid fa-house"></i> </span> <span class="p-0 d-none das-tab-button">Dashboard
@@ -345,7 +417,7 @@
                 <li>
                     <button class="nav-link d-flex justify-text gap-2 btn " id="v-pills-exam-tab" data-bs-toggle="pill"
                         data-bs-target="#v-pills-exam" type="button" role="tab" aria-controls="v-pills-exam"
-                        aria-selected="false"><span class="p-0"><i class="fa-solid fa-clipboard"></i></i> </span>
+                        aria-selected="false"><span class="p-0"><i class="fa-solid fa-clipboard"></i></span>
                         <span class="p-0 d-none das-tab-button">My Exam</span></button>
                 </li>
                 <li>
@@ -356,7 +428,7 @@
                         <span class="p-0 d-none das-tab-button">Result</span></button>
                 </li>
                 <li>
-                    <button class="nav-link d-flex justify-text gap-2 btn" id="v-pills-messages-tab"
+                    <button class="nav-link d-flex justify-text gap-2 btn active" id="v-pills-messages-tab"
                         data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab"
                         aria-controls="v-pills-messages" aria-selected="false"> <span class="p-0"><i
                                 class="fa-solid fa-user-tie"></i> </span> <span
@@ -374,11 +446,11 @@
         </aside>
 
         <!-- Main Wrapper -->
-        <main class="my-container bg-white w-100 active-cont">
+        <main class="my-container bg-white w-100 z-2 active-cont">
             <!-- Top Nav -->
             <nav class="navbar position-sticky z-1 top-0 top-navbar p-2 p-md-3 bg-white navbar-light">
                 <div class="ms-auto d-flex align-items-center gap-3 gap-md-4 text-gray">
-                    <span class="hover-class d-none d-md-inline">
+                    <span class="d-none d-md-inline">
                         <i class="fa-solid fa-calendar-days"></i>
                         <small class="ps-1">Monday, 11th March</small>
                     </span>
@@ -389,9 +461,9 @@
                     </span>
                     <div class="hover-class log-in d-grid align-items-center text-end" data-bs-toggle="modal"
                         data-bs-target="#logInModal">
-                        <small class="ps-1">Ritesh Chouhan</small>
+                        <small class="ps-1" style="font-size: clamp(11px,3vw,14px) !important;" >Pawan Kumar</small>
                         <img src="assets/images/main-logo-small.png" style="max-height: 2rem;" alt="">
-                        <small class="ps-1 fs-7">ritesan8871@gmail.com</small>
+                        <small class="ps-1" style="font-size: clamp(8px,3vw,10px) !important;" >pawankrtest07@gmail.com</small>
                     </div>
                 </div>
             </nav>
@@ -400,53 +472,78 @@
             <!-- TabContant Contant -->
             <div class="tab-content overflow-auto" id="v-pills-tabContent" style="min-height: 90vh;">
                 <!-- Dashboard -->
-                <div class="tab-pane dashboard fade show active" id="v-pills-Dashboard" role="tabpanel"
+                <div class="tab-pane h-100 dashboard fade" id="v-pills-Dashboard" style="min-height: 90vh;" role="tabpanel"
                     aria-labelledby="v-pills-Dashboard-tab" tabindex="0">
-                    <div class="row m-0 p-3 p-md-5">
-                        <div class="col-md-4 col-lg-3 p-2">
-                            <div class="card border-0 p-2">
-                                <div class="d-flex  hover-class">
-                                    <div class="flex-grow-1" >
-                                        <small class="ps-1 text-start">ritesan8871@gmail.com</small>
-                                        <h4 class="ps-1 text-start">Ritesh Chouhan</h4>
+                    <!-- details tab -->
+                    <div class="row m-0 ps-0 p-1 p-sm-3 p-md-4 justify-content-center row-gap-sm-2 row-gap-md-4 p-lg-5">
+                        <div class="col-6 col-md-4 col-lg-3 px-md-3 px-xl-4 px-2 p-1 mb-1 mb-sm-0">
+                            <div class="card border-0 p-1 p-sm-2 h-100">
+                                <div class="d-flex h-100 align-items-center hover-class">
+                                    <div class="flex-grow-1">
+                                        <p class="mb-1 mb-sm-2"
+                                            style="font-size:clamp(7px,2.7vw,14px)!important; line-height: normal !important;"
+                                            class="text-dashboard-gray d-block mt-1 mb-2 ">Total Exam</p>
+                                        <h4 style="font-size: clamp(14px,4vw,25px);" class="mb-0 mb-sm-2">20</h4>
                                     </div>
-                                    <img src="assets/images/main-logo-small.png" style="width: auto ;max-height: 3rem;" alt="">
+                                    <!-- <img src="assets/images/main-logo-small.png" style="width: auto ;max-height: 3rem;" alt=""> -->
+                                    <span class="bg-light-red d-flex">
+                                        <i class="fa-solid fa-clipboard"></i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-lg-3 p-2">
-                            <div class="card border-0 p-2">
-                                <div class="d-flex  hover-class">
-                                    <div class="flex-grow-1" >
-                                        <small class="ps-1 text-start">ritesan8871@gmail.com</small>
-                                        <h4 class="ps-1 text-start">Ritesh Chouhan</h4>
+                        <div class="col-6 col-md-4 col-lg-3 px-md-3 px-xl-4 px-2 p-1 mb-1 mb-sm-0">
+                            <div class="card border-0 p-1 p-sm-2 h-100">
+                                <div class="d-flex h-100 align-items-center hover-class">
+                                    <div class="flex-grow-1">
+                                        <p class="mb-1 mb-sm-2"
+                                            style="font-size:clamp(7px,2.7vw,14px)!important; line-height: normal !important;"
+                                            class="text-dashboard-gray d-block mt-1 mb-2 ">Student ID</p>
+                                        <h4 style="font-size: clamp(14px,4vw,25px);" class="mb-0 mb-sm-2">#8797333</h4>
                                     </div>
-                                    <img src="assets/images/main-logo-small.png" style="width: auto ;max-height: 3rem;" alt="">
+                                    <!-- <img src="assets/images/main-logo-small.png" style="width: auto ;max-height: 3rem;" alt=""> -->
+                                    <span class="bg-light-blue d-flex">
+                                        <i class="fa-solid fa-user"></i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-lg-3 p-2">
-                            <div class="card border-0 p-2">
-                                <div class="d-flex  hover-class">
-                                    <div class="flex-grow-1" >
-                                        <small class="ps-1 text-start">ritesan8871@gmail.com</small>
-                                        <h4 class="ps-1 text-start">Ritesh Chouhan</h4>
+                        <div class="col-6 col-md-4 col-lg-3 px-md-3 px-xl-4 px-2 p-1 mb-1 mb-sm-0">
+                            <div class="card border-0 p-1 p-sm-2 h-100">
+                                <div class="d-flex h-100 align-items-center hover-class">
+                                    <div class="flex-grow-1">
+                                        <p class="mb-1 mb-sm-2"
+                                            style="font-size:clamp(7px,2.7vw,14px)!important; line-height: normal !important;"
+                                            class="text-dashboard-gray d-block mt-1 mb-2 ">Passed</p>
+                                        <h4 style="font-size: clamp(14px,4vw,25px);" class="mb-0 mb-sm-2">12</h4>
                                     </div>
-                                    <img src="assets/images/main-logo-small.png" style="width: auto ;max-height: 3rem;" alt="">
+                                    <!-- <img src="assets/images/main-logo-small.png" style="width: auto ;max-height: 3rem;" alt=""> -->
+                                    <span class="bg-light-red d-flex">
+                                        <i class="fa-solid fa-clipboard"></i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-lg-3 p-2">
-                            <div class="card border-0 p-2">
-                                <div class="d-flex  hover-class">
-                                    <div class="flex-grow-1" >
-                                        <small class="ps-1 text-start">ritesan8871@gmail.com</small>
-                                        <h4 class="ps-1 text-start">Ritesh Chouhan</h4>
+                        <div class="col-6 col-md-4 col-lg-3 px-md-3 px-xl-4 px-2 p-1 mb-1 mb-sm-0">
+                            <div class="card border-0 p-1 p-sm-2 h-100">
+                                <div class="d-flex h-100 align-items-center hover-class">
+                                    <div class="flex-grow-1">
+                                        <p class="mb-1 mb-sm-2"
+                                            style="font-size:clamp(7px,2.7vw,14px)!important; line-height: normal !important;"
+                                            class="text-dashboard-gray d-block mt-1 mb-2 ">Joined Scholarship</p>
+                                        <h4 style="font-size: clamp(14px,4vw,25px);" class="mb-0 mb-sm-2">14</h4>
                                     </div>
-                                    <img src="assets/images/main-logo-small.png" style="width: auto ;max-height: 3rem;" alt="">
+                                    <!-- <img src="assets/images/main-logo-small.png" style="width: auto ;max-height: 3rem;" alt=""> -->
+                                    <span class="bg-light-red d-flex">
+                                        <i class="fa-solid fa-clipboard"></i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <!-- Wel-Come img -->
+                    <div class="d-flex justify-content-center mt-5 my-md-auto" >
+                        <img src="assets/images/welcome.png" style="width: 100%; max-width: 50rem;" alt="">
                     </div>
                 </div>
                 <!-- My Exam -->
@@ -457,13 +554,74 @@
                     tabindex="0">
                     Result</div>
                 <!-- Contact Admin -->
-                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
-                    tabindex="0">Contant Admin</div>
+                <div class="tab-pane fade pe-2 contact-admin p-md-4 p-lg-5 show active" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
+                    tabindex="0">
+                    <img src="assets/images/contactdminBg.jpg" alt="" class="img-thumbnail border-0" srcset="">
+                    <h4 class="text-md-center text-gray ff-roboto mt-md-4" >Connect with Admin</h4>
+                    <div class="mt-md-4 flex-wrap-reverse row m-0 row-cols-1 row-cols-md-2 mt-2" >
+                        <!-- Send Massage -->
+                        <div class="col p-0">
+                            <div>
+                                <h4 class="mb-2 mb-md-4 text-uppercase d-flex align-items-center text-nowrap gap-3">Send a message <p
+                                    class="bg-dark m-0 heading_line" style="max-width: 70px; height: 2px;"></p>
+                            </div>
+                            <p class="ff-roboto" style="line-height: inherit;" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique</p>
+                            <form class="" action="">
+                                <div class="d-flex row row-gap-4 justify-content-start">
+                                    <div class="px-0 col-md-6 pe-md-4" >
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Full Name" required style="line-height: normal;"
+                                                onkeydown="return /[a-z]/i.test(event.key)"
+                                                class="form-control form-control-sm border-0 bg-white">
+                                        </div>
+                                    </div>
+                                    <div class="px-0 col-md-6 ps-md-4">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Mobile no." required style="line-height: normal;"
+                                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
+                                                minlength="10" maxlength="10"
+                                                class="form-control form-control-sm border-0 bg-white">
+                                        </div>
+                                    </div>
+                                    <div class="px-0">
+                                        <div class="form-group">
+                                            <textarea type="text" placeholder="Address" pattern=".+@gmail\.(com|in)"
+                                                class="form-control form-control-sm border-0 bg-white"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 d-flex px-0">
+                                        <div class="bg-gradient" style="padding : 0.05em; border-radius: 9px;" >
+                                            <button type="submit"
+                                            class="btn rounded-2 py-2 py-md-3 mx-auto px-5 fw-semibold"
+                                            style="font-size: clamp(12px,3vw,14px);">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Contact details -->
+                        <div class="col p-0">
+                            <div class="card">
+                                <i class="fa-regular fa-envelope"></i>
+                                <span>Support@ngo.com</span>
+                            </div>
+                            <div class="card">
+                                <i class="fa-regular fa-envelope"></i>
+                                <span>Info@ngo.com</span>
+                            </div>
+                            <div class="card">
+                                <i class="fa-regular fa-phone"></i>
+                                <span>Info@ngo.com</span>
+                            </div>
+                        </div>
+                    </h4>
+                    </div>
+                </div>
                 <!-- Profile -->
                 <div class="tab-pane fade h-100" id="v-pills-settings" role="tabpanel"
                     aria-labelledby="v-pills-settings-tab" tabindex="0">
                     <!-- Profile detail page -->
-                    <div class="row m-0 p-2 p-md-4 bg-light h-100 profile-detail row-gap-4" style="min-height: 90vh;">
+                    <div class="row m-0 p-0 p-sm-2 p-md-4 bg-md-light h-100 profile-detail row-gap-4" style="min-height: 90vh;">
                         <!-- User Data -->
                         <div class="col-md-5 pt-3">
                             <div class="bg-gradient rounded-2 h-100" style="padding: 0.05em;">
@@ -554,13 +712,14 @@
                             </div>
                         </div>
                         <!-- btns -->
-                        <div class="gap-2 d-flex flex-wrap justify-content-center justify-content-sm-end"
+                        <div class="gap-2 mb-3 d-flex flex-wrap justify-content-center justify-content-sm-end"
                             style="height: fit-content;">
                             <button type="submit" class="btn rounded-pill edit-profile-btn fw-semibold btn-secondary"
-                                onclick="goToEditProfile()" style="font-size: clamp(10px,3vw,14px);">Edit
+                                onclick="goToEditProfile()"
+                                style="font-size: clamp(10px,3vw,14px); line-height: normal; padding: clamp() ;">Edit
                                 Profile</button>
                             <button type="submit" class="btn rounded-pill  fw-semibold btn-secondary"
-                                style="font-size: clamp(10px,3vw,14px);">View Admit Card</button>
+                                style="font-size: clamp(10px,3vw,14px); line-height: normal; padding: clamp() ;">View Admit Card</button>
                         </div>
                     </div>
                     <!-- profile Edit page  -->
@@ -870,9 +1029,10 @@
                             <img src="assets/images/main-logo-small.png" style="max-height: 2rem;" alt="">
                             <small class="ps-1 fs-7">ritesan8871@gmail.com</small>
                         </div>
-                        <button class="btn nav-link mt-3 w-100 rounded-pill fw-semibold btn-secondary btn-block" id="v-pills-settings-tab"
-                        data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab"
-                        onclick="goToProfile()" aria-controls="v-pills-settings" aria-selected="false"
+                        <button class="btn nav-link mt-3 w-100 rounded-pill fw-semibold btn-secondary btn-block"
+                            id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
+                            type="button" role="tab" onclick="goToEditProfile()" onclick="goToProfile()"
+                            aria-controls="v-pills-settings" aria-selected="false"
                             style="font-size: 13px; padding : 12px 0"> <img src="assets/images/log-out.png"
                                 alt="log-out" style="max-width: 1.2rem; aspect-ratio: 1/1;" srcset=""> Edit
                             Profile</button>
@@ -925,30 +1085,30 @@
 
         let hogya = true;
 
-        window.addEventListener('resize', function () {
-            if (window.innerWidth <= 768) {
-                if (hogya) {
-                    if (mainlogo.classList.contains("d-none")) {
-                        console.log("ones")
-                        mainlogo.classList.add("d-none");
-                    }
-                    if (smalllogo.classList.contains("d-none")) {
-                        console.log("two")
-                        smalllogo.classList.remove("d-none");
-                        mainlogo.classList.add("d-none");
-                    }
-                    tabButtons.forEach(tab => {
-                        tab.classList.toggle("d-none");
-                    });
-                    sidebar.style.marginLeft = "0px";
-                    container.style.marginLeft = sidebar.offsetWidth + "px";
-                    justifyText.forEach(text => {
-                        text.style.justifyContent = "center";
-                    });
-                }
-                hogya = false;
-            }
-        });
+        // window.addEventListener('resize', function () {
+        //     if (window.innerWidth <= 768) {
+        //         if (hogya) {
+        //             if (mainlogo.classList.contains("d-none")) {
+        //                 console.log("ones")
+        //                 mainlogo.classList.add("d-none");
+        //             }
+        //             if (smalllogo.classList.contains("d-none")) {
+        //                 console.log("two")
+        //                 smalllogo.classList.remove("d-none");
+        //                 mainlogo.classList.add("d-none");
+        //             }
+        //             tabButtons.forEach(tab => {
+        //                 tab.classList.toggle("d-none");
+        //             });
+        //             sidebar.style.marginLeft = "0px";
+        //             container.style.marginLeft = sidebar.offsetWidth + "px";
+        //             justifyText.forEach(text => {
+        //                 text.style.justifyContent = "center";
+        //             });
+        //         }
+        //         hogya = false;
+        //     }
+        // });
 
         function setWidth() {
             container.style.marginLeft = sidebar.offsetWidth + "px";
