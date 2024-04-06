@@ -1,5 +1,6 @@
 // Desktop View navbar active class
 $(document).ready(function() {
+  $('.input-switch').attr('disabled', 'disabled');
   $(".navbar-nav > li > a").click(function() {
     $(".navbar-nav > li > a").removeClass("active");
     $(this).addClass("active");

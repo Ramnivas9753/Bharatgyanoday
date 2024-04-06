@@ -33,267 +33,334 @@
 
     <style>
         .form-label-group {
-          position: relative;
-          margin-bottom: 1rem;
-        }
-      
-        .form-label-group label {
-          position: absolute;
-          top: -11px;
-          left: 12px;
-          transition: all 0.2s ease;
-          background-color: white;
-          font-size: 13px;
-          color:  #666666;
+            position: relative;
+            margin-bottom: 1rem;
         }
 
-        #admit h5{
+        .form-label-group label {
+            position: absolute;
+            top: -11px;
+            left: 12px;
+            transition: all 0.2s ease;
+            background-color: white;
+            font-size: 13px;
+            color: #666666;
+        }
+
+        #admit h5 {
             color: #1F64B4;
             font-family: Tiro Devanagari Hindi;
             font-size: 24px;
             font-weight: 500;
             line-height: 31.92px;
             text-align: left;
-
         }
 
-        #admit .form-label-group{
+        #admit .form-label-group {
             border-radius: 8px !important;
         }
 
-        .wid-btn{
+        .wid-btn {
             width: 100px;
 
         }
 
-      </style>
+        .form-control:disabled {
+            background-color: white !important;
+        }
+        
+        .form-control {
+            font-size: 14px;
+        }
+
+        .classname::-webkit-scrollbar{
+           overflow: scroll;
+        }
+        .classname::-webkit-scrollbar{
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
-   <section id="admit">
-    <div class="container py-5">
-        <form action="#">
-            <div class="row">
-                <div class="col-9 mx-auto mb-4 d-block d-lg-none">
-                    <div class="w-100 text-center">
-                     <img src="./assets/images/pawan.png" alt=""  style="height: 200px; width: 200px" id="img-preview">
-                     <!-- <label for="file-input">fghjkl </label> -->
-                     <input accept="image/*" type="file" id="file-input" />
-                         <label for="file-input" class="d-flex justify-content-center align-items-center gap-2 mt-1" style="cursor:pointer; font-size: 14px; color: blue; "><i class="fa-solid fa-pen"></i> Change profile photo</label>
-                         <img src="assets/images/sign.png" alt="" class="border py-2 px-3 mt-2 rounded-1" style="width: 100%; height: 7vh;">
-                    </div>
-                 </div>
-                <div class="col-lg-9 mx-auto border border-2 rounded-1">
-                    <div class="row mt-md-5  d-lg-flex d-none justify-content-between align-items-center--">
-                        <!-- Added align-items-center to vertically center the content -->
-                        <div class="col-2 d-flex justify-content-end  text-center">
-                            <div class="p-2 " style="max-width: 100px;">
-                                <img src="./assets/images/logo-sk.png" alt="" class="" style="max-width: 100%; height: auto;">
-                            </div>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="text-center">
-                                <h4 class="fw-bold fs-3">Bharat Gyan Uday</h4>
-                                <h6 class=" fw-bold fs-5 text-center">(Scheme - A mini Patna. Category - A Public
-                                    sector)</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
-                                    elementum tristique</p>
-                                <h4 class="fw-medium fs-3" style="color: #1F64B4;">Admit Card</h4>
-                            </div>
-                        </div>
-                        <div class="col-2 d-flex justify-content-start ">
-                            <div class="p-2  text-center " style="max-width: 100px;">
-                                <img src="./assets/images/logo-sk.png" alt="" style="max-width: 100%; height: auto;">
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="py-lg-4 py-2">
-                    <div class="row  align-items-center justify-content-between ">
-                        <div class="col-lg-8">
-                            <div class="row py-xxl-3">
-                              <h5 class="mb-4">Candidate detail</h5>
-                            <div class="col-lg-6 px-0 px-lg-3 d-flex flex-column gap-2">
-                                <div class="form-label-group position-relative">
-                                    <input type="text" id="tt1" class="form-control border"  onkeydown="return /[a-z]/i.test(event.key)" placeholder="Name" required />
-                                    <label for="tt1" class="me-2">Candidate Name</label>
-                                    <i class="fa-solid fa-pen position-absolute" style="top: 50%; transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
-                                </div>
-
-                                <style>
-                                    /* Hide the default arrow button */
-input[type="date"]::-webkit-calendar-picker-indicator {
-  display: none;
-}
-
-/* Add custom icon background */
-input[type="date"] {
-  /* background-image: url('calendar-icon.png');  */
-  background-image: url('assets/images/calendar_img.png'); 
-  background-size: 20px; /* Adjust the size of the icon */
-  background-repeat: no-repeat;
-  background-position: right center; /* Adjust the position of the icon */
-  -webkit-appearance: none; /* Remove default styles */
-  appearance: none; /* Remove default styles */
-}
-                                </style>
-                                
-                                  <div class="form-label-group">
-
-                                    <input type="text" onfocus="(this.type = 'date');" onblur="(this.type = 'text');"
-                                    required  placeholder="DOB" value="DOB"
-                                    class="form-control border">
-                                    <label for="tt1" class="me-2">Date of birth</label>
-                                    <i class=" position-absolute" style="top: 50%; transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
-
-
-
-                                  </div>
-                                  <div class="form-label-group">
-                                    <input type="text" id="tt1" class="form-control border" placeholder=" Male" required />
-                                    <label for="tt1" class="me-2">Gender</label>
-                                    <i class="fa-solid fa-caret-down position-absolute" style="top: 50%; transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
-
-                                  </div>
-                            </div>
-                            <div class="col-lg-6 px-lg-3 px-0 d-flex flex-column gap-2">
-                                <div class="form-label-group">
-                                    <input type="text" id="tt1" class="form-control border"   onkeydown="return /[a-z]/i.test(event.key)" placeholder=" Tulsi prasad" required />
-                                    <label for="tt1" class="me-2">Fathers Name</label>
-                                    <i class="fa-solid fa-pen position-absolute" style="top: 50%; transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
-    
-                                  </div>
-                                  <div class="form-label-group">
-                                    <input type="text" id="tt1" class="form-control border" placeholder=" BC-1" required />
-                                    <label for="tt1" class="me-2">Catogory</label>
-                                    <i class="fa-solid fa-caret-down position-absolute" style="top: 50%; transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
-                                    
-                                  </div>
-                                  <div class="form-label-group">
-                                    <input type="text" id="tt1" class="form-control border" placeholder="Mohan Yadav" required />
-                                    <label for="tt1" class="me-2">Signature</label>
-                                    <i class="fa-solid fa-cloud-arrow-up position-absolute" style="top: 50%; rotate: 0deg;  transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
-                                    <i class=""></i>
-                                  </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-3 d-lg-block d-none">
-                           <div class="w-100 ">
-                            <img src="./assets/images/pawan.png" alt=""  style="height: 200px; width: 100%;" id="img-preview">
+    <section id="admit">
+        <div class="container py-5">
+            <form action="#">
+                <div class="row">
+                    <div class="col-9 mx-auto mb-4 d-block d-lg-none">
+                        <div class="w-100 text-center">
+                            <img src="./assets/images/pawan.png" alt="" style="height: 200px; width: 200px"
+                                id="img-preview">
                             <!-- <label for="file-input">fghjkl </label> -->
                             <input accept="image/*" type="file" id="file-input" />
-                                <label for="file-input" class="d-flex justify-content-center align-items-center gap-2 mt-1" style="cursor:pointer; font-size: 14px; color: blue; "><i class="fa-solid fa-pen"></i> Change profile photo</label>
-                                <img src="assets/images/sign.png" alt="" class="border py-2 px-3 mt-2 rounded-1" style="width: 100%; height: 7vh;">
-                           </div>
+                            <label for="file-input" class="d-flex justify-content-center align-items-center gap-2 mt-1"
+                                style="cursor:pointer; font-size: 14px; color: blue; "><i class="fa-solid fa-pen"></i>
+                                Change profile photo</label>
+                            <img src="assets/images/sign.png" alt="" class="border py-2 px-3 mt-2 rounded-1"
+                                style="width: 100%; height: 7vh;">
                         </div>
                     </div>
-                
-                    <div class="row px-lg-3">
-                        <h5 class="mb-4">Center Detail</h5>
-                        <div class="col-lg-4 py-3 d-flex flex-column gap-3">
-                            <div class="form-label-group">
-                                <input type="text" id="tt1" class="form-control border"   onkeydown="return /[a-z]/i.test(event.key)" placeholder="Satya kabir" required />
-                                <label for="tt1" class="me-2">Center Name</label>
-                              </div>
-                              <div class="form-label-group">
-                                <input type="text" id="tt1" class="form-control border" placeholder=" 212"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');" required />
-                                <label for="tt1" class="me-2">Center code</label>
-                              </div>
-                        </div>
-                        <div class="col-lg-4 py-3 d-flex flex-column gap-3">
-                            <div class="form-label-group">
-                                <input type="text" id="tt1" class="form-control border" placeholder=" JH4545454545" required />
-                                <label for="tt1" class="me-2">Application No</label>
-                              </div>
-                              <div class="form-label-group">
-                                <input type="text" id="tt1" class="form-control border" placeholder=" 21 March 2024" required />
-                                <label for="tt1" class="me-2">Examination Date </label>
-                              </div>
-                        </div>
-                        <div class="col-lg-4 py-3 d-flex flex-column gap-3">
-                            <div class="form-label-group">
-                                <input type="text" id="tt1" class="form-control border" placeholder=" 787994339933" required />
-                                <label for="tt1" class="me-2">Roll Number</label>
-                              </div>
-                              <div class="form-label-group">
-                                <input type="text" id="tt1" class="form-control border" placeholder=" 11:30 AM" required/>
-                                <label for="tt1" class="me-2">Reporting time</label>
-                              </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-label-group rounded-3">
-                                <textarea type="text" id="tt1" class="form-control border h-100" placeholder=" Ram Tahal Choudhary Institute of Technology RTCIT, Anandi, Ormanjhi Block Chowk, Ranchi, Jharkhand, India, 835219" aria-label="Address" required ></textarea>
-                                <label for="tt1" class="me-2">Address</label>
-                            </div>                          
-                        </div>
-                    </div>
-    
-                  <div class="py-3 px-4">
-                   <div class="position-relative">
-                    <hr class="position-absolute" style="top: 0;">
-                   <p></p>
-                   </div>
-                  </div>
-                  
-                    <div class="row">
-                        <div class="col-12">
-                            <ol class="" style="line-height: 30px;">
-                                <li class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius
-                                    enim in eros elementum tristiqueLorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Suspendisse varius enim in eros elementum tristique</li class="">
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
-                                    elementum tristiqueLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    varius enim in eros elementum tristique</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
-                                    elementum tristiqueLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    varius enim in eros elementum tristique</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
-                                    elementum tristiqueLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    varius enim in eros elementum tristique</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
-                                    elementum tristiqueLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    varius enim in eros elementum tristique</li>
-                            </ol>
-    
-                        </div>
-                        <!-- <form action=""> -->
-                            <div class="col-12 col-md-12 col-lg-12">
-                                <div class="text-center py-2">
-                                    <button type="submit" class="border border-2 rounded-2  py-1 px-4 bg-gradient wid-btn text-dark">Update</button>
-                                    <button type="submit" class="border border-2 rounded-2  py-1 px-4 bg-gradient wid-btn text-dark">Print</button>
+                    <div class="col-lg-9 mx-auto border border-2 rounded-1">
+                        <div class="row mt-md-5  d-lg-flex d-none justify-content-between align-items-center--">
+                            <!-- Added align-items-center to vertically center the content -->
+                            <div class="col-2 d-flex justify-content-end  text-center">
+                                <div class="p-2 " style="max-width: 100px;">
+                                    <img src="./assets/images/logo-sk.png" alt="" class=""
+                                        style="max-width: 100%; height: auto;">
                                 </div>
                             </div>
-                            
-                        <!-- </form>/ -->
+
+                            <div class="col-lg-7">
+                                <div class="text-center">
+                                    <h4 class="fw-bold fs-3">Bharat Gyan Uday</h4>
+                                    <h6 class=" fw-bold fs-5 text-center">(Scheme - A mini Patna. Category - A Public
+                                        sector)</h6>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim
+                                        in eros
+                                        elementum tristique</p>
+                                    <h4 class="fw-medium fs-3" style="color: #1F64B4;">Admit Card</h4>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex justify-content-start ">
+                                <div class="p-2  text-center " style="max-width: 100px;">
+                                    <img src="./assets/images/logo-sk.png" alt=""
+                                        style="max-width: 100%; height: auto;">
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="py-lg-4 py-2 ">
+                        <div class="row  align-items-center justify-content-between ">
+                            <div class="col-lg-8">
+                                <div class="row py-xxl-3">
+                                    <h5 class="mb-4">Candidate detail</h5>
+                                    <div class="col-lg-6 px-0 px-lg-3 d-flex flex-column gap-2">
+                                        <div class="form-label-group  position-relative">
+                                            <input type="text" class="input-switch form-control border" id="username"
+                                                name="username" required onkeydown="return /[a-z]/i.test(event.key)"
+                                                placeholder="Name" required />
+                                            <label for="tt1" class="me-2">Candidate Name</label>
+                                            <i class="fa-solid fa-pen position-absolute pencilIcon " onclick="inputChange(event)"
+                                                style="cursor:pointer;top: 50%; transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
+                                        </div>
+
+
+                                        <!-- FORM-1 -->
+                                        <div class="form-label-group">
+                                            <input type="text" onfocus="(this.type = 'date');"
+                                                onblur="(this.type = 'text');" required placeholder="DOB" value="DOB"
+                                                class="form-control border">
+                                            <label for="tt1" class="me-2">Date of birth</label>
+                                            <i class=" position-absolute"
+                                                style="top: 50%; transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
+                                        </div>
+                                        <div class="form-label-group">
+                                            <input type="text" id="tt1" class="form-control border" placeholder=" Male"
+                                                required />
+                                            <label for="tt1" class="me-2">Gender</label>
+                                            <i class="fa-solid fa-caret-down position-absolute "
+                                                style="top: 50%; transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 px-lg-3 px-0 d-flex flex-column gap-2">
+                                        <div class="form-label-group ">
+                                            <input type="text" id="tt1" class="input-switch form-control border"
+                                                onkeydown="return /[a-z]/i.test(event.key)" placeholder=" Tulsi prasad"
+                                                required />
+                                            <label for="tt1" class="me-2">Fathers Name</label>
+                                            <i class="fa-solid fa-pen position-absolute pencilIcon" onclick="inputChange(event)"
+                                                style="cursor:pointer;top: 50%; transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
+
+                                        </div>
+                                        <div class="form-label-group " >
+                                            <input type="text" id="tt1" class="form-control border" placeholder=" BC-1"
+                                                required />
+                                            <label for="tt1" class="me-2 ">Catogory</label>
+                                            <i class="fa-solid fa-caret-down position-absolute"
+                                                style="top: 50%; transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px;"></i>
+                                                
+                                        </div>
+                                        <div class="form-label-group">
+                                            <div class="form-label-group">
+                                                <input type="" id="tt1" class="form-control border"
+                                                    placeholder="Mohan Yadav" required />
+                                                <label for="tt1" class="me-2">Signature</label>
+                                                <i id="uploadIcon" class="fas fa-cloud-upload-alt position-absolute"
+                                                    onclick="openFileManager()"
+                                                    style="top: 50%; rotate: 0deg;  transform: translateY(-50%); right: 10px; color: #5D5FEF; font-size: 15px; cursor: pointer;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 d-lg-block d-none">
+                                <div class="w-100 ">
+                                    <img src="./assets/images/pawan.png" alt="" style="height: 200px; width: 100%;"
+                                        id="img-preview">
+                                    <!-- <label for="file-input">fghjkl </label> -->
+                                    <input accept="image/*" type="file" id="file-input" />
+                                    <label for="file-input"
+                                        class="d-flex justify-content-center align-items-center gap-2 mt-1"
+                                        style="cursor:pointer; font-size: 14px; color: blue; "><i
+                                            class="fa-solid fa-pen"></i> Change profile photo</label>
+                                    <img src="assets/images/sign.png" alt="" class="border py-2 px-3 mt-2 rounded-1"
+                                        style="width: 100%; height: 7vh;">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FORM -2 -->
+                        <div class="row px-lg-3">
+                            <h5 class="mb-4">Center Detail</h5>
+                            <div class="col-lg-4 py-3 d-flex flex-column gap-3">
+                                <div class="form-label-group">
+                                    <input type="text" id="tt1" class="form-control border"
+                                        onkeydown="return /[a-z]/i.test(event.key)" placeholder="Satya kabir"
+                                        required />
+                                    <label for="tt1" class="me-2">Center Name</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input type="text" id="tt1" class="form-control border" placeholder=" 212"
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..?)\../g, '$1');"
+                                        required />
+                                    <label for="tt1" class="me-2">Center code</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 py-3 d-flex flex-column gap-3">
+                                <div class="form-label-group">
+                                    <input type="text" id="tt1" class="form-control border" placeholder=" JH4545454545"
+                                        required />
+                                    <label for="tt1" class="me-2">Application No</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input type="text" id="tt1" class="form-control border" placeholder=" 21 March 2024"
+                                        required />
+                                    <label for="tt1" class="me-2">Examination Date </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 py-3 d-flex flex-column gap-3">
+                                <div class="form-label-group">
+                                    <input type="text" id="tt1" class="form-control border" placeholder=" 787994339933"
+                                        required />
+                                    <label for="tt1" class="me-2">Roll Number</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input type="text" id="tt1" class="form-control border" placeholder=" 11:30 AM"
+                                        required />
+                                    <label for="tt1" class="me-2">Reporting time</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-label-group rounded-3">
+                                    <textarea type="text" id="tt1" class="form-control border h-100 classname"
+                                        placeholder=" Ram Tahal Choudhary Institute of Technology RTCIT, Anandi, Ormanjhi Block Chowk, Ranchi, Jharkhand, India, 835219"
+                                        aria-label="Address" required></textarea>
+                                    <label for="tt1" class="me-2">Address</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TERMS AND CONDITION LINE -->
+                        <div class="col-12 d-flex justify-content-center align-items-center gap-2 py-3">
+                            <hr class=" w-50 border-0  " style="opacity:0.9; height: 2px; background-color: #8B909A;">
+                            </hr>
+                            <p class="m-0 fw-bold text-nowrap"> Terms & condition </p>
+                            <hr class=" w-50 border-0  " style="opacity:0.9 ; height: 2px; background-color: #8B909A;">
+                            </hr>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <ol class="" style="line-height: 30px;">
+                                    <li class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                                        varius
+                                        enim in eros elementum tristiqueLorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit.
+                                        Suspendisse varius enim in eros elementum tristique</li class="">
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim
+                                        in eros
+                                        elementum tristiqueLorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Suspendisse
+                                        varius enim in eros elementum tristique</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim
+                                        in eros
+                                        elementum tristiqueLorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Suspendisse
+                                        varius enim in eros elementum tristique</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim
+                                        in eros
+                                        elementum tristiqueLorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Suspendisse
+                                        varius enim in eros elementum tristique</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim
+                                        in eros
+                                        elementum tristiqueLorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Suspendisse
+                                        varius enim in eros elementum tristique</li>
+                                </ol>
+                            </div>
+
+                            <!-- <form> -->
+                            <div class="col-12 col-md-12 col-lg-12">
+                                <div class="text-center py-2">
+                                    <button type="submit"
+                                        class="border fw-bold rounded-3  py-1 px-4 bg-gradient wid-btn text-dark">Update</button>
+                                    <button type="submit"
+                                        class="border fw-bold rounded-3  py-1 px-4 bg-gradient wid-btn text-dark">Print</button>
+                                </div>
+                            </div>
+                            <!-- </form>/ -->
+                        </div>
                     </div>
                 </div>
-            </div>
-        </form>
-    </div>
-   </section>
+            </form>
+        </div>
+    </section>
 
-   
+
+
+    <!-- ONCLIK FUNCTION FOR SIGNATURE  -->
+    <input type="file" id="imageInput" accept="image/*" style="display:none;" />
+
+
     <!-- Bootstrap CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script src="assets/js/index.js"></script>
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Font Awsome CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
         integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <!-- Bootstrap JS link  -->
     <script src="assets/css/bootstrap_js.js"></script>
     <!-- Main JS  -->
-    <script src="assets/js/index.js"></script>
-
     <!-- Include AOS JavaScript from CDN -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
+    <!-- EDIT NAME FATHER-SNAME -->
+    <script>
+    function inputChange(event){
+        $(event.target).siblings('input').removeAttr('disabled');
+        $(event.target).siblings('input').focus();
+        }
+           
+        function openFileManager() {
+            document.getElementById('imageInput').click();
+        }
+
+        document.getElementById('imageInput').addEventListener('change', function () {
+            var selectedImage = this.files[0];
+        });
+       
+    </script>
+
+    <!-- IMAGE SIGN ICON -->
     <script>
         const input = document.getElementById("file-input");
         const image = document.getElementById("img-preview");
@@ -306,15 +373,6 @@ input[type="date"] {
         });
 
     </script>
-     <script>
-        $(document).ready(function(){
-          $("#datepicker").datepicker({
-            dateFormat: 'yy-mm-dd' // Format of the date
-          });
-        });
-      </script>
-    
-
 </body>
 
 </html>
